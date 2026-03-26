@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — ListingGems</title>
+  <meta name="description" content="Get in touch with the ListingGems team. We're here to help you create better product listings.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://listinggems.com/contact">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-deep: #ffffff;
+      --bg-main: #f8fafb;
+      --border: #e2e5e9;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --emerald: #059669;
+      --emerald-deep: #047857;
+      --emerald-glow: rgba(5, 150, 105, 0.08);
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    nav .container { max-width: 1100px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-primary); }
+    .nav-logo-img { height: 36px; width: auto; }
+    .nav-logo-text { font-weight: 700; font-size: 17px; letter-spacing: -0.3px; color: var(--text-primary); }
+    .nav-logo-accent { color: var(--emerald-deep); }
+
+    .nav-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--emerald-deep); color: white; padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .nav-cta:hover { background: #047857; transform: translateY(-1px); }
+
+    main { padding: 120px 0 80px; }
+    h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 24px; }
+    p { font-size: 15px; color: var(--text-secondary); margin-bottom: 14px; }
+
+    .contact-card {
+      background: var(--bg-main);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .contact-card p { font-size: 16px; line-height: 1.8; max-width: 520px; margin: 0 auto 24px; }
+    .contact-email {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--emerald-deep);
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .contact-email:hover { background: rgba(5, 150, 105, 0.12); }
+
+    .contact-note {
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-links { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="ListingGems" class="nav-logo-img">
+      <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
+    </a>
+    <a href="index.html#pricing" class="nav-cta">Buy Now &mdash; $49</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <h1>Get in Touch</h1>
+
+    <div class="contact-card">
+      <p>We built ListingGems to help sellers like you spend less time editing photos and more time growing your business. Whether you have a question, a feature request, or just want to say hi &mdash; we'd love to hear from you.</p>
+      <!-- TODO: Replace with real email -->
+      <a href="mailto:support@listinggems.com" class="contact-email">support@listinggems.com</a>
+      <p class="contact-note">We typically respond within 24 hours.</p>
+    </div>
+
+    <div class="footer-links">
+      <span>&copy; 2026 ListingGems</span>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+      <a href="download.html">Download</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ListingGems — Turn Phone Photos into Marketplace-Ready Listings</title>
+  <meta name="description" content="Offline product photo tool for Amazon FBA, Etsy, and Shopify sellers. AI background removal, lighting correction, upscaling, marketplace presets. $49 one-time — no subscriptions.">
+  <meta name="keywords" content="Amazon product photo tool, remove background for Amazon FBA, Etsy listing image editor, offline background remover, product photo background removal software, Alibaba product photo upscaler, e-commerce product photography tool">
+  <meta property="og:title" content="ListingGems — Turn Phone Photos into Marketplace-Ready Listings">
+  <meta property="og:description" content="AI background removal, lighting correction, upscaling, and marketplace export presets. Runs offline on your GPU. $49 one-time purchase — no subscriptions, no per-image fees.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://listinggems.com">
+  <meta property="og:image" content="https://listinggems.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ListingGems — Turn Phone Photos into Marketplace-Ready Listings">
+  <meta name="twitter:description" content="AI background removal, lighting correction, upscaling, and marketplace export presets. Runs offline on your GPU. $49 one-time purchase.">
+  <meta name="twitter:image" content="https://listinggems.com/og-image.png">
+
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://listinggems.com/">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ListingGems",
+    "applicationCategory": "PhotographyApplication",
+    "operatingSystem": "Windows 10, Windows 11, Linux",
+    "description": "Offline product photo tool for marketplace sellers. AI background removal, lighting correction, upscaling, and marketplace export presets for Amazon, Etsy, eBay, Shopify, and more.",
+    "url": "https://listinggems.com",
+    "offers": {
+      "@type": "Offer",
+      "price": "49.00",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock"
+    },
+    "featureList": [
+      "AI background removal (BiRefNet, BEN2)",
+      "Exposure and white balance correction",
+      "AI upscaling (Real-ESRGAN 4x)",
+      "9 marketplace export presets",
+      "Batch processing",
+      "100% offline — no cloud uploads"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this really a one-time purchase? No hidden fees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. $49 and it's yours permanently. No subscriptions, no credits, no usage limits. Process one image or one million — same price. All future updates are included at no extra cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need internet to use it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only for the initial model download (115–490 MB depending on the model you choose). After that, ListingGems works completely offline. No cloud, no API calls, no data sent anywhere."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a powerful computer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ListingGems works on any Windows or Linux computer. A dedicated NVIDIA GPU (GTX 1650 / 2019 or newer, 4GB+ VRAM) or AMD GPU (Windows only) speeds things up dramatically — under 2 seconds per image. Without a GPU, it still works on CPU, taking about 20 seconds per image."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which marketplaces are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Amazon (Main + Secondary), Etsy, eBay, Poshmark, Mercari, Depop, Facebook Marketplace, and Shopify. Each preset auto-crops to the platform's required dimensions. Amazon Main enforces a pure white background."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What image formats does it support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Input: JPEG, PNG, WebP, HEIC, and AVIF — drop photos straight from your iPhone or Galaxy, no conversion needed. Output: JPEG, PNG (with transparency), and WebP — with marketplace-specific optimization for each format."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it handle transparent or reflective products?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The AI models handle complex edges including glass, transparent packaging, jewelry, and reflective surfaces. For tricky cases, the built-in touch-up brush lets you refine edges by hand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if the background removal isn't perfect?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ListingGems includes a manual eraser and restore brush for edge refinement. If the AI misses a spot or removes too much, you can paint it back in or erase it with precision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your images never leave your computer. There is no cloud connection, no upload, no analytics on your photos. The AI models run entirely on your hardware."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the money-back guarantee work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Full refund within 45 days, no questions asked. Just reach out and we'll process it immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use it on multiple computers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — each license supports up to 3 device activations. You can deactivate a device anytime from Settings to free up a slot."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about Mac?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "macOS support is coming soon. The ML infrastructure for Apple Silicon (CoreML) is already built in — we just need to test and package it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does upscaling (sharpening) take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upscaling uses Real-ESRGAN, a neural network that enhances detail and sharpness. With a GPU: about 1 second per tile (~1 minute for a 2048×2048 image). On CPU: about 8 seconds per tile."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep: #ffffff;
+      --bg-main: #f8fafb;
+      --bg-card: #ffffff;
+      --bg-elevated: #f1f3f5;
+      --border: #e2e5e9;
+      --border-light: #d1d5db;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --emerald: #059669;
+      --emerald-deep: #047857;
+      --emerald-glow: rgba(5, 150, 105, 0.08);
+      --red-soft: #dc2626;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════
+       GLOBAL LAYOUT
+    ═══════════════════════════════════════ */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    section + section {
+      border-top: 1px solid var(--border);
+    }
+
+    /* ═══════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .nav-logo-img {
+      height: 36px;
+      width: auto;
+    }
+
+    .nav-logo-text {
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      color: var(--text-primary);
+    }
+
+    .nav-logo-accent {
+      color: var(--emerald-deep);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--emerald-deep);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: #047857;
+      transform: translateY(-1px);
+    }
+
+    .nav-cta .price-old {
+      text-decoration: line-through;
+      opacity: 0.6;
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      padding: 140px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-content {
+        align-items: center;
+        order: -1;
+      }
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--emerald);
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 3.5vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin: 0 0 16px;
+    }
+
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--emerald) 0%, #6ee7b7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin: 0 0 28px;
+      line-height: 1.5;
+    }
+
+    /* Before/After Slider */
+    .ba-slider {
+      position: relative;
+      max-width: 100%;
+      margin: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      aspect-ratio: 4 / 3;
+      cursor: ew-resize;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .ba-slider img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .ba-after-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      overflow: hidden;
+      width: 50%;
+    }
+
+    .ba-after-wrap img {
+      width: 100%;
+      min-width: 100%;
+      max-width: none;
+    }
+
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: var(--emerald);
+      transform: translateX(-50%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .ba-handle-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: var(--emerald);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+      pointer-events: none;
+    }
+
+    .ba-handle-circle svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    .ba-label {
+      position: absolute;
+      top: 12px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .ba-label-before {
+      right: 12px;
+      background: rgba(0, 0, 0, 0.55);
+      color: white;
+    }
+
+    .ba-label-after {
+      left: 12px;
+      background: rgba(5, 150, 105, 0.85);
+      color: white;
+    }
+
+    /* Placeholder for photos */
+    .ba-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--text-muted);
+      background: var(--bg-card);
+    }
+
+    .ba-placeholder-before {
+      background: linear-gradient(135deg, #d4d4d8 0%, #a1a1aa 50%, #d4d4d8 100%);
+      color: #52525b;
+    }
+
+    .ba-placeholder-after {
+      background: #ffffff;
+      color: #71717a;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emerald-deep);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(5, 150, 105, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #065f46;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(5, 150, 105, 0.3);
+    }
+
+    .price-old-hero {
+      font-size: 20px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .hero-guarantee {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════
+       PAIN POINTS
+    ═══════════════════════════════════════ */
+    .pain-points {
+      background: var(--bg-main);
+    }
+
+    .section-title {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+
+    /* ═══════════════════════════════════════
+       FEATURES
+    ═══════════════════════════════════════ */
+    .features {
+      background: var(--bg-deep);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      padding: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: border-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      border-color: var(--border-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .feature-tech {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--emerald);
+      opacity: 0.85;
+    }
+
+    /* ═══════════════════════════════════════
+       GALLERY
+    ═══════════════════════════════════════ */
+    .gallery {
+      background: var(--bg-main);
+    }
+
+    .gallery-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 0 64px;
+    }
+
+    .gallery-section:last-child {
+      padding-bottom: 0;
+    }
+
+    .gallery-section.reverse {
+      direction: rtl;
+    }
+
+    .gallery-section.reverse > * {
+      direction: ltr;
+    }
+
+    .gallery-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .gallery-subtitle {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .gallery-benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .gallery-benefits li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .gallery-benefits li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+    }
+
+    .gallery-item {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      aspect-ratio: 4 / 3;
+      position: relative;
+      cursor: ew-resize;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .gallery-item .ba-after-wrap img {
+      width: 100%;
+      max-width: none;
+    }
+
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════
+       PROBLEM NARRATIVE
+    ═══════════════════════════════════════ */
+    .problem-narrative {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .problem-narrative p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .problem-narrative .problem-kicker {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--emerald);
+      margin-top: 24px;
+      margin-bottom: 0;
+    }
+
+    /* ═══════════════════════════════════════
+       COMPETITOR COMPARISON
+    ═══════════════════════════════════════ */
+    .comparison {
+      background: var(--bg-deep);
+    }
+
+    .comparison-table-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px 16px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table th {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text-secondary);
+      background: var(--bg-main);
+    }
+
+    .comparison-table th:first-child,
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-primary);
+      min-width: 180px;
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--bg-card);
+    }
+
+    .comparison-table th:first-child {
+      background: var(--bg-main);
+    }
+
+    @media (max-width: 640px) {
+      .comparison-table td:first-child,
+      .comparison-table th:first-child {
+        box-shadow: 2px 0 4px rgba(0, 0, 0, 0.06);
+      }
+    }
+
+    .comparison-table th.highlight {
+      color: var(--emerald-deep);
+      background: var(--emerald-glow);
+    }
+
+    .comparison-table td.highlight {
+      background: rgba(5, 150, 105, 0.03);
+    }
+
+    .comparison-callout {
+      max-width: 680px;
+      margin: 28px auto 0;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 16px 24px;
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: 10px;
+    }
+
+    /* ═══════════════════════════════════════
+       SPEED BENCHMARKS
+    ═══════════════════════════════════════ */
+    .speed {
+      background: var(--bg-main);
+    }
+
+    .speed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .speed-item {
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .speed-time {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--emerald-deep);
+      letter-spacing: -1px;
+      margin-bottom: 4px;
+    }
+
+    .speed-hw {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .speed-detail {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .speed-note {
+      max-width: 680px;
+      margin: 24px auto 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       HOW IT WORKS
+    ═══════════════════════════════════════ */
+    .how-it-works {
+      background: var(--bg-deep);
+    }
+
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      max-width: 700px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      text-align: center;
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .step-number {
+      width: 52px;
+      height: 52px;
+      background: var(--emerald-deep);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      font-size: 22px;
+      font-weight: 800;
+      color: white;
+      box-shadow: 0 4px 16px rgba(5, 150, 105, 0.3);
+    }
+
+    .step h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .steps-connector {
+      display: none;
+    }
+
+    /* ═══════════════════════════════════════
+       SYSTEM REQUIREMENTS
+    ═══════════════════════════════════════ */
+    .sysreq {
+      background: var(--bg-main);
+    }
+
+    .sysreq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .sysreq-item {
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .sysreq-item .req-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .sysreq-item h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .sysreq-item p {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .sysreq-note {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .sysreq-note a {
+      color: var(--emerald);
+      text-decoration: none;
+    }
+
+    .sysreq-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* ═══════════════════════════════════════
+       PRICING
+    ═══════════════════════════════════════ */
+    .pricing {
+      background: var(--bg-deep);
+      text-align: center;
+    }
+
+    .pricing-card {
+      max-width: 400px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 2px solid var(--emerald-deep);
+      border-radius: 20px;
+      padding: 40px 36px;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(5, 150, 105, 0.1);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--emerald-deep);
+      color: white;
+      padding: 4px 18px;
+      border-radius: 100px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .pricing-price {
+      margin: 12px 0 4px;
+    }
+
+    .pricing-price .old {
+      font-size: 22px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-right: 8px;
+    }
+
+    .pricing-price .current {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .pricing-subtitle {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    .pricing-features {
+      text-align: left;
+      margin-bottom: 28px;
+    }
+
+    .pricing-features li {
+      list-style: none;
+      padding: 6px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pricing-features li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2334d399'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 12px;
+    }
+
+    .pricing-cta {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+    }
+
+    .pricing-guarantee {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════ */
+    .faq {
+      background: var(--bg-main);
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      text-align: left;
+      padding: 20px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-question:hover {
+      color: var(--emerald);
+    }
+
+    .faq-toggle {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--bg-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--text-muted);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+      background: var(--emerald-glow);
+      color: var(--emerald);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      padding-bottom: 20px;
+    }
+
+    .faq-answer p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER CTA
+    ═══════════════════════════════════════ */
+    .footer-cta {
+      background: var(--bg-deep);
+      text-align: center;
+      padding: 80px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-cta::before {
+      content: '';
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .footer-cta h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .footer-cta .sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    .footer-links {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-secondary);
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 640px) {
+      section { padding: 56px 0; }
+      .hero { padding: 110px 0 56px; }
+      .steps { gap: 32px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .gallery-section { grid-template-columns: 1fr; gap: 24px; padding-bottom: 48px; }
+      .gallery-section.reverse { direction: ltr; }
+      .pricing-card { padding: 32px 24px; }
+      .nav-cta .price-old { display: none; }
+    }
+
+    /* ═══════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════ */
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-in {
+      opacity: 0;
+      animation: slideIn 0.6s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="ListingGems" class="nav-logo-img">
+      <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
+    </a>
+    <a href="#pricing" class="nav-cta">
+      Buy Now &mdash; $49 <span class="price-old">$79</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-layout">
+      <!-- Before/After Slider — left side -->
+      <div class="ba-slider animate-in delay-3" id="heroSlider">
+        <!-- PLACEHOLDER: Replace with real before/after images -->
+        <div class="ba-placeholder ba-placeholder-before">
+          <span>&#x1f4f7; Before photo placeholder</span>
+        </div>
+        <div class="ba-after-wrap" id="heroAfterWrap">
+          <div class="ba-placeholder ba-placeholder-after">
+            <span>&#x2728; After photo placeholder</span>
+          </div>
+        </div>
+        <div class="ba-handle" id="heroHandle">
+          <div class="ba-handle-circle">
+            <svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg>
+          </div>
+        </div>
+        <span class="ba-label ba-label-before">Before</span>
+        <span class="ba-label ba-label-after">After</span>
+      </div>
+
+      <!-- Copy + CTA — right side -->
+      <div class="hero-content">
+        <div class="hero-badge animate-in">Launch Sale &mdash; Save 38%</div>
+        <h1 class="animate-in delay-1">Turn phone photos into <span class="accent">marketplace-ready listings</span></h1>
+        <p class="hero-sub animate-in delay-2">Remove backgrounds, fix lighting, upscale supplier photos, and export Amazon/Etsy/Shopify-compliant images &mdash; all on your computer. No subscriptions. No cloud uploads. No per-image fees.</p>
+        <div class="hero-cta-group animate-in delay-3">
+          <a href="#pricing" class="btn-primary">Buy Now &mdash; $49</a>
+          <span class="price-old-hero">$79</span>
+        </div>
+        <p class="hero-guarantee animate-in delay-3">45-day money-back guarantee &middot; No questions asked</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROBLEM ═══════════════ -->
+<section class="pain-points">
+  <div class="container">
+    <h2 class="section-title">You're overpaying for background removal.<br>And your photos still get rejected.</h2>
+    <div class="problem-narrative">
+      <p>You know the drill. Shoot your product on the kitchen table. Upload it to a cloud tool. Pay per image. Download the result. Realize Amazon rejected it because the white isn't white enough. Open another app to fix the color. Re-export. Re-upload. Repeat for 200 products.</p>
+      <p>Meanwhile, remove.bg is charging you <strong>$39/month</strong>, PhotoRoom wants <strong>$13/month</strong>, and you're still running back and forth between three different tools just to get a compliant listing image.</p>
+      <p class="problem-kicker">There's a better way.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FEATURES ═══════════════ -->
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">One app. Five tools. Zero subscriptions.</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#x2702;&#xFE0F;</div>
+        <h3>AI Background Removal</h3>
+        <p>Strip backgrounds from product photos in seconds. Handles hair, fur, lace, transparent packaging, and jewelry filigree. Replace with white, custom colors, gradients, or your own images.</p>
+        <span class="feature-tech">Under 2s on GPU &middot; ~20s on CPU &middot; no GPU required</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f4a1;</div>
+        <h3>Exposure &amp; White Balance Fix</h3>
+        <p>Shot your product under warm kitchen lights? That yellow tint is costing you sales. ListingGems auto-corrects exposure and white balance so your product looks studio-lit. Colors stay accurate. Whites stay white.</p>
+        <span class="feature-tech">AI exposure correction + automatic color balancing</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f50d;</div>
+        <h3>AI Upscaling (4x)</h3>
+        <p>Turn a 400px Alibaba thumbnail into a 2000px listing hero. AI generates real detail, not blurry mush. Take a supplier screenshot and make it listing-ready.</p>
+        <span class="feature-tech">500px in, 2000px out &middot; works on any image</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f4d0;</div>
+        <h3>Marketplace Export Presets</h3>
+        <p>Stop guessing whether your image will pass. Amazon pure white background, Etsy square crop, eBay and Shopify dimensions. Select your marketplace, hit export. It's compliant. Every time.</p>
+        <span class="feature-tech">9 presets: Amazon, Etsy, eBay, Poshmark, Shopify + more</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x26a1;</div>
+        <h3>Batch Processing</h3>
+        <p>Drag a folder in. Every image gets the same treatment: same background, same padding, same colors. Your catalog looks like it was shot in one session, even if it wasn't.</p>
+        <span class="feature-tech">200 photos in under 4 minutes on a mid-range GPU</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f512;</div>
+        <h3>100% Offline &amp; Private</h3>
+        <p>Cloud tools upload your photos to their servers. Your unreleased products, private label packaging, supplier shots, all on someone else's infrastructure. ListingGems processes everything on your machine. Nothing leaves.</p>
+        <span class="feature-tech">Your images never leave your computer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GALLERY ═══════════════ -->
+<section class="gallery">
+  <div class="container">
+    <h2 class="section-title">See the full pipeline in action</h2>
+
+    <!-- 1. Background Removal — slider left, text right -->
+    <div class="gallery-section">
+      <div class="gallery-item" data-ba-slider>
+        <div class="gallery-placeholder ba-placeholder-before"><span>Background Removal &mdash; Before</span></div>
+        <div class="ba-after-wrap"><div class="gallery-placeholder ba-placeholder-after"><span>Clean white background</span></div></div>
+        <div class="ba-handle"><div class="ba-handle-circle"><svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg></div></div>
+        <span class="ba-label ba-label-before">Before</span>
+        <span class="ba-label ba-label-after">After</span>
+      </div>
+      <div>
+        <h3 class="gallery-title">Background Removal</h3>
+        <p class="gallery-subtitle">Kitchen table to <strong>clean studio shot</strong> in one click. Three AI models, pick the one that fits your GPU.</p>
+        <ul class="gallery-benefits">
+          <li>Pure white, custom color, gradient, or image backgrounds</li>
+          <li>Transparent PNG export, drop it into any editor or listing</li>
+          <li>Brush tool for <strong>pixel-perfect edges</strong> on tricky items</li>
+          <li>Passes Amazon Main Image white background check</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2. Lighting Correction — text left, slider right -->
+    <div class="gallery-section reverse">
+      <div class="gallery-item" data-ba-slider>
+        <div class="gallery-placeholder ba-placeholder-before"><span>Bad lighting &mdash; Before</span></div>
+        <div class="ba-after-wrap"><div class="gallery-placeholder ba-placeholder-after"><span>True-to-life colors</span></div></div>
+        <div class="ba-handle"><div class="ba-handle-circle"><svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg></div></div>
+        <span class="ba-label ba-label-before">Before</span>
+        <span class="ba-label ba-label-after">After</span>
+      </div>
+      <div>
+        <h3 class="gallery-title">Lighting Correction</h3>
+        <p class="gallery-subtitle">Yellow casts, dark corners, washed-out colors. The AI fixes what your phone couldn't, so every shot looks like a <strong>professional lightbox</strong>.</p>
+        <ul class="gallery-benefits">
+          <li>AI exposure correction, even <strong>badly lit</strong> phone photos come out right</li>
+          <li>White balance kills yellow and blue casts</li>
+          <li>Shadow lift pulls hidden detail out of dark areas</li>
+          <li>Colors that match the real product, <strong>fewer returns</strong> from buyers</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. AI Upscaling — slider left, text right -->
+    <div class="gallery-section">
+      <div class="gallery-item" data-ba-slider>
+        <div class="gallery-placeholder ba-placeholder-before"><span>400px supplier photo</span></div>
+        <div class="ba-after-wrap"><div class="gallery-placeholder ba-placeholder-after"><span>2000px listing-ready</span></div></div>
+        <div class="ba-handle"><div class="ba-handle-circle"><svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg></div></div>
+        <span class="ba-label ba-label-before">Before</span>
+        <span class="ba-label ba-label-after">After</span>
+      </div>
+      <div>
+        <h3 class="gallery-title">AI Upscaling</h3>
+        <p class="gallery-subtitle">That tiny supplier photo? Now it's a <strong>high-res listing image</strong>. 4x enlargement with Real-ESRGAN.</p>
+        <ul class="gallery-benefits">
+          <li><strong>4x resolution</strong>, 500px becomes 2000px</li>
+          <li>Sharpens real detail instead of just stretching pixels</li>
+          <li>Unlocks Amazon's zoom feature (1600px minimum)</li>
+          <li>Turn Alibaba/1688 supplier photos into <strong>your own listings</strong></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ COMPETITOR COMPARISON ═══════════════ -->
+<section class="comparison">
+  <div class="container">
+    <h2 class="section-title">How much are you really paying?</h2>
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="highlight">ListingGems</th>
+            <th>remove.bg</th>
+            <th>PhotoRoom</th>
+            <th>Aiarty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Price</td>
+            <td class="highlight"><strong>$49 once</strong></td>
+            <td>$39&ndash;89/mo</td>
+            <td>$10&ndash;35/mo</td>
+            <td>$75 once</td>
+          </tr>
+          <tr>
+            <td>Per-image cost</td>
+            <td class="highlight"><strong>$0 forever</strong></td>
+            <td>$0.14&ndash;1.99</td>
+            <td>~$0.02 (API)</td>
+            <td>$0</td>
+          </tr>
+          <tr>
+            <td>Background removal</td>
+            <td class="highlight">&#x2705;</td>
+            <td>&#x2705;</td>
+            <td>&#x2705;</td>
+            <td>&#x2705;</td>
+          </tr>
+          <tr>
+            <td>Exposure correction</td>
+            <td class="highlight">&#x2705;</td>
+            <td>&#x274c;</td>
+            <td>&#x274c;</td>
+            <td>&#x274c;</td>
+          </tr>
+          <tr>
+            <td>White balance fix</td>
+            <td class="highlight">&#x2705;</td>
+            <td>&#x274c;</td>
+            <td>&#x274c;</td>
+            <td>&#x274c;</td>
+          </tr>
+          <tr>
+            <td>AI upscaling</td>
+            <td class="highlight">&#x2705;</td>
+            <td>&#x274c;</td>
+            <td>&#x274c;</td>
+            <td>&#x274c;</td>
+          </tr>
+          <tr>
+            <td>Marketplace presets</td>
+            <td class="highlight">&#x2705; 9 platforms</td>
+            <td>&#x274c;</td>
+            <td>Basic templates</td>
+            <td>&#x274c;</td>
+          </tr>
+          <tr>
+            <td>Runs offline</td>
+            <td class="highlight">&#x2705; 100% local</td>
+            <td>&#x274c; Cloud</td>
+            <td>&#x274c; Cloud</td>
+            <td>&#x2705; Local</td>
+          </tr>
+          <tr>
+            <td>GPU accelerated</td>
+            <td class="highlight">&#x2705; CUDA + DirectML + CPU</td>
+            <td>N/A (cloud)</td>
+            <td>N/A (cloud)</td>
+            <td>Partial</td>
+          </tr>
+          <tr>
+            <td>Batch processing</td>
+            <td class="highlight">&#x2705; Unlimited</td>
+            <td>Credit-limited</td>
+            <td>50&ndash;250 images</td>
+            <td>&#x2705;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="comparison-callout">
+      A remove.bg Pro subscription costs $468/year. ListingGems pays for itself in 5 weeks &mdash; then it's free forever.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SPEED ═══════════════ -->
+<section class="speed">
+  <div class="container">
+    <h2 class="section-title">Fast enough to feel instant</h2>
+    <div class="speed-grid">
+      <div class="speed-item">
+        <div class="speed-time">&lt;0.5s</div>
+        <div class="speed-hw">RTX 4090</div>
+        <div class="speed-detail">24 GB VRAM</div>
+      </div>
+      <div class="speed-item">
+        <div class="speed-time">~1s</div>
+        <div class="speed-hw">RTX 3060 / 4060</div>
+        <div class="speed-detail">8 GB VRAM</div>
+      </div>
+      <div class="speed-item">
+        <div class="speed-time">~2s</div>
+        <div class="speed-hw">Entry GPU</div>
+        <div class="speed-detail">4 GB VRAM</div>
+      </div>
+      <div class="speed-item">
+        <div class="speed-time">~20s</div>
+        <div class="speed-hw">CPU Only</div>
+        <div class="speed-detail">No GPU required</div>
+      </div>
+    </div>
+    <p class="speed-note">
+      A batch of 200 product photos finishes in under 4 minutes on a mid-range GPU.<br>
+      The same batch on remove.bg? 15+ minutes of uploading, processing, and downloading &mdash; plus $28 in credits.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+<section class="how-it-works">
+  <div class="container">
+    <h2 class="section-title">How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Drop</h3>
+        <p>Drag your photos in</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Process</h3>
+        <p>AI does the work</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Export</h3>
+        <p>Ready for any marketplace</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SYSTEM REQUIREMENTS ═══════════════ -->
+<section class="sysreq">
+  <div class="container">
+    <h2 class="section-title">System Requirements</h2>
+    <div class="sysreq-grid">
+      <div class="sysreq-item">
+        <div class="req-icon">&#x1f5a5;&#xFE0F;</div>
+        <h4>Windows 10/11</h4>
+        <p>64-bit. NVIDIA or AMD GPU for fast processing, or CPU-only mode.</p>
+      </div>
+      <div class="sysreq-item">
+        <div class="req-icon">&#x1f427;</div>
+        <h4>Linux</h4>
+        <p>64-bit. NVIDIA GPU (CUDA) for fast processing, or CPU-only mode.</p>
+      </div>
+      <div class="sysreq-item">
+        <div class="req-icon">&#x26a1;</div>
+        <h4>GPU Recommended</h4>
+        <p>NVIDIA GTX 1650+ or AMD (Windows). ~1&ndash;2s per image vs ~20s on CPU.</p>
+      </div>
+    </div>
+    <p class="sysreq-note">
+      No GPU? ListingGems still works &mdash; just slower. macOS support coming soon. &nbsp;
+      <a href="#faq">More details in the FAQ &darr;</a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <h2 class="section-title">One price. One time. Unlimited images.</h2>
+    <div class="pricing-card">
+      <div class="pricing-badge">Launch Sale</div>
+      <div class="pricing-price">
+        <span class="old">$79</span>
+        <span class="current">$49</span>
+      </div>
+      <p class="pricing-subtitle">one-time payment &mdash; yours forever</p>
+      <ul class="pricing-features">
+        <li>AI background removal (GPU + CPU)</li>
+        <li>Exposure and white balance correction</li>
+        <li>AI upscaling (4x Real-ESRGAN)</li>
+        <li>Manual touch-up brush for edge refinement</li>
+        <li>9 marketplace export presets</li>
+        <li>Unlimited batch processing</li>
+        <li>100% offline &mdash; no cloud, no per-image fees</li>
+        <li>Windows &amp; Linux</li>
+        <li>3 device activations</li>
+        <li>Free updates forever</li>
+      </ul>
+      <a href="#" class="btn-primary pricing-cta">Buy Now</a>
+      <p class="pricing-guarantee">45-day money-back guarantee &middot; No questions asked</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Is this really a one-time purchase? No hidden fees? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Yes. $49 and it's yours permanently. No subscriptions, no credits, no usage limits. Process one image or one million &mdash; same price. All future updates are included at no extra cost.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do I need internet to use it? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Only for the initial model download (115&ndash;490 MB depending on the model you choose). After that, ListingGems works completely offline. No cloud, no API calls, no data sent anywhere.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do I need a powerful computer? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>ListingGems works on any Windows or Linux computer. A dedicated NVIDIA GPU (GTX 1650 / 2019 or newer, 4GB+ VRAM) or AMD GPU (Windows only) speeds things up dramatically &mdash; under 2 seconds per image. Without a GPU, it still works on CPU, taking about 20 seconds per image.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Which marketplaces are supported? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Amazon (Main + Secondary), Etsy, eBay, Poshmark, Mercari, Depop, Facebook Marketplace, and Shopify. Each preset auto-crops to the platform's required dimensions. Amazon Main enforces a pure white background.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What image formats does it support? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Input: JPEG, PNG, WebP, HEIC, and AVIF &mdash; drop photos straight from your iPhone or Galaxy, no conversion needed. Output: JPEG, PNG (with transparency), and WebP &mdash; with marketplace-specific optimization for each format.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can it handle transparent or reflective products? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Yes. The AI models handle complex edges including glass, transparent packaging, jewelry, and reflective surfaces. For tricky cases, the built-in touch-up brush lets you refine edges by hand.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What if the background removal isn't perfect? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>ListingGems includes a manual eraser and restore brush for edge refinement. If the AI misses a spot or removes too much, you can paint it back in or erase it with precision.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is my data safe? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Your images never leave your computer. There is no cloud connection, no upload, no analytics on your photos. The AI models run entirely on your hardware. Ideal for sellers working with unreleased products, private label designs, or confidential supplier materials.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How does the money-back guarantee work? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Full refund within 45 days, no questions asked. Just reach out and we'll process it immediately. We want you to buy with zero risk.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I use it on multiple computers? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Yes &mdash; each license supports up to 3 device activations. You can deactivate a device anytime from Settings to free up a slot.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What about Mac? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>macOS support is coming soon. The ML infrastructure for Apple Silicon (CoreML) is already built in &mdash; we just need to test and package it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How long does upscaling (sharpening) take? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Upscaling uses Real-ESRGAN, a neural network that enhances detail and sharpness. Speed depends on image size and your hardware. With a GPU: about 1 second per tile (~1 minute for a 2048&times;2048 image). On CPU: about 8 seconds per tile. Images larger than ~2048&times;2048 pixels are too large to upscale &mdash; crop or resize them first. Background removal and lighting correction are separate steps and remain fast regardless of upscaling.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER CTA ═══════════════ -->
+<section class="footer-cta">
+  <div class="container">
+    <h2>Stop paying monthly to remove backgrounds.</h2>
+    <p class="sub">Download ListingGems, process your first batch today, and never pay per image again.</p>
+    <div class="hero-cta-group" style="justify-content: center;">
+      <a href="#pricing" class="btn-primary">Buy Now &mdash; $49</a>
+      <span class="price-old-hero">$79</span>
+    </div>
+    <div class="footer-links">
+      <span>&copy; 2026 ListingGems</span>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+      <a href="download.html">Download</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ═══════════════════════════════════════
+  // Before/After Slider
+  // ═══════════════════════════════════════
+  function initSlider(container) {
+    const afterWrap = container.querySelector('.ba-after-wrap');
+    const handle = container.querySelector('.ba-handle');
+    if (!afterWrap || !handle) return;
+
+    let isDragging = false;
+    let autoAnimDone = false;
+
+    function setPosition(pct) {
+      const clamped = Math.max(0, Math.min(100, pct));
+      afterWrap.style.width = clamped + '%';
+      handle.style.left = clamped + '%';
+    }
+
+    function getPercent(e) {
+      const rect = container.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      return (x / rect.width) * 100;
+    }
+
+    function onStart(e) {
+      isDragging = true;
+      autoAnimDone = true;
+      e.preventDefault();
+      setPosition(getPercent(e));
+    }
+
+    function onMove(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      setPosition(getPercent(e));
+    }
+
+    function onEnd() {
+      isDragging = false;
+    }
+
+    container.addEventListener('mousedown', onStart);
+    container.addEventListener('touchstart', onStart, { passive: false });
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('mouseup', onEnd);
+    window.addEventListener('touchend', onEnd);
+
+    // Auto-slide animation on load
+    if (container.id === 'heroSlider') {
+      setPosition(20);
+      setTimeout(() => {
+        if (autoAnimDone) return;
+        const duration = 2000;
+        const start = performance.now();
+        function animate(now) {
+          if (autoAnimDone) return;
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease in-out
+          const eased = progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+          setPosition(20 + eased * 60);
+          if (progress < 1) requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+      }, 800);
+    } else {
+      setPosition(50);
+    }
+  }
+
+  // Init hero slider
+  const heroSlider = document.getElementById('heroSlider');
+  if (heroSlider) initSlider(heroSlider);
+
+  // Init gallery sliders
+  document.querySelectorAll('[data-ba-slider]').forEach(initSlider);
+
+  // ═══════════════════════════════════════
+  // FAQ Accordion
+  // ═══════════════════════════════════════
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      // Toggle clicked
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // ═══════════════════════════════════════
+  // Scroll animations (IntersectionObserver)
+  // ═══════════════════════════════════════
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feature-card, .step, .sysreq-item, .speed-item, .problem-narrative p').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
