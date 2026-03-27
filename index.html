@@ -47,7 +47,7 @@
     "featureList": [
       "AI background removal (BiRefNet, BEN2)",
       "Exposure and white balance correction",
-      "AI upscaling (Real-ESRGAN 4x)",
+      "AI upscaling (HFA2k 4x)",
       "9 marketplace export presets",
       "Batch processing",
       "100% offline — no cloud uploads"
@@ -154,7 +154,7 @@
         "name": "How long does upscaling (sharpening) take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Upscaling uses Real-ESRGAN, a neural network that enhances detail and sharpness. With a GPU: about 1 second per tile (~1 minute for a 2048×2048 image). On CPU: about 8 seconds per tile."
+          "text": "Upscaling uses HFA2k, a neural network that enhances detail and sharpness. With a GPU: about 1 second per tile (~1 minute for a 2048×2048 image). On CPU: about 8 seconds per tile."
         }
       }
     ]
@@ -1391,16 +1391,16 @@
 
     <!-- 3. AI Upscaling — slider left, text right -->
     <div class="gallery-section">
-      <div class="gallery-item" data-ba-slider>
-        <div class="gallery-placeholder ba-placeholder-before"><span>400px supplier photo</span></div>
-        <div class="ba-after-wrap"><div class="gallery-placeholder ba-placeholder-after"><span>2000px listing-ready</span></div></div>
+      <div class="gallery-item" data-ba-slider style="aspect-ratio: 2/3">
+        <img src="images/upscale-before.png" alt="400px supplier photo — blurry scarf" style="width:100%;height:100%;object-fit:cover;image-rendering:pixelated">
+        <div class="ba-after-wrap"><img src="images/upscale-after.jpg" alt="1600px upscaled — sharp knit detail" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="ba-handle"><div class="ba-handle-circle"><svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg></div></div>
-        <span class="ba-label ba-label-before">Before</span>
-        <span class="ba-label ba-label-after">After</span>
+        <span class="ba-label ba-label-before">Before (400px)</span>
+        <span class="ba-label ba-label-after">After (1600px)</span>
       </div>
       <div>
         <h3 class="gallery-title">AI Upscaling</h3>
-        <p class="gallery-subtitle">That tiny supplier photo? Now it's a <strong>high-res listing image</strong>. 4x enlargement with Real-ESRGAN.</p>
+        <p class="gallery-subtitle">That tiny supplier photo? Now it's a <strong>high-res listing image</strong>. 4x enlargement with HFA2k.</p>
         <ul class="gallery-benefits">
           <li><strong>4x resolution</strong>, 500px becomes 2000px</li>
           <li>Sharpens real detail instead of just stretching pixels</li>
@@ -1607,7 +1607,7 @@
       <ul class="pricing-features">
         <li>AI background removal (GPU + CPU)</li>
         <li>Exposure and white balance correction</li>
-        <li>AI upscaling (4x Real-ESRGAN)</li>
+        <li>AI upscaling (HFA2k 4x)</li>
         <li>Manual touch-up brush for edge refinement</li>
         <li>9 marketplace export presets</li>
         <li>Unlimited batch processing</li>
@@ -1673,7 +1673,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-question">How long does upscaling (sharpening) take? <span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><p>Upscaling uses Real-ESRGAN, a neural network that enhances detail and sharpness. Speed depends on image size and your hardware. With a GPU: about 1 second per tile (~1 minute for a 2048&times;2048 image). On CPU: about 8 seconds per tile. Images larger than ~2048&times;2048 pixels are too large to upscale &mdash; crop or resize them first. Background removal and lighting correction are separate steps and remain fast regardless of upscaling.</p></div>
+        <div class="faq-answer"><p>Upscaling uses HFA2k, a neural network that enhances detail and sharpness. Speed depends on image size and your hardware. With a GPU: about 1 second per tile (~1 minute for a 2048&times;2048 image). On CPU: about 8 seconds per tile. Images larger than ~2048&times;2048 pixels are too large to upscale &mdash; crop or resize them first. Background removal and lighting correction are separate steps and remain fast regardless of upscaling.</p></div>
       </div>
     </div>
   </div>
