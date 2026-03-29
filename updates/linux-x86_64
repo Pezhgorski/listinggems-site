@@ -1,11 +1,11 @@
 {
-  "version": "0.1.1",
-  "notes": "Faster startup: background removal model now preloads while you browse for photos.",
-  "pub_date": "2026-03-29T12:00:00Z",
+  "version": "0.1.2",
+  "notes": "Production release: Creem checkout, eager model preloading, app identifier fix, signed builds.",
+  "pub_date": "2026-03-29T19:00:00Z",
   "platforms": {
     "linux-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.1.1/ListingGems_0.1.1_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THRZcWlrQ3psRk1jdzV4TUxXbUtub0xhYkdTK050L3RGUWUrdVM5b1FKWkVzdUFnMlJDLy9TNDV4TllGOWNRMXZwaGVrS1pEcy9HNDJKZDN2MkFNOXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc0NzkwOTE0CWZpbGU6TGlzdGluZ0dlbXNfMC4xLjFfYW1kNjQuQXBwSW1hZ2UKY2hsdytaN3dHdmRZQ2NHUzl1R0Q1U1ZsbDZBUlFpL1E2VjhhdStham9zc28rSW0yWk1NQ2xzRGRaWmh3OTVMeG5WR0orM0tHV29DMDNwNUZ0RGZ1QVE9PQo="
+      "url": "https://dl.listinggems.com/releases/0.1.2/ListingGems_0.1.2_amd64.AppImage",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THZiaC9EaEFjVjhvZ2hqNDBXNytERWVVUGxjWVdGWXlwYUYzUEY4Z2xpdTNsNFhLc2dvQW1BSFNBMVhseVBHdnljYUc1MXBSUUJUN3JRTTZCK213WFFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc0ODAwMDExCWZpbGU6TGlzdGluZ0dlbXNfMC4xLjJfYW1kNjQuQXBwSW1hZ2UKNjcyQllnQVRpUDY2bDJPVlVJaVZhTnRVWmsxNktUTjVIaVdCUHM5b21jQUk1RjZvUDFTYmdxa2N6eXd6VkdPZU81c3VOMkZPVTh5dlFBeHFDWWt0RFE9PQo="
     }
   }
 }
