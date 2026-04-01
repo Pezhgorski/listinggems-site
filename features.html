@@ -318,10 +318,35 @@
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     }
 
-    .feature-screenshot img {
+    .feature-screenshot img,
+    .feature-screenshot video {
       display: block;
       width: 100%;
       height: auto;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.85);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img,
+    .lightbox video {
+      max-width: 92vw;
+      max-height: 92vh;
+      border-radius: 8px;
     }
 
     .feature-screenshot-placeholder {
@@ -591,8 +616,9 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: screenshot of Studio Mode full workspace -->
-        <div class="feature-screenshot-placeholder">Screenshot: Studio Mode workspace with before/after slider, sidebar controls, and image thumbnails</div>
+        <video autoplay loop muted playsinline preload="none">
+          <source src="images/feature-studio-mode.webm" type="video/webm">
+        </video>
       </div>
     </div>
   </div>
@@ -614,8 +640,7 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: screenshot showing bg removal result, ideally a tricky product like jewelry -->
-        <div class="feature-screenshot-placeholder">Screenshot: Product with complex edges (jewelry/glass) after background removal</div>
+        <img src="images/feature-bg-removal.webp" alt="AI background removal showing product with complex edges" loading="lazy">
       </div>
     </div>
   </div>
@@ -637,8 +662,9 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: screenshot of brush tool in action, showing mask overlay -->
-        <div class="feature-screenshot-placeholder">Screenshot: Touch-up brush refining edges on a product mask</div>
+        <video autoplay loop muted playsinline loading="lazy" preload="none">
+          <source src="images/feature-touchup.webm" type="video/webm">
+        </video>
       </div>
     </div>
   </div>
@@ -661,8 +687,7 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: grid/collage showing same product on different backgrounds -->
-        <div class="feature-screenshot-placeholder">Screenshot: Same product shown on white, gradient, custom color, and image backgrounds</div>
+        <img src="images/feature-backgrounds.webp" alt="Same product shown on white, gradient, custom color, and image backgrounds" loading="lazy">
       </div>
     </div>
   </div>
@@ -685,8 +710,7 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: screenshot of preset preview panel showing multiple platform crops -->
-        <div class="feature-screenshot-placeholder">Screenshot: Preset preview panel showing the same product cropped for Amazon, Etsy, eBay, and Poshmark</div>
+        <img src="images/feature-presets.webp" alt="Marketplace presets for Amazon, Etsy, eBay, Poshmark, Shopify, and more" loading="lazy">
       </div>
     </div>
   </div>
@@ -708,8 +732,7 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: screenshot showing layer controls sidebar + canvas with transform handles -->
-        <div class="feature-screenshot-placeholder">Screenshot: Product repositioned on canvas with layer controls visible in sidebar</div>
+        <img src="images/feature-layers.webp" alt="Product repositioned on canvas with layer controls visible in sidebar" loading="lazy">
       </div>
     </div>
   </div>
@@ -732,8 +755,7 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: before/after of a badly lit product photo -->
-        <div class="feature-screenshot-placeholder">Screenshot: Before/after showing a product with corrected lighting and white balance</div>
+        <img src="images/feature-lighting.webp" alt="Before and after showing a product with corrected lighting and white balance" loading="lazy">
       </div>
     </div>
   </div>
@@ -756,8 +778,7 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: screenshot of Quick Mode with progress bar mid-batch -->
-        <div class="feature-screenshot-placeholder">Screenshot: Quick Mode processing a batch of images with progress bar and ETA</div>
+        <img src="images/feature-batch.webp" alt="Quick Mode processing a batch of images with progress bar and ETA" loading="lazy">
       </div>
     </div>
   </div>
@@ -779,8 +800,7 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: side-by-side crop showing original vs upscaled detail -->
-        <div class="feature-screenshot-placeholder">Screenshot: Close-up comparison showing original resolution vs 4x upscaled detail</div>
+        <img src="images/feature-upscale.webp" alt="Close-up comparison showing original resolution vs 4x upscaled detail" loading="lazy">
       </div>
     </div>
   </div>
@@ -802,8 +822,7 @@
         </ul>
       </div>
       <div class="feature-screenshot">
-        <!-- Replace with: screenshot showing the app working (maybe with wifi off indicator or just the clean UI) -->
-        <div class="feature-screenshot-placeholder">Screenshot: ListingGems running offline with no internet connection required</div>
+        <img src="images/feature-offline.webp" alt="ListingGems processing a photo while offline with no internet connection" loading="lazy">
       </div>
     </div>
   </div>
@@ -829,7 +848,34 @@
   </div>
 </section>
 
+<div class="lightbox" id="lightbox"></div>
+
 <script>
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    while (lightbox.firstChild) lightbox.removeChild(lightbox.firstChild);
+  }
+
+  document.querySelectorAll('.feature-screenshot img, .feature-screenshot video').forEach(el => {
+    el.addEventListener('click', () => {
+      closeLightbox();
+      const clone = el.cloneNode(true);
+      if (clone.tagName === 'VIDEO') {
+        clone.autoplay = true;
+        clone.loop = true;
+        clone.muted = true;
+      }
+      lightbox.appendChild(clone);
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightbox.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
   // Scroll animation
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
