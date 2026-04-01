@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features — ListingGems</title>
+  <meta name="description" content="See ListingGems in action. AI background removal, touch-up brush, marketplace presets, lighting correction, batch processing, and more. Screenshots and deep dive into every feature.">
+  <meta name="keywords" content="ListingGems features, product photo background removal, marketplace listing tool, AI photo editor, batch photo processing, Etsy photo tool, Amazon listing images">
+  <meta property="og:title" content="Features — ListingGems">
+  <meta property="og:description" content="See ListingGems in action. AI background removal, touch-up brush, marketplace presets, lighting correction, batch processing, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://listinggems.com/features">
+  <meta property="og:image" content="https://listinggems.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Features — ListingGems">
+  <meta name="twitter:description" content="See ListingGems in action. AI background removal, touch-up brush, marketplace presets, lighting correction, batch processing, and more.">
+  <meta name="twitter:image" content="https://listinggems.com/og-image.png">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://listinggems.com/features">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep: #ffffff;
+      --bg-main: #f8fafb;
+      --bg-card: #ffffff;
+      --bg-elevated: #f1f3f5;
+      --border: #e2e5e9;
+      --border-light: #d1d5db;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --emerald: #059669;
+      --emerald-deep: #047857;
+      --emerald-glow: rgba(5, 150, 105, 0.08);
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ═══════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .nav-logo-img {
+      height: 36px;
+      width: auto;
+    }
+
+    .nav-logo-text {
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      color: var(--text-primary);
+    }
+
+    .nav-logo-accent {
+      color: var(--emerald-deep);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a.active {
+      color: var(--emerald-deep);
+      font-weight: 600;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--emerald-deep);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: #047857;
+      transform: translateY(-1px);
+    }
+
+    .nav-cta .price-old {
+      text-decoration: line-through;
+      opacity: 0.6;
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .features-hero {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .features-hero-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--emerald);
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .features-hero h1 {
+      font-size: clamp(30px, 3.5vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin: 0 0 16px;
+    }
+
+    .features-hero h1 .accent {
+      background: linear-gradient(135deg, var(--emerald) 0%, #6ee7b7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .features-hero-sub {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       FEATURE SECTIONS
+    ═══════════════════════════════════════ */
+    .feature-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .feature-section:nth-child(even) {
+      background: var(--bg-main);
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .feature-row.reverse {
+      direction: rtl;
+    }
+
+    .feature-row.reverse > * {
+      direction: ltr;
+    }
+
+    .feature-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-label {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--emerald);
+      margin-bottom: 12px;
+    }
+
+    .feature-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .feature-description {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .feature-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .feature-bullets li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 5px 0;
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .feature-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+    }
+
+    .feature-screenshot {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .feature-screenshot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .feature-screenshot-placeholder {
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--text-muted);
+      background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-main) 100%);
+      padding: 24px;
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════════
+       TWO MODES OVERVIEW
+    ═══════════════════════════════════════ */
+    .modes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .mode-card {
+      padding: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: border-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .mode-card:hover {
+      border-color: var(--border-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .mode-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    .mode-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .mode-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--emerald);
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.15);
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER CTA
+    ═══════════════════════════════════════ */
+    .footer-cta {
+      background: var(--bg-deep);
+      text-align: center;
+      padding: 80px 0 40px;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-cta::before {
+      content: '';
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .footer-cta h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .footer-cta .sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emerald-deep);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(5, 150, 105, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #065f46;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(5, 150, 105, 0.3);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .price-old-hero {
+      font-size: 20px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .footer-links {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-secondary);
+    }
+
+    /* ═══════════════════════════════════════
+       SCROLL ANIMATION
+    ═══════════════════════════════════════ */
+    .animate-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .feature-row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .feature-row.reverse {
+        direction: ltr;
+      }
+      .modes-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .nav-cta .price-old {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .features-hero { padding: 110px 0 40px; }
+      .feature-section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="ListingGems" class="nav-logo-img">
+        <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="features.html" class="active">Features</a>
+        <a href="download.html">Download</a>
+      </div>
+    </div>
+    <a href="index.html#pricing" class="nav-cta">
+      Buy Now &mdash; $49 <span class="price-old">$79</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="features-hero">
+  <div class="container">
+    <span class="features-hero-badge animate-in">Deep Dive</span>
+    <h1 class="animate-in delay-1">See <span class="accent">ListingGems</span> in Action</h1>
+    <p class="features-hero-sub animate-in delay-2">From drag-and-drop to marketplace-ready export. Here's everything the app does and how it works.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ TWO MODES ═══════════════ -->
+<section class="feature-section">
+  <div class="container">
+    <div class="modes-grid">
+      <div class="mode-card animate-in">
+        <span class="mode-tag">Quick Mode</span>
+        <h3>Batch Processing</h3>
+        <p>Drop an entire folder of photos. Pick your settings once &mdash; background, lighting, crop preset &mdash; and process everything in one click. Progress bar with ETA so you know exactly when it's done.</p>
+      </div>
+      <div class="mode-card animate-in delay-1">
+        <span class="mode-tag">Studio Mode</span>
+        <h3>Fine Control</h3>
+        <p>Work on individual images with a live before/after preview. Adjust background, lighting, layer position, and mask &mdash; see changes instantly. Export to one or multiple marketplace presets at once.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STUDIO MODE ═══════════════ -->
+<section class="feature-section" id="studio">
+  <div class="container">
+    <div class="feature-row animate-in">
+      <div class="feature-text">
+        <span class="feature-label">Studio Mode</span>
+        <h2 class="feature-title">Your product photo workspace</h2>
+        <p class="feature-description">The Studio is where you fine-tune each image. Load your photos in the sidebar, process them with AI background removal, then adjust everything to get the perfect listing image.</p>
+        <ul class="feature-bullets">
+          <li>Before/after slider to compare original and processed</li>
+          <li>Live preview updates as you change settings</li>
+          <li>Per-image settings &mdash; each photo keeps its own config</li>
+          <li>"Apply to All" to copy settings across your batch</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: screenshot of Studio Mode full workspace -->
+        <div class="feature-screenshot-placeholder">Screenshot: Studio Mode workspace with before/after slider, sidebar controls, and image thumbnails</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BACKGROUND REMOVAL ═══════════════ -->
+<section class="feature-section" id="background-removal">
+  <div class="container">
+    <div class="feature-row reverse animate-in">
+      <div class="feature-text">
+        <span class="feature-label">AI Background Removal</span>
+        <h2 class="feature-title">Three AI models, one click</h2>
+        <p class="feature-description">Choose the model that fits your workflow. Quality mode (BiRefNet) for complex edges like jewelry and glass. Fast mode (BiRefNet Lite) for high-volume batches. Balanced mode (BEN2) for everyday products.</p>
+        <ul class="feature-bullets">
+          <li>Handles transparent, reflective, and furry edges</li>
+          <li>GPU-accelerated: under 1 second per image</li>
+          <li>CPU fallback for machines without a dedicated GPU</li>
+          <li>Models download once, then everything runs offline</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: screenshot showing bg removal result, ideally a tricky product like jewelry -->
+        <div class="feature-screenshot-placeholder">Screenshot: Product with complex edges (jewelry/glass) after background removal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TOUCH-UP BRUSH ═══════════════ -->
+<section class="feature-section" id="touch-up">
+  <div class="container">
+    <div class="feature-row animate-in">
+      <div class="feature-text">
+        <span class="feature-label">Manual Touch-Up</span>
+        <h2 class="feature-title">Fix what AI misses</h2>
+        <p class="feature-description">No AI is perfect 100% of the time. The built-in erase and restore brush lets you refine the mask by hand. Paint back areas the AI removed, or erase bits it missed.</p>
+        <ul class="feature-bullets">
+          <li>Adjustable brush size for precision work</li>
+          <li>Erase mode removes unwanted areas from the mask</li>
+          <li>Restore mode brings back areas that were over-removed</li>
+          <li>Changes apply instantly to the live preview</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: screenshot of brush tool in action, showing mask overlay -->
+        <div class="feature-screenshot-placeholder">Screenshot: Touch-up brush refining edges on a product mask</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BACKGROUND OPTIONS ═══════════════ -->
+<section class="feature-section" id="backgrounds">
+  <div class="container">
+    <div class="feature-row reverse animate-in">
+      <div class="feature-text">
+        <span class="feature-label">Background Options</span>
+        <h2 class="feature-title">White, color, gradient, image, or transparent</h2>
+        <p class="feature-description">Different marketplaces, different requirements. Amazon needs pure white. Etsy sellers want lifestyle backgrounds. Shopify stores want brand colors. ListingGems handles all of them.</p>
+        <ul class="feature-bullets">
+          <li>Pure white for Amazon Main Image compliance</li>
+          <li>Custom solid colors and gradients</li>
+          <li>Background images with scale, rotation, and position controls</li>
+          <li>Built-in texture presets</li>
+          <li>Transparent PNG export for maximum flexibility</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: grid/collage showing same product on different backgrounds -->
+        <div class="feature-screenshot-placeholder">Screenshot: Same product shown on white, gradient, custom color, and image backgrounds</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ MARKETPLACE PRESETS ═══════════════ -->
+<section class="feature-section" id="presets">
+  <div class="container">
+    <div class="feature-row animate-in">
+      <div class="feature-text">
+        <span class="feature-label">Marketplace Presets</span>
+        <h2 class="feature-title">Perfectly sized for every platform</h2>
+        <p class="feature-description">Each marketplace has specific image dimension requirements. ListingGems smart-crops and resizes your product photo to fit each platform's specs while keeping your product centered.</p>
+        <ul class="feature-bullets">
+          <li>Amazon Main &amp; Secondary (white bg enforced for Main)</li>
+          <li>Etsy, eBay, Poshmark, Mercari, Depop</li>
+          <li>Facebook Marketplace and Shopify</li>
+          <li>Export to multiple presets at once</li>
+          <li>Custom preset with your own dimensions</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: screenshot of preset preview panel showing multiple platform crops -->
+        <div class="feature-screenshot-placeholder">Screenshot: Preset preview panel showing the same product cropped for Amazon, Etsy, eBay, and Poshmark</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LAYER TRANSFORMS ═══════════════ -->
+<section class="feature-section" id="layers">
+  <div class="container">
+    <div class="feature-row reverse animate-in">
+      <div class="feature-text">
+        <span class="feature-label">Layer Controls</span>
+        <h2 class="feature-title">Position your product exactly where you want it</h2>
+        <p class="feature-description">Two independent layers &mdash; product and background &mdash; each with their own scale, rotation, and position controls. Drag directly on the canvas or use the sliders for precision.</p>
+        <ul class="feature-bullets">
+          <li>Drag to reposition, scroll to scale</li>
+          <li>Independent controls for product and background layers</li>
+          <li>Keyboard shortcuts: 1 for product, 2 for background layer</li>
+          <li>Hold Shift to interact with the other layer</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: screenshot showing layer controls sidebar + canvas with transform handles -->
+        <div class="feature-screenshot-placeholder">Screenshot: Product repositioned on canvas with layer controls visible in sidebar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LIGHTING CORRECTION ═══════════════ -->
+<section class="feature-section" id="lighting">
+  <div class="container">
+    <div class="feature-row animate-in">
+      <div class="feature-text">
+        <span class="feature-label">Lighting Correction</span>
+        <h2 class="feature-title">Fix bad lighting automatically</h2>
+        <p class="feature-description">Phone photos taken under fluorescent lights, yellow bulbs, or mixed lighting look unprofessional. ListingGems corrects white balance, exposure, and contrast automatically using AI and algorithmic processing.</p>
+        <ul class="feature-bullets">
+          <li>White balance correction removes color casts</li>
+          <li>AI exposure correction (IAT neural network)</li>
+          <li>Shadow lift and gentle contrast enhancement</li>
+          <li>Auto-exposure toggle &mdash; turn it off for photos that already look good</li>
+          <li>Adjustable intensity slider</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: before/after of a badly lit product photo -->
+        <div class="feature-screenshot-placeholder">Screenshot: Before/after showing a product with corrected lighting and white balance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BATCH PROCESSING ═══════════════ -->
+<section class="feature-section" id="batch">
+  <div class="container">
+    <div class="feature-row reverse animate-in">
+      <div class="feature-text">
+        <span class="feature-label">Quick Mode</span>
+        <h2 class="feature-title">Process an entire folder in minutes</h2>
+        <p class="feature-description">Drop 50 photos, pick your settings, hit Process. ListingGems runs through every image with the same pipeline &mdash; background removal, lighting, crop, export &mdash; with a progress bar and ETA.</p>
+        <ul class="feature-bullets">
+          <li>Drag and drop a folder or multiple files</li>
+          <li>One-click processing with shared settings</li>
+          <li>Progress bar with time remaining estimate</li>
+          <li>Cancel mid-batch without losing completed images</li>
+          <li>Memory guard prevents crashes on large batches</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: screenshot of Quick Mode with progress bar mid-batch -->
+        <div class="feature-screenshot-placeholder">Screenshot: Quick Mode processing a batch of images with progress bar and ETA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ UPSCALING ═══════════════ -->
+<section class="feature-section" id="upscaling">
+  <div class="container">
+    <div class="feature-row animate-in">
+      <div class="feature-text">
+        <span class="feature-label">AI Upscaling</span>
+        <h2 class="feature-title">4x resolution with real detail</h2>
+        <p class="feature-description">Low-resolution phone photos don't cut it for marketplace listings. The HFA2k neural network upscales your images 4x while adding genuine detail and sharpness &mdash; not just blurry interpolation.</p>
+        <ul class="feature-bullets">
+          <li>HFA2k model trained specifically for photo enhancement</li>
+          <li>Tiled processing handles any image size without running out of memory</li>
+          <li>Works with or without background removal</li>
+          <li>GPU-accelerated for fast results</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: side-by-side crop showing original vs upscaled detail -->
+        <div class="feature-screenshot-placeholder">Screenshot: Close-up comparison showing original resolution vs 4x upscaled detail</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRIVACY ═══════════════ -->
+<section class="feature-section" id="privacy">
+  <div class="container">
+    <div class="feature-row reverse animate-in">
+      <div class="feature-text">
+        <span class="feature-label">100% Offline</span>
+        <h2 class="feature-title">Your photos never leave your machine</h2>
+        <p class="feature-description">Unlike cloud-based tools that upload every image to their servers, ListingGems runs entirely on your computer. The AI models download once on first launch, then the app works without any internet connection.</p>
+        <ul class="feature-bullets">
+          <li>No cloud uploads, no API calls, no tracking</li>
+          <li>Process product photos with trade secrets or unreleased designs</li>
+          <li>Works on airplane mode after initial setup</li>
+          <li>No per-image fees &mdash; process unlimited photos</li>
+        </ul>
+      </div>
+      <div class="feature-screenshot">
+        <!-- Replace with: screenshot showing the app working (maybe with wifi off indicator or just the clean UI) -->
+        <div class="feature-screenshot-placeholder">Screenshot: ListingGems running offline with no internet connection required</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER CTA ═══════════════ -->
+<section class="footer-cta">
+  <div class="container">
+    <h2>Ready to upgrade your listing photos?</h2>
+    <p class="sub">$49 one-time. 45-day money-back guarantee. No subscriptions.</p>
+    <div class="hero-cta-group">
+      <a href="index.html#pricing" class="btn-primary">Buy Now &mdash; $49</a>
+      <span class="price-old-hero">$79</span>
+    </div>
+    <div class="footer-links">
+      <span>&copy; 2026 ListingGems</span>
+      <a href="features.html">Features</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+      <a href="download.html">Download</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

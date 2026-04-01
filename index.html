@@ -278,6 +278,30 @@
       transform: translateY(-1px);
     }
 
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
     .nav-cta .price-old {
       text-decoration: line-through;
       opacity: 0.6;
@@ -1222,6 +1246,10 @@
       .nav-cta .price-old { display: none; }
     }
 
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
     /* ═══════════════════════════════════════
        ANIMATIONS
     ═══════════════════════════════════════ */
@@ -1247,10 +1275,16 @@
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav>
   <div class="container">
-    <a href="#" class="nav-logo">
-      <img src="logo.png" alt="ListingGems" class="nav-logo-img">
-      <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
-    </a>
+    <div class="nav-left">
+      <a href="#" class="nav-logo">
+        <img src="logo.png" alt="ListingGems" class="nav-logo-img">
+        <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="features.html">Features</a>
+        <a href="download.html">Download</a>
+      </div>
+    </div>
     <a href="#pricing" class="nav-cta">
       Buy Now &mdash; $49 <span class="price-old">$79</span>
     </a>
@@ -1263,9 +1297,9 @@
     <div class="hero-layout">
       <!-- Before/After Slider — left side -->
       <div class="ba-slider animate-in delay-3" id="heroSlider">
-        <img src="images/hero-before.jpg" alt="Leather handbag on cluttered desk">
+        <img src="images/hero-before.webp" alt="Leather handbag on cluttered desk">
         <div class="ba-after-wrap" id="heroAfterWrap">
-          <img src="images/hero-after.jpg" alt="Same handbag on clean white background">
+          <img src="images/hero-after.webp" alt="Same handbag on clean white background">
         </div>
         <div class="ba-handle" id="heroHandle">
           <div class="ba-handle-circle">
@@ -1356,8 +1390,8 @@
     <!-- 1. Background Removal — slider left, text right -->
     <div class="gallery-section">
       <div class="gallery-item" data-ba-slider>
-        <img src="images/bgremoval-before.jpg" alt="Handmade soap on messy kitchen counter" style="width:100%;height:100%;object-fit:cover">
-        <div class="ba-after-wrap"><img src="images/bgremoval-after.jpg" alt="Same soap on clean white background" style="width:100%;height:100%;object-fit:cover"></div>
+        <img src="images/bgremoval-before.webp" alt="Handmade soap on messy kitchen counter" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <div class="ba-after-wrap"><img src="images/bgremoval-after.webp" alt="Same soap on clean white background" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="ba-handle"><div class="ba-handle-circle"><svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg></div></div>
         <span class="ba-label ba-label-before">Before</span>
         <span class="ba-label ba-label-after">After</span>
@@ -1377,8 +1411,8 @@
     <!-- 2. Lighting Correction — text left, slider right -->
     <div class="gallery-section reverse">
       <div class="gallery-item" data-ba-slider>
-        <img src="images/lighting-before.jpg" alt="Dark underexposed vase photo" style="width:100%;height:100%;object-fit:cover">
-        <div class="ba-after-wrap"><img src="images/lighting-after.jpg" alt="Corrected exposure — vase detail visible" style="width:100%;height:100%;object-fit:cover"></div>
+        <img src="images/lighting-before.webp" alt="Dark underexposed vase photo" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <div class="ba-after-wrap"><img src="images/lighting-after.webp" alt="Corrected exposure — vase detail visible" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="ba-handle"><div class="ba-handle-circle"><svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg></div></div>
         <span class="ba-label ba-label-before">Before</span>
         <span class="ba-label ba-label-after">After</span>
@@ -1398,8 +1432,8 @@
     <!-- 3. AI Upscaling — slider left, text right -->
     <div class="gallery-section">
       <div class="gallery-item" data-ba-slider>
-        <img src="images/upscale-before.png" alt="400px supplier photo — blurry scarf" style="width:100%;height:100%;object-fit:cover;image-rendering:pixelated">
-        <div class="ba-after-wrap"><img src="images/upscale-after.jpg" alt="1600px upscaled — sharp knit detail" style="width:100%;height:100%;object-fit:cover"></div>
+        <img src="images/upscale-before.webp" alt="400px supplier photo — blurry scarf" loading="lazy" style="width:100%;height:100%;object-fit:cover;image-rendering:pixelated">
+        <div class="ba-after-wrap"><img src="images/upscale-after.webp" alt="1600px upscaled — sharp knit detail" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="ba-handle"><div class="ba-handle-circle"><svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg></div></div>
         <span class="ba-label ba-label-before">Before (400px)</span>
         <span class="ba-label ba-label-after">After (1600px)</span>
@@ -1622,7 +1656,8 @@
         <li>3 device activations</li>
         <li>Free updates forever</li>
       </ul>
-      <a href="https://www.creem.io/payment/prod_3h9qK2NG9j7ZDaIalnQc7V" class="btn-primary pricing-cta">Buy Now</a>
+      <!-- TODO: wait for CREEM — replace form link with Creem checkout URL -->
+      <a href="https://forms.gle/oeJYZgLWGaJ4eQut5" class="btn-primary pricing-cta" target="_blank">Buy Now</a>
       <p class="pricing-guarantee">45-day money-back guarantee &middot; No questions asked</p>
     </div>
   </div>
@@ -1696,6 +1731,7 @@
     </div>
     <div class="footer-links">
       <span>&copy; 2026 ListingGems</span>
+      <a href="features.html">Features</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="contact.html">Contact</a>

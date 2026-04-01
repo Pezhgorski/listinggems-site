@@ -39,6 +39,12 @@
 
     .nav-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--emerald-deep); color: white; padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.15s; }
     .nav-cta:hover { background: #047857; transform: translateY(-1px); }
+    .nav-left { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--emerald-deep); font-weight: 600; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
 
     main { padding: 120px 0 80px; }
     h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 24px; }
@@ -82,10 +88,16 @@
 
 <nav>
   <div class="container">
-    <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="ListingGems" class="nav-logo-img">
-      <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
-    </a>
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="ListingGems" class="nav-logo-img">
+        <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="features.html">Features</a>
+        <a href="download.html">Download</a>
+      </div>
+    </div>
     <a href="index.html#pricing" class="nav-cta">Buy Now &mdash; $49</a>
   </div>
 </nav>
@@ -103,6 +115,7 @@
 
     <div class="footer-links">
       <span>&copy; 2026 ListingGems</span>
+      <a href="features.html">Features</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="contact.html">Contact</a>
