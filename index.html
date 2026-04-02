@@ -161,6 +161,7 @@
   }
   </script>
 
+  <link rel="preload" href="images/hero-before.webp" as="image" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -1297,7 +1298,7 @@
     <div class="hero-layout">
       <!-- Before/After Slider — left side -->
       <div class="ba-slider animate-in delay-3" id="heroSlider">
-        <img src="images/hero-before.webp" alt="Leather handbag on cluttered desk">
+        <img src="images/hero-before.webp" alt="Leather handbag on cluttered desk" fetchpriority="high">
         <div class="ba-after-wrap" id="heroAfterWrap">
           <img src="images/hero-after.webp" alt="Same handbag on clean white background">
         </div>
