@@ -6,3 +6,6 @@
 
 /updates/*
   Content-Type: application/json
+
+/sitemap.xml
+  Content-Type: application/xml
