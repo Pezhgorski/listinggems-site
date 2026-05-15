@@ -1,11 +1,11 @@
 {
   "version": "0.1.2",
   "notes": "Production release: Creem checkout, eager model preloading, app identifier fix, signed builds.",
-  "pub_date": "2026-03-29T19:00:00Z",
+  "pub_date": "2026-05-15T10:30:00Z",
   "platforms": {
     "linux-x86_64": {
       "url": "https://dl.listinggems.com/releases/0.1.2/ListingGems_0.1.2_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THZiaC9EaEFjVjhvZ2hqNDBXNytERWVVUGxjWVdGWXlwYUYzUEY4Z2xpdTNsNFhLc2dvQW1BSFNBMVhseVBHdnljYUc1MXBSUUJUN3JRTTZCK213WFFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc0ODAwMDExCWZpbGU6TGlzdGluZ0dlbXNfMC4xLjJfYW1kNjQuQXBwSW1hZ2UKNjcyQllnQVRpUDY2bDJPVlVJaVZhTnRVWmsxNktUTjVIaVdCUHM5b21jQUk1RjZvUDFTYmdxa2N6eXd6VkdPZU81c3VOMkZPVTh5dlFBeHFDWWt0RFE9PQo="
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGx6RXUvUTI0dU9EUUVwZmxVYTQvdUlrK2pndzk4RkxJZEFYTERYcVF1emhSWjNMemJBeG83UE5hR2IwWnRLVUxqempkd2R3L0s2OFd3bjEwWGNVMmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc4ODQwMDQ1CWZpbGU6TGlzdGluZ0dlbXNfMC4xLjJfYW1kNjRfQXBwSW1hZ2UKUzdsYU9CVmVxWmV1czhlYkp5MGNvQXFoN3V6SGdWQnl2VVFtM05kTVpkcWxjNnFpbSt4MC9wVFhweVpvVkNoc2VrbGw3VndqUHBGSnhCMU5aa0Y3RHc9PQo="
     }
   }
 }
