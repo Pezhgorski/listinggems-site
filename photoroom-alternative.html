@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="4wxa-zCVVQ75tolYzQKHdjW0o0sj7icc2yNKlK7JUvg" />
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="dda4e0e3-90be-4000-adc2-9bd30734d9ee"></script>
+  <title>Photoroom Alternative — ListingGems ($49 One-Time, Offline)</title>
+  <meta name="description" content="Looking for a Photoroom alternative? ListingGems is a $49 one-time desktop app. No subscription, no image caps, runs offline. Background removal + lighting + upscale + marketplace presets, all in one tool.">
+  <meta name="keywords" content="Photoroom alternative, Photoroom vs ListingGems, one-time purchase background remover, offline product photo editor, no subscription photo tool, Photoroom Pro alternative, Photoroom retroactive cap, desktop background removal">
+  <meta property="og:title" content="Photoroom Alternative — ListingGems ($49 One-Time, Offline)">
+  <meta property="og:description" content="One-time $49, runs offline, no monthly caps. Built after Photoroom retroactively capped 'unlimited' plans in November 2025. Background removal, lighting, upscale, and marketplace presets in one desktop app.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://listinggems.com/photoroom-alternative">
+  <meta property="og:image" content="https://listinggems.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Photoroom Alternative — ListingGems ($49 One-Time, Offline)">
+  <meta name="twitter:description" content="One-time $49, runs offline, no monthly caps. Background removal + lighting + upscale + marketplace presets in one desktop app.">
+  <meta name="twitter:image" content="https://listinggems.com/og-image.png">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://listinggems.com/photoroom-alternative">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep: #ffffff;
+      --bg-main: #f8fafb;
+      --bg-card: #ffffff;
+      --bg-elevated: #f1f3f5;
+      --border: #e2e5e9;
+      --border-light: #d1d5db;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --emerald: #059669;
+      --emerald-deep: #047857;
+      --emerald-glow: rgba(5, 150, 105, 0.08);
+      --red-soft: #dc2626;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-left { display: flex; align-items: center; gap: 32px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-primary); }
+    .nav-logo-img { height: 36px; width: auto; }
+    .nav-logo-text { font-weight: 700; font-size: 17px; letter-spacing: -0.3px; color: var(--text-primary); }
+    .nav-logo-accent { color: var(--emerald-deep); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--emerald-deep);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: #065f46; transform: translateY(-1px); }
+    .nav-cta .price-old { text-decoration: line-through; opacity: 0.6; font-weight: 400; font-size: 12px; }
+
+    /* NAV DROPDOWNS */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+    .nav-dropdown-toggle:hover { color: var(--text-primary); }
+    .nav-dropdown-toggle::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      margin-top: -3px;
+      transition: transform 0.2s;
+    }
+    .nav-dropdown:hover .nav-dropdown-toggle::after { transform: rotate(225deg); margin-top: 3px; }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: -16px;
+      min-width: 240px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      padding: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4px);
+      transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-dropdown-menu a:hover {
+      background: var(--emerald-glow);
+      color: var(--emerald-deep);
+    }
+    .nav-dropdown-menu a .small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .nav-dropdown-menu a:hover .small { color: var(--emerald); }
+    /* invisible bridge so menu doesn't close in the gap */
+    .nav-dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 12px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--emerald);
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 3.5vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin: 0 0 16px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--emerald) 0%, #6ee7b7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emerald-deep);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(5, 150, 105, 0.2);
+    }
+    .btn-primary:hover {
+      background: #065f46;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(5, 150, 105, 0.3);
+    }
+    .price-old-hero { font-size: 20px; color: var(--text-muted); text-decoration: line-through; }
+    .hero-meta {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* GENERIC SECTION */
+    section.block {
+      padding: 70px 0;
+      border-top: 1px solid var(--border);
+    }
+    section.block.alt { background: var(--bg-main); }
+    .section-title {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    /* TLDR */
+    .tldr {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 24px 28px;
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      border-radius: 14px;
+    }
+    .tldr h3 {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--emerald-deep);
+      margin-bottom: 12px;
+    }
+    .tldr p {
+      font-size: 15px;
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .tldr p + p { margin-top: 10px; }
+
+    /* THE STORY / INCIDENT BLOCK */
+    .incident-card {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red-soft);
+      border-radius: 12px;
+    }
+    .incident-card .date {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--red-soft);
+      margin-bottom: 8px;
+    }
+    .incident-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+    .incident-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .incident-card p + p { margin-top: 12px; }
+    .incident-card a { color: var(--emerald-deep); text-decoration: underline; }
+
+    /* COMPARISON TABLE */
+    .comparison-table-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px 16px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table th {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text-secondary);
+      background: var(--bg-main);
+    }
+    .comparison-table th:first-child,
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-primary);
+      min-width: 200px;
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--bg-card);
+    }
+    .comparison-table th:first-child { background: var(--bg-main); }
+    @media (max-width: 640px) {
+      .comparison-table td:first-child,
+      .comparison-table th:first-child {
+        box-shadow: 2px 0 4px rgba(0, 0, 0, 0.06);
+      }
+    }
+    .comparison-table th.highlight {
+      color: var(--emerald-deep);
+      background: var(--emerald-glow);
+    }
+    .comparison-table td.highlight {
+      background: rgba(5, 150, 105, 0.03);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* COST CARDS */
+    .cost-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .cost-card {
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-align: center;
+    }
+    .cost-card.highlight {
+      border: 2px solid var(--emerald-deep);
+      background: var(--emerald-glow);
+    }
+    .cost-tier {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .cost-card.highlight .cost-tier { color: var(--emerald-deep); }
+    .cost-price {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .cost-card.highlight .cost-price { color: var(--emerald-deep); }
+    .cost-period {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .cost-3yr {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .cost-3yr strong { color: var(--text-primary); }
+
+    /* QUOTES */
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .quote-card {
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .quote-card p {
+      font-size: 15px;
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+    .quote-card .source {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .quote-card .source a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .quote-card .source a:hover { color: var(--emerald); }
+
+    /* REASONS GRID */
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .reason-card {
+      padding: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: border-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    }
+    .reason-card:hover {
+      border-color: var(--border-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+    .reason-number {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: var(--emerald);
+      margin-bottom: 12px;
+    }
+    .reason-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    .reason-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* HONEST TRADEOFFS */
+    .tradeoffs {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 32px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .tradeoffs h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: -0.3px;
+    }
+    .tradeoffs ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .tradeoffs li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 6px 0 6px 24px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .tradeoffs li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .tradeoffs li strong { color: var(--text-primary); }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      text-align: left;
+      padding: 20px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-question:hover { color: var(--emerald); }
+    .faq-toggle {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--bg-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--text-muted);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+      background: var(--emerald-glow);
+      color: var(--emerald);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding-bottom: 20px;
+    }
+    .faq-answer p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    .faq-answer p + p { margin-top: 10px; }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      background: var(--bg-deep);
+      text-align: center;
+      padding: 80px 0 40px;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+    .footer-cta::before {
+      content: '';
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .footer-cta h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .footer-cta .sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+    .footer-links {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-links a { color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    /* SCROLL ANIMATION */
+    .animate-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-cta .price-old { display: none; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 110px 0 40px; }
+      section.block { padding: 50px 0; }
+      .incident-card, .tldr { padding: 20px; }
+    }
+  </style>
+
+  <!-- JSON-LD: WebPage + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Photoroom Alternative — ListingGems",
+    "description": "Looking for a Photoroom alternative? ListingGems is a $49 one-time desktop app. No subscription, no image caps, runs offline.",
+    "url": "https://listinggems.com/photoroom-alternative",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "ListingGems",
+      "url": "https://listinggems.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is ListingGems really cheaper than Photoroom?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ListingGems is $49 one-time. Photoroom Pro is $90/year, Max is $250/year. After year one of Pro, you're ahead. After year one of Max, you've saved $201."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will ListingGems cap my image count like Photoroom did?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There are no per-month image limits because there are no servers — everything runs on your machine. Process 50 photos or 50,000. Same price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ListingGems work without internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Models download once on first launch (about 500 MB total), then the app runs entirely offline. No cloud uploads, no API calls, no tracking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I don't like it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "45-day money-back guarantee. No questions asked. Email us and we refund the same day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ListingGems do AI background generation like Photoroom?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, and that's intentional. ListingGems uses ML segmentation to remove backgrounds, then replaces them with solid colors, gradients, or your own images. It will not hallucinate fake scenes. This matters because Amazon, eBay, and Etsy all penalize AI-generated backgrounds that misrepresent the product."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a powerful computer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A GPU helps — under 2 seconds per image on a modern NVIDIA or AMD card. On CPU it's about 20 seconds per image. Either way it works. No subscription required either way."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="ListingGems" class="nav-logo-img">
+        <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="features.html">Features</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">Compare</button>
+          <div class="nav-dropdown-menu">
+            <a href="photoroom-alternative.html">Photoroom alternative<span class="small">$49 once vs $13&ndash;35/month</span></a>
+            <a href="removebg-alternative.html">remove.bg alternative<span class="small">Unlimited vs per-credit pricing</span></a>
+            <!-- Add as built: best-free-background-removal-tools-2026.html -->
+          </div>
+        </div>
+        <!-- Add Guides dropdown when first guide page ships:
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">Guides</button>
+          <div class="nav-dropdown-menu">
+            <a href="amazon-product-photo-requirements-2026.html">Amazon photo requirements</a>
+          </div>
+        </div>
+        -->
+        <a href="download.html" data-umami-event="nav-download">Download</a>
+      </div>
+    </div>
+    <a href="index.html#pricing" class="nav-cta" data-umami-event="buy-now-nav">
+      Buy Now &mdash; $49 <span class="price-old">$79</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge animate-in">Photoroom Alternative</span>
+    <h1 class="animate-in delay-1">Pay once. <span class="accent">Own it forever.</span><br>No retroactive caps.</h1>
+    <p class="hero-sub animate-in delay-2">ListingGems is a $49 one-time desktop app for marketplace sellers tired of monthly fees, image limits, and Terms of Service that change after you've paid. Background removal, lighting correction, upscaling, and Amazon / Etsy / eBay / Poshmark / Shopify export presets &mdash; all running on your computer, all included.</p>
+    <div class="hero-cta-group animate-in delay-3">
+      <a href="index.html#pricing" class="btn-primary" data-umami-event="buy-now-hero-photoroom-alt">Buy Now &mdash; $49</a>
+      <span class="price-old-hero">$79</span>
+    </div>
+    <div class="hero-meta animate-in delay-3">45-day money-back guarantee &middot; 3 device activations &middot; runs on Windows &amp; Linux</div>
+  </div>
+</section>
+
+<!-- TL;DR -->
+<section class="block">
+  <div class="container">
+    <div class="tldr animate-in">
+      <h3>TL;DR</h3>
+      <p><strong>Photoroom:</strong> $12.99&ndash;$99/month, cloud-based, capped exports per tier, terms can change mid-subscription.</p>
+      <p><strong>ListingGems:</strong> $49 once, offline desktop app, no caps, your photos never leave your machine. Includes things Photoroom doesn't &mdash; AI exposure correction, 4&times; upscaling, marketplace-specific export presets for Amazon / Etsy / Poshmark / Mercari / Depop / eBay / Shopify.</p>
+      <p>If you do more than 50 listings a month and you're not bought into Photoroom's AI scene generation, you're paying for software you don't need.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COST OVER TIME -->
+<section class="block alt">
+  <div class="container">
+    <h2 class="section-title animate-in">What it actually costs over 3 years</h2>
+    <p class="section-sub animate-in">Most marketplace sellers don&rsquo;t quit after a year. Multiply.</p>
+
+    <div class="cost-grid">
+      <div class="cost-card animate-in delay-1">
+        <div class="cost-tier">Photoroom Pro</div>
+        <div class="cost-price">~$468</div>
+        <div class="cost-period">total over 3 years</div>
+        <div class="cost-3yr">$155.88 / year &middot; <strong>recurring</strong></div>
+      </div>
+      <div class="cost-card animate-in delay-2">
+        <div class="cost-tier">Photoroom Max</div>
+        <div class="cost-price">~$1,260</div>
+        <div class="cost-period">total over 3 years</div>
+        <div class="cost-3yr">$419.88 / year &middot; <strong>recurring</strong></div>
+      </div>
+      <div class="cost-card highlight animate-in delay-3">
+        <div class="cost-tier">ListingGems</div>
+        <div class="cost-price">$49</div>
+        <div class="cost-period">total over 3 years</div>
+        <div class="cost-3yr">$49 once &middot; <strong>paid forever</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PEOPLE SEARCH FOR A PHOTOROOM ALTERNATIVE -->
+<section class="block">
+  <div class="container">
+    <h2 class="section-title animate-in">Why people are searching for a Photoroom alternative</h2>
+    <p class="section-sub animate-in">Photoroom is a capable tool. It&rsquo;s also the most-complained-about background remover in the reseller community right now. The common reasons sellers leave:</p>
+
+    <div class="reasons-grid">
+      <div class="reason-card animate-in delay-1">
+        <div class="reason-number">Cost</div>
+        <h3>The monthly fee never ends</h3>
+        <p>Pro is $12.99/month ($156/year). Max is $34.99/month ($420/year). Ultra goes to $99/month. Whether you sell 5 items this month or 500, the subscription bills every month. Three years on Pro is $468 &mdash; almost 10&times; the price of ListingGems. Most sellers don&rsquo;t process photos every single day, but the credit card does.</p>
+      </div>
+      <div class="reason-card animate-in delay-1">
+        <div class="reason-number">Licensing</div>
+        <h3>The free tier doesn&rsquo;t allow selling</h3>
+        <p>Photoroom&rsquo;s free plan explicitly prohibits commercial use. Every photo you export and put on an Amazon, Etsy, eBay, or Poshmark listing is a paid use case &mdash; technically a ToS violation if you&rsquo;re on Free. The &ldquo;free&rdquo; tier is functionally a trial for hobbyists. ListingGems&rsquo; $49 license includes full commercial use on 3 devices, no upgrade path required.</p>
+      </div>
+      <div class="reason-card animate-in delay-1">
+        <div class="reason-number">Privacy</div>
+        <h3>Every photo gets uploaded</h3>
+        <p>Photoroom is a cloud tool. Every image you process leaves your machine and lands on their servers for AI inference. The privacy policy URL on photoroom.com returns 404 at time of writing &mdash; image-retention period and training-data opt-out are not clearly documented. If you sell private-label, vintage with provenance, or unreleased designs, those photos are on someone else&rsquo;s computer.</p>
+      </div>
+      <div class="reason-card animate-in delay-2">
+        <div class="reason-number">Caps</div>
+        <h3>Image limits per tier</h3>
+        <p>Pro = 500/month, Max = 1,500/month. Big-batch sellers, crosslisting resellers, and anyone bulk-processing a thrift haul hits the wall. Going over means upgrading or waiting until next month.</p>
+      </div>
+      <div class="reason-card animate-in delay-2">
+        <div class="reason-number">Trust</div>
+        <h3>The November 2025 retroactive cap</h3>
+        <p>Customers who pre-paid for &ldquo;unlimited&rdquo; Pro and Max plans had their accounts capped mid-term at 500 and 1,500 images/month, with no refunds. Documented in an <a href="https://medium.com/@starraeforeman/photoroom-illegally-changes-terms-of-service-for-pre-paid-customers-90bf106b17ad" target="_blank" rel="noopener">open letter on Medium</a>. Trustpilot rating sits at <a href="https://www.trustpilot.com/review/www.photoroom.com" target="_blank" rel="noopener">1.3/5 across ~194 reviews</a>.</p>
+      </div>
+      <div class="reason-card animate-in delay-3">
+        <div class="reason-number">Billing</div>
+        <h3>Cancellation &amp; refund friction</h3>
+        <p>Recurring complaints across <a href="https://www.trustpilot.com/review/www.photoroom.com" target="_blank" rel="noopener">Trustpilot</a> and <a href="https://www.capterra.com/p/10012666/PhotoRoom/reviews/" target="_blank" rel="noopener">Capterra</a>: auto-renew after free trial, accounts disabled before the billing period ended, refunds denied, support that loops you through bots. Multiple users report needing card chargebacks.</p>
+      </div>
+      <div class="reason-card animate-in delay-3">
+        <div class="reason-number">Quality</div>
+        <h3>Quality reportedly getting worse</h3>
+        <p>Long-time users on <a href="https://reddit.com/r/Flipping/comments/1cc5fpr/best_batch_background_remover_thats_not_photoroom/" target="_blank" rel="noopener">r/Flipping</a> report the output has degraded over time even as prices rose. Reviews mention over-erased hair and edges, and pixels that don&rsquo;t match the real product when AI scene generation is on. Marketplace listing photos need to look like the actual product.</p>
+      </div>
+      <div class="reason-card animate-in delay-3">
+        <div class="reason-number">Reliability</div>
+        <h3>Batch processing crashes at scale</h3>
+        <p>Resellers report that batch uploads crash at 150&ndash;180 photos even when paying for 250-image batches. A Facebook reseller group <a href="https://www.facebook.com/groups/resellersconnected/posts/1394823088635534/" target="_blank" rel="noopener">post asked if others were seeing it too</a>. If a 250-photo batch fails at photo 170, you re-upload everything &mdash; or you split into smaller batches that defeat the point.</p>
+      </div>
+      <div class="reason-card animate-in delay-3">
+        <div class="reason-number">Support</div>
+        <h3>Support loops through bots</h3>
+        <p>Capterra and Trustpilot reviews repeatedly describe a 2-day human response time and AI chatbots that loop without resolving billing issues. &ldquo;The only contact is a robot&rdquo; appears in <a href="https://www.capterra.com/p/10012666/PhotoRoom/reviews/" target="_blank" rel="noopener">recent reviews</a>. For sellers chasing refunds on retroactive cap changes, that&rsquo;s a closed door.</p>
+      </div>
+      <div class="reason-card animate-in delay-3">
+        <div class="reason-number">Platform</div>
+        <h3>Mobile-first, weak on desktop</h3>
+        <p>Photoroom is strongest on iOS/Android. Native desktop is M1-Mac only; Windows and older Macs are stuck with the web app. Sellers managing 50&ndash;500 SKUs from Seller Central or Shopify on a desktop find the workflow clunky.</p>
+      </div>
+      <div class="reason-card animate-in delay-3">
+        <div class="reason-number">Scope</div>
+        <h3>You still need other tools</h3>
+        <p>Photoroom is mainly background removal + AI scene generation. For exposure / white balance fixes, 4&times; upscaling, or marketplace-specific export dimensions, most sellers reach for a second app. That&rsquo;s another tab, another login, often another subscription.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL QUOTES -->
+<section class="block alt">
+  <div class="container">
+    <h2 class="section-title animate-in">What real Photoroom customers are saying</h2>
+    <p class="section-sub animate-in">Verbatim from public reviews. Linked to the source.</p>
+
+    <div class="quote-grid">
+      <div class="quote-card animate-in delay-1">
+        <p>&ldquo;Changes the rules mid-way through subscription&hellip; the only contact is a robot.&rdquo;</p>
+        <div class="source"><a href="https://www.capterra.com/p/10012666/PhotoRoom/reviews/" target="_blank" rel="noopener">Capterra &middot; October 2025</a></div>
+      </div>
+      <div class="quote-card animate-in delay-2">
+        <p>&ldquo;Users who prepaid for the service with the promise of unlimited access will now be limited to either 500 or 1,500 images per month or must pay additional fees.&rdquo;</p>
+        <div class="source"><a href="https://medium.com/@starraeforeman/photoroom-illegally-changes-terms-of-service-for-pre-paid-customers-90bf106b17ad" target="_blank" rel="noopener">Medium &middot; November 2025</a></div>
+      </div>
+      <div class="quote-card animate-in delay-3">
+        <p>&ldquo;Sometimes takes out more than you wanted&hellip; when cutting out a person.&rdquo;</p>
+        <div class="source"><a href="https://www.capterra.com/p/10012666/PhotoRoom/reviews/" target="_blank" rel="noopener">Capterra review</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="block">
+  <div class="container">
+    <h2 class="section-title animate-in">Photoroom vs ListingGems</h2>
+    <p class="section-sub animate-in">Pricing and feature comparison, May 2026. Photoroom data from <a href="https://www.photoroom.com/pricing" target="_blank" rel="noopener" style="color: var(--emerald-deep);">photoroom.com/pricing</a>.</p>
+
+    <div class="comparison-table-wrap animate-in delay-1">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Photoroom Free</th>
+            <th>Photoroom Pro</th>
+            <th>Photoroom Max</th>
+            <th class="highlight">ListingGems</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Price</td>
+            <td>$0</td>
+            <td>$12.99/mo</td>
+            <td>$34.99/mo</td>
+            <td class="highlight">$49 once</td>
+          </tr>
+          <tr>
+            <td>3-year cost</td>
+            <td>&mdash;</td>
+            <td>~$270</td>
+            <td>~$750</td>
+            <td class="highlight">$49</td>
+          </tr>
+          <tr>
+            <td>Image cap per month</td>
+            <td>250 watermarked</td>
+            <td>500</td>
+            <td>1,500</td>
+            <td class="highlight">Unlimited</td>
+          </tr>
+          <tr>
+            <td>Where photos are processed</td>
+            <td>Cloud</td>
+            <td>Cloud</td>
+            <td>Cloud</td>
+            <td class="highlight">Your machine</td>
+          </tr>
+          <tr>
+            <td>Works offline</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td class="highlight">Yes</td>
+          </tr>
+          <tr>
+            <td>Watermark on export</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+            <td class="highlight">Never</td>
+          </tr>
+          <tr>
+            <td>Commercial use allowed</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td class="highlight">Yes</td>
+          </tr>
+          <tr>
+            <td>Background removal</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td class="highlight">Yes (3 models)</td>
+          </tr>
+          <tr>
+            <td>AI exposure / white balance</td>
+            <td>Limited</td>
+            <td>Limited</td>
+            <td>Limited</td>
+            <td class="highlight">Yes (IAT neural net)</td>
+          </tr>
+          <tr>
+            <td>4&times; AI upscaling</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td class="highlight">Yes (HFA2k)</td>
+          </tr>
+          <tr>
+            <td>Amazon main-image preset (#FFFFFF + 85% fill)</td>
+            <td>No</td>
+            <td>Generic templates</td>
+            <td>Generic templates</td>
+            <td class="highlight">Yes</td>
+          </tr>
+          <tr>
+            <td>Etsy / Poshmark / Mercari / Depop presets</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td class="highlight">Yes</td>
+          </tr>
+          <tr>
+            <td>Batch / session</td>
+            <td>&mdash;</td>
+            <td>50</td>
+            <td>250</td>
+            <td class="highlight">Limited only by disk space</td>
+          </tr>
+          <tr>
+            <td>Subscription required</td>
+            <td>&mdash;</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td class="highlight">No</td>
+          </tr>
+          <tr>
+            <td>Can terms change after you pay</td>
+            <td>n/a</td>
+            <td>Yes (Nov 2025 precedent)</td>
+            <td>Yes (Nov 2025 precedent)</td>
+            <td class="highlight">No &mdash; offline binary</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SWITCH -->
+<section class="block alt">
+  <div class="container">
+    <h2 class="section-title animate-in">Six reasons sellers switch</h2>
+
+    <div class="reasons-grid">
+      <div class="reason-card animate-in delay-1">
+        <div class="reason-number">01</div>
+        <h3>The math is brutal</h3>
+        <p>Photoroom Pro is $156/year &mdash; about 3&times; the price of ListingGems every single year. After 12 months you&rsquo;ve already paid more for Pro than ListingGems will ever cost you.</p>
+      </div>
+      <div class="reason-card animate-in delay-1">
+        <div class="reason-number">02</div>
+        <h3>No image caps</h3>
+        <p>500 images on Pro = 16 photos a day. For a serious reseller that&rsquo;s one bad weekend away from a paywall. ListingGems doesn&rsquo;t have caps because there&rsquo;s no server to throttle.</p>
+      </div>
+      <div class="reason-card animate-in delay-2">
+        <div class="reason-number">03</div>
+        <h3>Terms can&rsquo;t change after you pay</h3>
+        <p>Photoroom changed its terms in November 2025 after customers had already paid. With ListingGems, the version you download is yours &mdash; we can&rsquo;t reach into your machine and change the rules later.</p>
+      </div>
+      <div class="reason-card animate-in delay-2">
+        <div class="reason-number">04</div>
+        <h3>Marketplace-specific exports</h3>
+        <p>Amazon needs pure white (#FFFFFF) and 85% fill, Etsy wants square crops, Poshmark switched to 3:4 in early 2026. ListingGems ships presets for each. Photoroom&rsquo;s &ldquo;templates&rdquo; are generic.</p>
+      </div>
+      <div class="reason-card animate-in delay-3">
+        <div class="reason-number">05</div>
+        <h3>Your photos stay on your machine</h3>
+        <p>Photoroom uploads every image to its servers. If you sell private-label products, vintage finds with provenance you don&rsquo;t want public, or unreleased designs, that&rsquo;s a leak. ListingGems is offline.</p>
+      </div>
+      <div class="reason-card animate-in delay-3">
+        <div class="reason-number">06</div>
+        <h3>Real photos, not AI scenes</h3>
+        <p>Photoroom can generate fake lifestyle backgrounds with AI. Amazon, eBay, and Etsy all penalize misrepresented products. ListingGems removes backgrounds and lets you swap them for solid colors, gradients, or your own images &mdash; never hallucinated pixels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST TRADEOFFS -->
+<section class="block">
+  <div class="container">
+    <h2 class="section-title animate-in">When Photoroom is still the right call</h2>
+    <p class="section-sub animate-in">Honest tradeoffs. Not every seller should switch.</p>
+
+    <div class="tradeoffs animate-in delay-1">
+      <ul>
+        <li><strong>You work primarily on a phone.</strong> Photoroom has solid iOS and Android apps. ListingGems is desktop only (Windows, Linux, macOS coming).</li>
+        <li><strong>You need AI-generated lifestyle backgrounds.</strong> Photoroom can hallucinate scenes (cafes, beaches, marble tables). ListingGems intentionally won&rsquo;t &mdash; it&rsquo;s built for marketplace-compliance, not stylized social content.</li>
+        <li><strong>You want a team brand kit and shared templates.</strong> Photoroom has multi-user team features. ListingGems is a single-seat desktop app.</li>
+        <li><strong>You need Shopify integration baked in.</strong> Photoroom Max has a Shopify connector. ListingGems exports to a folder &mdash; you upload manually.</li>
+        <li><strong>You process fewer than 5 photos a month and are happy with the watermark.</strong> Photoroom Free works for you. ListingGems is a paid app.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block alt">
+  <div class="container">
+    <h2 class="section-title animate-in">FAQ</h2>
+
+    <div class="faq-list animate-in delay-1">
+      <div class="faq-item">
+        <button class="faq-question">Is ListingGems really cheaper than Photoroom? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Yes. ListingGems is $49 one-time. Photoroom Pro is $155.88/year ($12.99/month), Max is $419.88/year ($34.99/month). After year one of Pro, you&rsquo;re ahead. After year one of Max, you&rsquo;ve saved $370.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Will ListingGems cap my image count like Photoroom did? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>No. There are no per-month image limits because there are no servers &mdash; everything runs on your machine. Process 50 photos or 50,000. Same price.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Does ListingGems work without internet? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Yes. AI models download once on first launch (about 500 MB total), then the app runs entirely offline. No cloud uploads, no API calls, no tracking. Works on airplane mode after initial setup.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What if I don&rsquo;t like it? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>45-day money-back guarantee. No questions asked. Email and we refund the same day.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Does ListingGems do AI background generation like Photoroom? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>No, and that&rsquo;s intentional. ListingGems uses ML segmentation to remove backgrounds, then replaces them with solid colors, gradients, your own backdrop images, or transparent PNG. It will not hallucinate fake lifestyle scenes.</p><p>This matters because Amazon, eBay, and Etsy all have policies against misrepresenting the product. AI-generated backdrops can get listings suppressed.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do I need a powerful computer? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>A GPU helps &mdash; under 2 seconds per image on a modern NVIDIA or AMD card. On CPU it&rsquo;s about 20 seconds per image. Either way it works. No subscription required either way.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I use ListingGems for client work / commercial use? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Yes. Commercial use is included in the $49 license, on up to 3 devices. No tier upgrades, no per-image fees, no extra license. The free tier of Photoroom forbids commercial use &mdash; ListingGems doesn&rsquo;t.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What happens if you raise the price or change the terms later? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>The version you bought stays yours. ListingGems is a binary that runs on your computer &mdash; we can&rsquo;t change its behavior remotely. Future versions might cost more, but what you paid for keeps working.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="container">
+    <h2>Make the switch in 5 minutes</h2>
+    <p class="sub">$49 one-time. 45-day money-back guarantee. No subscriptions, no caps, no cloud.</p>
+    <div class="hero-cta-group">
+      <a href="index.html#pricing" class="btn-primary" data-umami-event="buy-now-footer-photoroom-alt">Buy Now &mdash; $49</a>
+      <span class="price-old-hero">$79</span>
+    </div>
+    <div class="footer-links">
+      <span>&copy; 2026 ListingGems</span>
+      <a href="features.html">Features</a>
+      <a href="photoroom-alternative.html">Photoroom alternative</a>
+      <a href="removebg-alternative.html">remove.bg alternative</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+      <a href="download.html">Download</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

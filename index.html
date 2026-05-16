@@ -330,6 +330,87 @@
       font-size: 12px;
     }
 
+    /* NAV DROPDOWNS */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+    .nav-dropdown-toggle:hover { color: var(--text-primary); }
+    .nav-dropdown-toggle::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      margin-top: -3px;
+      transition: transform 0.2s;
+    }
+    .nav-dropdown:hover .nav-dropdown-toggle::after { transform: rotate(225deg); margin-top: 3px; }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: -16px;
+      min-width: 240px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      padding: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4px);
+      transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-dropdown-menu a:hover {
+      background: var(--emerald-glow);
+      color: var(--emerald-deep);
+    }
+    .nav-dropdown-menu a .small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .nav-dropdown-menu a:hover .small { color: var(--emerald); }
+    .nav-dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 12px;
+    }
+
     /* ═══════════════════════════════════════
        HERO
     ═══════════════════════════════════════ */
@@ -1303,6 +1384,13 @@
       </a>
       <div class="nav-links">
         <a href="features.html">Features</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">Compare</button>
+          <div class="nav-dropdown-menu">
+            <a href="photoroom-alternative.html">Photoroom alternative<span class="small">$49 once vs $13&ndash;35/month</span></a>
+            <a href="removebg-alternative.html">remove.bg alternative<span class="small">Unlimited vs per-credit pricing</span></a>
+          </div>
+        </div>
         <a href="download.html" data-umami-event="nav-download">Download</a>
       </div>
     </div>
@@ -1352,7 +1440,7 @@
     <h2 class="section-title">You're overpaying for background removal.<br>And your photos still get rejected.</h2>
     <div class="problem-narrative">
       <p>You know the drill. Shoot your product on the kitchen table. Upload it to a cloud tool. Pay per image. Download the result. Realize Amazon rejected it because the white isn't white enough. Open another app to fix the color. Re-export. Re-upload. Repeat for 200 products.</p>
-      <p>Meanwhile, remove.bg is charging you <strong>$39/month</strong>, PhotoRoom wants <strong>$13/month</strong>, and you're still running back and forth between three different tools just to get a compliant listing image.</p>
+      <p>Meanwhile, <a href="removebg-alternative.html" style="color: inherit; text-decoration: underline; text-decoration-color: var(--text-muted); text-underline-offset: 3px;">remove.bg is charging you <strong>$39/month</strong></a>, <a href="photoroom-alternative.html" style="color: inherit; text-decoration: underline; text-decoration-color: var(--text-muted); text-underline-offset: 3px;">PhotoRoom wants <strong>$13/month</strong></a>, and you're still running back and forth between three different tools just to get a compliant listing image.</p>
       <p>And the new generative AI tools (ChatGPT, Gemini, Photoroom AI) make it worse, not better. They <strong>invent pixels</strong> &mdash; smoothing textures, hallucinating details, "improving" your product into something that isn't quite what ships. Amazon&apos;s main image policy requires the actual product. Get caught and your listing gets pulled.</p>
       <p class="problem-kicker">There's a better way.</p>
     </div>
@@ -1485,8 +1573,8 @@
           <tr>
             <th></th>
             <th class="highlight">ListingGems</th>
-            <th>remove.bg</th>
-            <th>PhotoRoom</th>
+            <th><a href="removebg-alternative.html" style="color: inherit; text-decoration: underline; text-decoration-color: var(--border-light); text-underline-offset: 3px;">remove.bg</a></th>
+            <th><a href="photoroom-alternative.html" style="color: inherit; text-decoration: underline; text-decoration-color: var(--border-light); text-underline-offset: 3px;">PhotoRoom</a></th>
             <th>Aiarty</th>
             <th>ChatGPT / Gemini</th>
           </tr>
@@ -1592,7 +1680,7 @@
       </table>
     </div>
     <div class="comparison-callout">
-      A remove.bg Pro subscription costs $468/year. ListingGems pays for itself in 5 weeks &mdash; then it's free forever.
+      A remove.bg Pro subscription costs $468/year. ListingGems pays for itself in 5 weeks &mdash; then it's free forever. <a href="removebg-alternative.html" style="color: var(--emerald-deep); font-weight: 600; text-decoration: none;">See full comparison &rarr;</a>
     </div>
   </div>
 </section>
@@ -1742,7 +1830,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-question">Why not just use ChatGPT, Gemini, or Photoroom AI? <span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><p>Generative AI tools <em>invent</em> pixels. They&apos;re built to generate plausible imagery &mdash; which means they smooth textures, idealize surfaces, and hallucinate details that aren&apos;t on your actual product. That&apos;s fine for lifestyle scenes (your product in a kitchen, on a beach, in a model&apos;s hand). It&apos;s risky for Amazon main images, where the policy requires the photo to accurately represent the real product. Misrepresentation gets listings pulled.</p><p>ListingGems uses <strong>ML segmentation</strong>, not generation. It identifies where your product ends and the background begins, then swaps the background. Your real photo of your real product &mdash; just background-cleaned and Amazon-sized. No invented details, no policy risk.</p><p>Use generative AI for lifestyle shots. Use ListingGems for the photo Amazon actually grades you on.</p></div>
+        <div class="faq-answer"><p>Generative AI tools <em>invent</em> pixels. They&apos;re built to generate plausible imagery &mdash; which means they smooth textures, idealize surfaces, and hallucinate details that aren&apos;t on your actual product. That&apos;s fine for lifestyle scenes (your product in a kitchen, on a beach, in a model&apos;s hand). It&apos;s risky for Amazon main images, where the policy requires the photo to accurately represent the real product. Misrepresentation gets listings pulled.</p><p>ListingGems uses <strong>ML segmentation</strong>, not generation. It identifies where your product ends and the background begins, then swaps the background. Your real photo of your real product &mdash; just background-cleaned and Amazon-sized. No invented details, no policy risk.</p><p>Use generative AI for lifestyle shots. Use ListingGems for the photo Amazon actually grades you on. <a href="photoroom-alternative.html" style="color: var(--emerald-deep); font-weight: 600;">Full Photoroom comparison &rarr;</a></p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">What if the background removal isn't perfect? <span class="faq-toggle">+</span></button>
@@ -1784,6 +1872,8 @@
     <div class="footer-links">
       <span>&copy; 2026 ListingGems</span>
       <a href="features.html">Features</a>
+      <a href="photoroom-alternative.html">Photoroom alternative</a>
+      <a href="removebg-alternative.html">remove.bg alternative</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="contact.html">Contact</a>

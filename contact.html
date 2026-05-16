@@ -48,6 +48,20 @@
     .nav-links a.active { color: var(--emerald-deep); font-weight: 600; }
     @media (max-width: 768px) { .nav-links { display: none; } }
 
+    /* NAV DROPDOWNS */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { font-size: 14px; font-weight: 500; color: var(--text-secondary); text-decoration: none; cursor: pointer; background: none; border: none; font-family: var(--font-body); padding: 0; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s; }
+    .nav-dropdown-toggle:hover { color: var(--text-primary); }
+    .nav-dropdown-toggle::after { content: ''; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin-top: -3px; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-dropdown-toggle::after { transform: rotate(225deg); margin-top: 3px; }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 8px); left: -16px; min-width: 240px; background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); padding: 8px; opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity 0.18s, transform 0.18s, visibility 0.18s; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-dropdown-menu a { display: block; padding: 10px 12px; font-size: 14px; font-weight: 500; color: var(--text-primary); text-decoration: none; border-radius: 6px; transition: background 0.15s, color 0.15s; }
+    .nav-dropdown-menu a:hover { background: var(--emerald-glow); color: var(--emerald-deep); }
+    .nav-dropdown-menu a .small { display: block; font-size: 12px; font-weight: 400; color: var(--text-muted); margin-top: 2px; }
+    .nav-dropdown-menu a:hover .small { color: var(--emerald); }
+    .nav-dropdown::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 12px; }
+
     main { padding: 120px 0 80px; }
     h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 24px; }
     p { font-size: 15px; color: var(--text-secondary); margin-bottom: 14px; }
@@ -97,6 +111,13 @@
       </a>
       <div class="nav-links">
         <a href="features.html">Features</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">Compare</button>
+          <div class="nav-dropdown-menu">
+            <a href="photoroom-alternative.html">Photoroom alternative<span class="small">$49 once vs $13&ndash;35/month</span></a>
+            <a href="removebg-alternative.html">remove.bg alternative<span class="small">Unlimited vs per-credit pricing</span></a>
+          </div>
+        </div>
         <a href="download.html" data-umami-event="nav-download">Download</a>
       </div>
     </div>
@@ -118,6 +139,8 @@
     <div class="footer-links">
       <span>&copy; 2026 ListingGems</span>
       <a href="features.html">Features</a>
+      <a href="photoroom-alternative.html">Photoroom alternative</a>
+      <a href="removebg-alternative.html">remove.bg alternative</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="contact.html">Contact</a>
