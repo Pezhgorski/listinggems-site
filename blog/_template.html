@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[ARTICLE TITLE] &mdash; ListingGems Blog</title>
-  <meta name="description" content="[150-160 char meta description with primary keyword]">
+  <meta name="description" content="[150-160 char meta description]">
   <meta property="og:title" content="[ARTICLE TITLE]">
   <meta property="og:description" content="[META DESCRIPTION]">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://listinggems.com/blog/[slug]">
   <meta property="og:image" content="https://listinggems.com/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="[ARTICLE TITLE]">
   <meta name="twitter:description" content="[META DESCRIPTION]">
@@ -22,6 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/blog.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,121 +40,89 @@
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://listinggems.com/blog/[slug]" }
   }
   </script>
-  <!-- If article has FAQ, add a second JSON-LD script with FAQPage schema here -->
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg-deep: #0a0a0b;
-      --bg-main: #18181b;
-      --bg-card: #27272a;
-      --bg-elevated: #3f3f46;
-      --border: #3f3f46;
-      --text-primary: #fafafa;
-      --text-secondary: #a1a1aa;
-      --text-muted: #71717a;
-      --emerald: #10b981;
-      --emerald-deep: #059669;
-      --emerald-glow: rgba(16, 185, 129, 0.15);
-      --font-body: 'DM Sans', system-ui, sans-serif;
-      --font-mono: 'Space Mono', monospace;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    a { color: var(--emerald); text-decoration: underline; text-underline-offset: 3px; }
-    a:hover { color: var(--emerald-deep); }
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); }
-    nav .logo { font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; color: var(--text-primary); text-decoration: none; }
-    nav .nav-links { display: flex; gap: 2rem; }
-    nav .nav-links a { color: var(--text-secondary); text-decoration: none; }
-    nav .nav-links a:hover { color: var(--text-primary); }
-    .breadcrumb { max-width: 720px; margin: 2rem auto 0; padding: 0 2rem; font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-mono); }
-    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--text-secondary); }
-    article { max-width: 720px; margin: 0 auto; padding: 2rem; }
-    article h1 { font-size: clamp(2rem, 5vw, 2.75rem); line-height: 1.15; margin-bottom: 1rem; letter-spacing: -0.02em; }
-    article .article-meta { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2.5rem; }
-    article p { margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-secondary); }
-    article p strong { color: var(--text-primary); }
-    article h2 { font-size: 1.75rem; margin-top: 3rem; margin-bottom: 1rem; color: var(--text-primary); letter-spacing: -0.01em; }
-    article h3 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--text-primary); }
-    article ul, article ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-secondary); }
-    article li { margin-bottom: 0.5rem; font-size: 1.1rem; }
-    article img { width: 100%; border-radius: 0.75rem; margin: 2rem 0; }
-    article figcaption { font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: -1rem; margin-bottom: 2rem; }
-    article table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
-    article th, article td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
-    article th { background: var(--bg-card); color: var(--text-primary); font-weight: 600; font-size: 0.9rem; }
-    article td { color: var(--text-secondary); }
-    article blockquote { border-left: 3px solid var(--emerald); padding-left: 1.5rem; margin: 2rem 0; color: var(--text-secondary); font-style: italic; }
-    .tldr-box { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--emerald); border-radius: 0.75rem; padding: 1.5rem 2rem; margin: 2rem 0 3rem; }
-    .tldr-box h2 { font-size: 0.85rem; font-family: var(--font-mono); color: var(--emerald); margin-top: 0; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
-    .tldr-box ul { margin-bottom: 0; padding-left: 1.2rem; }
-    .tldr-box li { font-size: 1.05rem; color: var(--text-primary); margin-bottom: 0.5rem; }
-    .faq-section { margin-top: 4rem; }
-    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
-    .faq-item h3 { font-size: 1.1rem; margin-top: 0; margin-bottom: 0.75rem; color: var(--text-primary); }
-    .faq-item p { font-size: 1rem; margin-bottom: 0; }
-    .cta-card { margin-top: 4rem; padding: 2.5rem; background: linear-gradient(135deg, var(--bg-card), var(--bg-main)); border: 1px solid var(--emerald); border-radius: 1rem; text-align: center; }
-    .cta-card h2 { font-size: 1.5rem; margin-top: 0; margin-bottom: 0.75rem; }
-    .cta-card p { color: var(--text-secondary); margin-bottom: 1.5rem; }
-    .cta-card .btn-primary { display: inline-block; padding: 0.85rem 2rem; background: var(--emerald); color: white; border-radius: 0.5rem; font-weight: 600; text-decoration: none; }
-    .cta-card .btn-primary:hover { background: var(--emerald-deep); color: white; }
-    footer { padding: 3rem 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
-    footer a { color: var(--text-secondary); margin: 0 0.75rem; text-decoration: none; }
-  </style>
+  <!-- If the article has a FAQ, add a second JSON-LD block with FAQPage schema here. -->
 </head>
 <body>
-  <nav>
-    <a href="/" class="logo">ListingGems</a>
-    <div class="nav-links">
-      <a href="/features">Features</a>
-      <a href="/blog/">Blog</a>
-      <a href="/download">Download</a>
-    </div>
-  </nav>
-  <div class="breadcrumb"><a href="/blog/">&larr; Back to blog</a></div>
-  <article>
-    <h1>[ARTICLE TITLE]</h1>
-    <div class="article-meta">[DATE] &middot; [X] min read</div>
 
-    <!-- LEAD IMAGE (optional) -->
-    <img src="/images/[hero-image].webp" alt="[descriptive alt text]">
-
-    <!-- TL;DR BOX -->
-    <div class="tldr-box">
-      <h2>TL;DR</h2>
-      <ul>
-        <li>[bullet 1]</li>
-        <li>[bullet 2]</li>
-        <li>[bullet 3]</li>
-      </ul>
-    </div>
-
-    <!-- BODY -->
-    <p>[Opening paragraph &mdash; direct answer to the article's title question, no preamble.]</p>
-
-    <h2>[Section heading]</h2>
-    <p>[Body]</p>
-
-    <!-- FAQ SECTION -->
-    <section class="faq-section">
-      <h2>Frequently asked questions</h2>
-      <div class="faq-item">
-        <h3>[Question]</h3>
-        <p>[Answer with citation links]</p>
+<nav>
+  <div class="container">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-logo">
+        <img src="../logo.png" alt="ListingGems" class="nav-logo-img">
+        <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="../features.html">Features</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">Compare</button>
+          <div class="nav-dropdown-menu">
+            <a href="../photoroom-alternative.html">Photoroom alternative<span class="small">$49 once vs $13&ndash;35/month</span></a>
+            <a href="../removebg-alternative.html">remove.bg alternative<span class="small">Unlimited vs per-credit pricing</span></a>
+          </div>
+        </div>
+        <a href="../blog/" class="active">Blog</a>
+        <a href="../download.html">Download</a>
       </div>
-    </section>
+    </div>
+    <a href="../index.html#pricing" class="nav-cta">
+      Buy Now &mdash; $49 <span class="price-old">$79</span>
+    </a>
+  </div>
+</nav>
 
-    <!-- CTA CARD -->
-    <aside class="cta-card">
-      <h2>Turn phone photos into marketplace-ready listings</h2>
-      <p>ListingGems removes backgrounds, fixes lighting, and exports to marketplace-required dimensions &mdash; all on your computer. $49 one-time, no subscriptions.</p>
-      <a href="/download" class="btn-primary">Download ListingGems</a>
-    </aside>
-  </article>
-  <footer>
-    <a href="/">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a> &middot; <a href="/contact">Contact</a>
-    <p style="margin-top: 1rem;">&copy; 2026 ListingGems</p>
-  </footer>
+<div class="breadcrumb"><a href="../blog/">&larr; Back to blog</a></div>
+
+<article>
+  <h1>[ARTICLE TITLE]</h1>
+  <div class="article-meta">[DATE] &middot; [X] min read</div>
+
+  <img src="../images/[hero-image].webp" alt="[descriptive alt text]">
+
+  <div class="tldr-box">
+    <h2>TL;DR</h2>
+    <ul>
+      <li>[bullet 1]</li>
+      <li>[bullet 2]</li>
+      <li>[bullet 3]</li>
+    </ul>
+  </div>
+
+  <p>[Opening paragraph &mdash; direct answer to the article's title question, no preamble.]</p>
+
+  <h2>[Section heading]</h2>
+  <p>[Body]</p>
+
+  <section class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>[Question]</h3>
+      <p>[Answer with citation links]</p>
+    </div>
+  </section>
+
+  <aside class="cta-card">
+    <h2>Turn phone photos into marketplace-ready listings</h2>
+    <p>ListingGems removes backgrounds, fixes lighting, and exports to marketplace-required dimensions &mdash; all on your computer. $49 one-time, no subscriptions.</p>
+    <a href="../download.html" class="btn-primary">Download ListingGems</a>
+  </aside>
+</article>
+
+<section class="footer-cta">
+  <div class="container">
+    <div class="footer-links">
+      <span>&copy; 2026 ListingGems</span>
+      <a href="../index.html">Home</a>
+      <a href="../features.html">Features</a>
+      <a href="../photoroom-alternative.html">Photoroom alternative</a>
+      <a href="../removebg-alternative.html">remove.bg alternative</a>
+      <a href="../blog/">Blog</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../download.html">Download</a>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
