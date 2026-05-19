@@ -14,53 +14,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg-deep: #ffffff;
-      --bg-main: #f8fafb;
-      --border: #e2e5e9;
-      --text-primary: #111827;
-      --text-secondary: #4b5563;
-      --text-muted: #9ca3af;
-      --emerald: #059669;
-      --emerald-deep: #047857;
-      --emerald-glow: rgba(5, 150, 105, 0.08);
-      --font-body: 'DM Sans', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
     .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
     nav .container { max-width: 1100px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-primary); }
-    .nav-logo-img { height: 36px; width: auto; }
-    .nav-logo-text { font-weight: 700; font-size: 17px; letter-spacing: -0.3px; color: var(--text-primary); }
-    .nav-logo-accent { color: var(--emerald-deep); }
 
-    .nav-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--emerald-deep); color: white; padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .nav-cta:hover { background: #047857; transform: translateY(-1px); }
-    .nav-left { display: flex; align-items: center; gap: 32px; }
-    .nav-links { display: flex; align-items: center; gap: 24px; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text-primary); }
     .nav-links a.active { color: var(--emerald-deep); font-weight: 600; }
-    @media (max-width: 768px) { .nav-links { display: none; } }
-
-    /* NAV DROPDOWNS */
-    .nav-dropdown { position: relative; }
-    .nav-dropdown-toggle { font-size: 14px; font-weight: 500; color: var(--text-secondary); text-decoration: none; cursor: pointer; background: none; border: none; font-family: var(--font-body); padding: 0; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s; }
-    .nav-dropdown-toggle:hover { color: var(--text-primary); }
-    .nav-dropdown-toggle::after { content: ''; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin-top: -3px; transition: transform 0.2s; }
-    .nav-dropdown:hover .nav-dropdown-toggle::after { transform: rotate(225deg); margin-top: 3px; }
-    .nav-dropdown-menu { position: absolute; top: calc(100% + 8px); left: -16px; min-width: 240px; background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); padding: 8px; opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity 0.18s, transform 0.18s, visibility 0.18s; }
-    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-    .nav-dropdown-menu a { display: block; padding: 10px 12px; font-size: 14px; font-weight: 500; color: var(--text-primary); text-decoration: none; border-radius: 6px; transition: background 0.15s, color 0.15s; }
-    .nav-dropdown-menu a:hover { background: var(--emerald-glow); color: var(--emerald-deep); }
-    .nav-dropdown-menu a .small { display: block; font-size: 12px; font-weight: 400; color: var(--text-muted); margin-top: 2px; }
-    .nav-dropdown-menu a:hover .small { color: var(--emerald); }
-    .nav-dropdown::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 12px; }
 
     main { padding: 120px 0 80px; }
     h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 24px; }
@@ -95,9 +55,6 @@
       color: var(--text-muted);
     }
 
-    .footer-links { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-    .footer-links a { color: var(--text-muted); text-decoration: none; }
-    .footer-links a:hover { color: var(--text-secondary); }
   </style>
 </head>
 <body>
