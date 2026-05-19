@@ -180,23 +180,10 @@ article td strong { color: var(--text-primary); }
 .tldr-box ul { margin-bottom: 0; padding-left: 1.2rem; }
 .tldr-box li { font-size: 1.05rem; color: var(--text-primary); margin-bottom: 0.5rem; }
 
-/* FAQ */
+/* FAQ accordion uses .faq-item / .faq-question / .faq-answer from site.css.
+   Only override the section header here. */
 .faq-section { margin-top: 4rem; }
 .faq-section > h2 { font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text-primary); }
-.faq-item {
-  background: var(--bg-main);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-}
-.faq-item h3 {
-  font-size: 1.05rem;
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
-}
-.faq-item p { font-size: 1rem; margin-bottom: 0; color: var(--text-secondary); }
 
 /* CTA card at end of articles */
 .cta-card {

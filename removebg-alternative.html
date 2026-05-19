@@ -30,6 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
+  <script defer src="assets/site.js"></script>
   <style>
     /* HERO */
     .hero {
@@ -412,57 +413,6 @@
       max-width: 700px;
       margin: 0 auto;
     }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-size: 15px;
-      font-weight: 600;
-      text-align: left;
-      padding: 20px 0;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-    .faq-question:hover { color: var(--emerald); }
-    .faq-toggle {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      border-radius: 6px;
-      background: var(--bg-elevated);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      color: var(--text-muted);
-      transition: transform 0.3s, background 0.3s;
-    }
-    .faq-item.open .faq-toggle {
-      transform: rotate(45deg);
-      background: var(--emerald-glow);
-      color: var(--emerald);
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.45s ease, padding 0.35s ease;
-    }
-    .faq-item.open .faq-answer {
-      max-height: 500px;
-      padding-bottom: 20px;
-    }
-    .faq-answer p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-    }
-    .faq-answer p + p { margin-top: 10px; }
 
     @media (max-width: 640px) {
       .hero { padding: 110px 0 40px; }
@@ -993,11 +943,6 @@
 
 <script>
   // FAQ accordion
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.parentElement.classList.toggle('open');
-    });
-  });
 
   // Scroll animation
   const observer = new IntersectionObserver((entries) => {
