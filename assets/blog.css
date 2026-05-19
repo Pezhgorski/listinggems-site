@@ -185,38 +185,6 @@ article td strong { color: var(--text-primary); }
 .faq-section { margin-top: 4rem; }
 .faq-section > h2 { font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text-primary); }
 
-/* CTA card at end of articles */
-.cta-card {
-  margin-top: 4rem;
-  padding: 2.5rem;
-  background: linear-gradient(135deg, var(--emerald-glow), var(--bg-main));
-  border: 1px solid rgba(5, 150, 105, 0.3);
-  border-radius: 1rem;
-  text-align: center;
-}
-.cta-card h2 {
-  font-size: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
-}
-.cta-card p { color: var(--text-secondary); margin-bottom: 1.5rem; }
-.cta-card .btn-primary {
-  display: inline-block;
-  padding: 0.85rem 2rem;
-  background: var(--emerald-deep);
-  color: white;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 20px rgba(5, 150, 105, 0.2);
-}
-.cta-card .btn-primary:hover {
-  background: #065f46;
-  transform: translateY(-2px);
-  color: white;
-}
 
 /* Responsive */
 @media (max-width: 640px) {
