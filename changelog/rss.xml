@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ListingGems Changelog</title>
+    <link>https://listinggems.com/changelog</link>
+    <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 May 2026 10:30:00 +0000</lastBuildDate>
+
+    <item>
+      <title>ListingGems 0.1.2</title>
+      <link>https://listinggems.com/changelog#v0-1-2</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-1-2</guid>
+      <pubDate>Fri, 15 May 2026 10:30:00 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Background removal models now preload in the background after app startup, so the first photo you process no longer waits on model initialization.</li>
+        </ul>
+      ]]></description>
+    </item>
+
+    <item>
+      <title>ListingGems 0.1.0 — Initial release</title>
+      <link>https://listinggems.com/changelog#v0-1-0</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-1-0</guid>
+      <pubDate>Wed, 01 Apr 2026 12:00:00 +0000</pubDate>
+      <description><![CDATA[
+        <p>First public release of ListingGems.</p>
+        <ul>
+          <li>Background removal powered by BiRefNet and BEN2 ONNX models, running locally on GPU or CPU — no cloud, no per-image fees.</li>
+          <li>Studio Mode for fine-grained editing: drop shadows, color and exposure correction, smart 4x upscaling, and a manual mask touch-up brush for refining edges.</li>
+          <li>Quick Mode for drag-and-drop batch processing with progress and remaining-time estimates.</li>
+          <li>Nine marketplace presets covering eBay, Etsy, Amazon, Shopify, Poshmark, Mercari, Depop, Facebook Marketplace, and a custom aspect ratio.</li>
+          <li>One-time purchase of $49 with no subscription, three device activations per license, and a 45-day money-back guarantee.</li>
+          <li>Runs fully offline after install — photos never leave your machine.</li>
+        </ul>
+      ]]></description>
+    </item>
+  </channel>
+</rss>

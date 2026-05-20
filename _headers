@@ -9,3 +9,6 @@
 
 /sitemap.xml
   Content-Type: application/xml
+
+/changelog/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
