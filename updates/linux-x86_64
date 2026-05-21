@@ -1,11 +1,11 @@
 {
-  "version": "0.1.2",
-  "notes": "Production release: Creem checkout, eager model preloading, app identifier fix, signed builds.",
-  "pub_date": "2026-05-15T10:30:00Z",
+  "version": "0.2.0",
+  "notes": "Fixes eraser brush bug. Misc improvements to brush UX and zoom behavior.",
+  "pub_date": "2026-05-21T13:00:00Z",
   "platforms": {
     "linux-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.1.2/ListingGems_0.1.2_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGx6RXUvUTI0dU9EUUVwZmxVYTQvdUlrK2pndzk4RkxJZEFYTERYcVF1emhSWjNMemJBeG83UE5hR2IwWnRLVUxqempkd2R3L0s2OFd3bjEwWGNVMmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc4ODQwMDQ1CWZpbGU6TGlzdGluZ0dlbXNfMC4xLjJfYW1kNjRfQXBwSW1hZ2UKUzdsYU9CVmVxWmV1czhlYkp5MGNvQXFoN3V6SGdWQnl2VVFtM05kTVpkcWxjNnFpbSt4MC9wVFhweVpvVkNoc2VrbGw3VndqUHBGSnhCMU5aa0Y3RHc9PQo="
+      "url": "https://dl.listinggems.com/releases/0.2.0/ListingGems_0.2.0_amd64.AppImage",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGc1ZTNTeG5ndmdWaExUMGFrcDNDWFYxSVZFTzI5Mkkrc1MrZG5HakVRSHkzNG5YcURvZkcwYmV1WHEveTVsNUpqaXd5R3BWcWhQUFVlL2lBNVpxd2c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5MzY2ODI1CWZpbGU6TGlzdGluZ0dlbXNfMC4yLjBfYW1kNjQuQXBwSW1hZ2UKRXE0dVNuWnFDUGJFemJreXc3Vnl1Y1BYVzhsSFoyWHVKUHBaVGJNYUlnWm5YOFhlZXBrOWV2SkRVWFFSMHpTZUhmcmlkQUJqbzVPSVVDdStHb2NyRFE9PQo="
     }
   }
 }
