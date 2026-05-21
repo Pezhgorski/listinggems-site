@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="dda4e0e3-90be-4000-adc2-9bd30734d9ee"></script>
   <title>Changelog &mdash; ListingGems</title>
-  <meta name="description" content="Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers. Current version: 0.1.2.">
+  <meta name="description" content="Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers. Current version: 0.2.0.">
   <meta property="og:title" content="ListingGems Changelog">
   <meta property="og:description" content="Release notes and version history for ListingGems.">
   <meta property="og:type" content="website">
@@ -57,7 +57,7 @@
         "url": "https://listinggems.com/",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows, Linux",
-        "softwareVersion": "0.1.2",
+        "softwareVersion": "0.2.0",
         "offers": {
           "@type": "Offer",
           "price": "49",
@@ -80,6 +80,19 @@
         "name": "ListingGems Changelog",
         "description": "Release notes and version history for ListingGems.",
         "about": { "@id": "https://listinggems.com/#software" }
+      },
+      {
+        "@type": "Article",
+        "headline": "ListingGems 0.2.0",
+        "datePublished": "2026-05-21",
+        "url": "https://listinggems.com/changelog#v0-2-0",
+        "about": { "@id": "https://listinggems.com/#software" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "ListingGems",
+          "url": "https://listinggems.com/"
+        },
+        "articleBody": "Mask brush now supports zoom and pan for pixel-precise edge work: Ctrl+scroll to zoom, middle-mouse drag to pan, and keyboard shortcuts (0 to reset, + and - to zoom). Erase and restore coordinates now line up exactly with the cursor when working on cropped previews. Brush mode menu renamed for clarity (Brush and Color Select) with Brush as the default, and a dismissable hint explains the brush in Studio and Quick modes. Background removal model picker now hides models your hardware can't run (FP16 support detection). HEIC files that are actually JPEGs, such as Samsung motion photos, now load correctly."
       },
       {
         "@type": "Article",
@@ -142,6 +155,19 @@
     <h1>Changelog</h1>
     <p class="lead">Release notes and version history for ListingGems.</p>
     <p class="rss-link"><a href="changelog/rss.xml">Subscribe via RSS &rarr;</a></p>
+
+    <article class="release" id="v0-2-0">
+      <h2><a href="#v0-2-0">v0.2.0</a></h2>
+      <time datetime="2026-05-21">May 21, 2026</time>
+      <ul>
+        <li>Mask brush now supports <strong>zoom and pan</strong> for pixel-precise edge work: Ctrl+scroll to zoom, middle-mouse drag to pan, and keyboard shortcuts (<code>0</code> to reset, <code>+</code> / <code>-</code> to zoom). A live cursor coordinate readout helps you align edits.</li>
+        <li>Fixed brush erase and restore coordinates so paint lands exactly under the cursor when working on a cropped preview.</li>
+        <li>Brush mode menu renamed for clarity: <strong>Brush</strong> (previously Smart) and <strong>Color Select</strong>, with Brush as the new default.</li>
+        <li>Added a dismissable hint banner explaining the brush in both Studio and Quick modes.</li>
+        <li>Background removal model picker now hides models your GPU can't run (FP16 support detection), so you only see options that will work on your hardware.</li>
+        <li>HEIC files that are actually JPEGs (such as Samsung motion photos) now load correctly instead of failing.</li>
+      </ul>
+    </article>
 
     <article class="release" id="v0-1-2">
       <h2><a href="#v0-1-2">v0.1.2</a></h2>

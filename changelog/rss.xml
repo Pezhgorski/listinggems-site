@@ -6,7 +6,24 @@
     <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 May 2026 10:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 04:12:06 +0000</lastBuildDate>
+
+    <item>
+      <title>ListingGems 0.2.0</title>
+      <link>https://listinggems.com/changelog#v0-2-0</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-2-0</guid>
+      <pubDate>Thu, 21 May 2026 04:12:06 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Mask brush now supports zoom and pan for pixel-precise edge work: Ctrl+scroll to zoom, middle-mouse drag to pan, and keyboard shortcuts (0 to reset, + / - to zoom). A live cursor coordinate readout helps you align edits.</li>
+          <li>Fixed brush erase and restore coordinates so paint lands exactly under the cursor when working on a cropped preview.</li>
+          <li>Brush mode menu renamed for clarity: Brush (previously Smart) and Color Select, with Brush as the new default.</li>
+          <li>Added a dismissable hint banner explaining the brush in both Studio and Quick modes.</li>
+          <li>Background removal model picker now hides models your GPU can't run (FP16 support detection).</li>
+          <li>HEIC files that are actually JPEGs (such as Samsung motion photos) now load correctly.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>ListingGems 0.1.2</title>
