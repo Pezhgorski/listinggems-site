@@ -282,99 +282,7 @@
       border-radius: 6px;
     }
 
-    /* ═══════════════════════════════════════
-       FOOTER CTA
-    ═══════════════════════════════════════ */
-    .footer-cta {
-      background: var(--bg-deep);
-      text-align: center;
-      padding: 80px 0 40px;
-      position: relative;
-      overflow: hidden;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-cta::before {
-      content: '';
-      position: absolute;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 400px;
-      background: radial-gradient(ellipse, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .footer-cta h2 {
-      font-size: clamp(24px, 3vw, 36px);
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
-
-    .footer-cta .sub {
-      font-size: 16px;
-      color: var(--text-secondary);
-      margin-bottom: 28px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--emerald-deep);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(5, 150, 105, 0.2);
-    }
-
-    .btn-primary:hover {
-      background: #065f46;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 30px rgba(5, 150, 105, 0.3);
-    }
-
-    .hero-cta-group {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      justify-content: center;
-    }
-
-    .price-old-hero {
-      font-size: 20px;
-      color: var(--text-muted);
-      text-decoration: line-through;
-    }
-
-    .footer-links {
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--text-secondary);
-    }
+    /* Footer CTA / shared button / footer-links styles live in assets/site.css */
 
     /* ═══════════════════════════════════════
        RESPONSIVE
@@ -416,31 +324,54 @@
 </head>
 <body>
 
+<!-- @begin nav -->
 <nav>
   <div class="container">
     <div class="nav-left">
-      <a href="index.html" class="nav-logo">
-        <img src="logo.png" alt="ListingGems" class="nav-logo-img">
+      <a href="/" class="nav-logo">
+        <img src="/logo.png" alt="ListingGems" class="nav-logo-img">
         <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
       </a>
       <div class="nav-links">
-        <a href="features.html" class="active">Features</a>
+        <a href="/features">Features</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-toggle" type="button">Compare</button>
           <div class="nav-dropdown-menu">
-            <a href="photoroom-alternative.html">Photoroom alternative<span class="small">$49 once vs $13&ndash;35/month</span></a>
-            <a href="removebg-alternative.html">remove.bg alternative<span class="small">Unlimited vs per-credit pricing</span></a>
+            <a href="/photoroom-alternative">Photoroom alternative<span class="small">$49 once vs $13&ndash;35/month</span></a>
+            <a href="/removebg-alternative">remove.bg alternative<span class="small">Unlimited vs per-credit pricing</span></a>
           </div>
         </div>
-        <a href="blog/" data-umami-event="nav-blog">Blog</a>
-        <a href="download.html" data-umami-event="nav-download">Download</a>
+        <a href="/blog/" data-umami-event="nav-blog">Blog</a>
+        <a href="/download" data-umami-event="nav-download">Download</a>
       </div>
     </div>
-    <a href="index.html#pricing" class="nav-cta" data-umami-event="buy-now-nav">
-      Buy Now &mdash; $49 <span class="price-old">$79</span>
+    <div class="nav-right">
+      <a href="/#pricing" class="nav-cta" data-umami-event="buy-now-nav">
+        Buy Now &mdash; $49 <span class="price-old">$79</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="nav-mobile-panel" aria-hidden="true">
+    <a href="/features">Features</a>
+    <a href="/photoroom-alternative">
+      Photoroom alternative
+      <span class="small">$49 once vs $13&ndash;35/month</span>
     </a>
+    <a href="/removebg-alternative">
+      remove.bg alternative
+      <span class="small">Unlimited vs per-credit pricing</span>
+    </a>
+    <a href="/blog/" data-umami-event="nav-blog-mobile">Blog</a>
+    <a href="/download" data-umami-event="nav-download-mobile">Download</a>
   </div>
 </nav>
+<script src="/assets/site.js" defer></script>
+<!-- @end nav -->
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="features-hero">
@@ -706,18 +637,20 @@
       <a href="index.html#pricing" class="btn-primary" data-umami-event="buy-now-footer">Buy Now &mdash; $49</a>
       <span class="price-old-hero">$79</span>
     </div>
-    <div class="footer-links">
-      <span>&copy; 2026 ListingGems</span>
-      <a href="features.html">Features</a>
-      <a href="photoroom-alternative.html">Photoroom alternative</a>
-      <a href="removebg-alternative.html">remove.bg alternative</a>
-      <a href="blog/" data-umami-event="footer-blog">Blog</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="contact.html">Contact</a>
-      <a href="download.html">Download</a>
-      <a href="changelog.html">Changelog</a>
-    </div>
+    <!-- @begin footer-links -->
+<div class="footer-links">
+  <span>&copy; 2026 ListingGems</span>
+  <a href="/features">Features</a>
+  <a href="/photoroom-alternative">Photoroom alternative</a>
+  <a href="/removebg-alternative">remove.bg alternative</a>
+  <a href="/blog/" data-umami-event="footer-blog">Blog</a>
+  <a href="/privacy">Privacy</a>
+  <a href="/terms">Terms</a>
+  <a href="/contact">Contact</a>
+  <a href="/download">Download</a>
+  <a href="/changelog">Changelog</a>
+</div>
+<!-- @end footer-links -->
   </div>
 </section>
 

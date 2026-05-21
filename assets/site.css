@@ -78,10 +78,82 @@ nav .container {
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
+  white-space: nowrap;
   transition: background 0.2s, transform 0.15s;
 }
 .nav-cta:hover { background: #065f46; transform: translateY(-1px); }
 .nav-cta .price-old { text-decoration: line-through; opacity: 0.6; font-weight: 400; font-size: 12px; }
+
+/* ═══ NAV RIGHT (CTA + hamburger group) ═══ */
+.nav-right { display: flex; align-items: center; gap: 12px; }
+
+/* ═══ HAMBURGER BUTTON ═══ */
+.nav-toggle {
+  display: none;          /* hidden by default; shown at ≤768px */
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+}
+.nav-toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  margin: 5px 0;
+  transition: transform 0.2s, opacity 0.2s;
+  border-radius: 2px;
+}
+body.nav-open .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+body.nav-open .nav-toggle-bar:nth-child(2) { opacity: 0; }
+body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ═══ MOBILE OVERLAY PANEL ═══ */
+.nav-mobile-panel {
+  display: none;          /* shown at ≤768px when .nav-open */
+  position: fixed;
+  top: 60px;              /* below the 60px nav bar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Explicit height is required: flex-direction: column collapses a fixed-positioned
+     element to content height even with top/bottom set. */
+  height: calc(100vh - 60px);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  flex-direction: column;
+  padding: 16px 0;
+  overflow-y: auto;
+}
+.nav-mobile-panel a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+.nav-mobile-panel a:last-child { border-bottom: none; }
+.nav-mobile-panel a .small {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.nav-mobile-panel a:hover,
+.nav-mobile-panel a:focus { background: var(--bg-elevated); }
+
+/* ═══ ACTIVE LINK ═══ */
+.nav-links a.active,
+.nav-mobile-panel a.active {
+  color: var(--emerald-deep);
+}
 
 /* ═══ NAV DROPDOWN ═══ */
 .nav-dropdown { position: relative; }
@@ -210,6 +282,40 @@ nav .container {
 .footer-links a { color: var(--text-muted); text-decoration: none; }
 .footer-links a:hover { color: var(--text-secondary); }
 
+/* ═══ SHARED CTA BUTTON + HERO CTA GROUP ═══ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--emerald-deep);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(5, 150, 105, 0.2);
+}
+.btn-primary:hover {
+  background: #065f46;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(5, 150, 105, 0.3);
+}
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+}
+.price-old-hero {
+  font-size: 20px;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
 /* ═══ SCROLL ANIMATION ═══ */
 .animate-in {
   opacity: 0;
@@ -281,4 +387,14 @@ nav .container {
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-cta .price-old { display: none; }
+  .nav-toggle { display: block; }
+  body.nav-open .nav-mobile-panel { display: flex; }
+  body.nav-open { overflow: hidden; }                 /* lock background scroll */
+}
+
+/* Below 480px the logo wordmark + CTA + hamburger no longer fit in a 60px nav
+   bar without wrapping. Hide the wordmark — the icon alone still identifies
+   the brand and links to "/". */
+@media (max-width: 480px) {
+  .nav-logo-text { display: none; }
 }
