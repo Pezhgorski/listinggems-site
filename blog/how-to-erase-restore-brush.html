@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="dda4e0e3-90be-4000-adc2-9bd30734d9ee"></script>
+  <title>Fix background removal mistakes with the Erase and Restore brush &mdash; ListingGems</title>
+  <meta name="description" content="Background removal isn't always perfect. Use the Erase and Restore brush in ListingGems to clean up missed pixels and bring back parts that got cut.">
+  <meta name="keywords" content="how to fix background removal, manual mask refinement, restore erased part of photo, product photo cleanup, erase brush product photo, listinggems brush tool, fix background removal mistakes, edit mask product photo">
+  <meta property="og:title" content="How to Fix Background Removal Mistakes: The Erase and Restore Brush in ListingGems">
+  <meta property="og:description" content="Background removal isn't always perfect. Use ListingGems' Erase and Restore brush in Studio Mode to clean up missed pixels and bring back parts of your product that got cut.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://listinggems.com/blog/how-to-erase-restore-brush">
+  <meta property="og:image" content="https://listinggems.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Fix Background Removal Mistakes: The Erase and Restore Brush in ListingGems">
+  <meta name="twitter:description" content="Background removal isn't always perfect. Use ListingGems' Erase and Restore brush in Studio Mode to clean up missed pixels and bring back parts of your product that got cut.">
+  <meta name="twitter:image" content="https://listinggems.com/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://listinggems.com/blog/how-to-erase-restore-brush">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Fix Background Removal Mistakes in ListingGems: The Erase and Restore Brush",
+    "description": "Background removal isn't always perfect. Use ListingGems' Erase and Restore brush in Studio Mode to clean up missed pixels and bring back parts of your product that got cut.",
+    "image": "https://listinggems.com/og-image.png",
+    "datePublished": "2026-05-23",
+    "dateModified": "2026-05-23",
+    "author": { "@type": "Organization", "name": "ListingGems Team" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ListingGems",
+      "logo": { "@type": "ImageObject", "url": "https://listinggems.com/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://listinggems.com/blog/how-to-erase-restore-brush" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does the canvas look different when I switch to Restore + Color Select?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That swap is intentional. To restore pixels, you need to see what's currently outside the mask, so ListingGems shows the full original image with the removed regions tinted dark red. The green overlay on top is exactly what Apply will bring back into the mask."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Reset destroy my brush edits permanently?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reset wipes the current brush session and reverts to the auto-generated mask. Brush edits aren't baked into anything until you export, so resetting and starting over is always safe. The original auto-mask is always recoverable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I undo a single brush stroke?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brush strokes commit immediately, so there's no per-stroke undo. Color Select effectively acts as one for bigger edits, since nothing applies until you press Apply. For a fully clean slate, use Reset to revert to the auto-generated mask and start over."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the brush work without running background removal first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The brush refines an existing mask, so background removal has to run at least once before the toolbar appears. Open a photo in Studio Mode, run the initial removal, then use the brush to clean up the result."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- @begin nav -->
+<nav>
+  <div class="container">
+    <div class="nav-left">
+      <a href="/" class="nav-logo">
+        <img src="/logo.png" alt="ListingGems" class="nav-logo-img">
+        <span class="nav-logo-text">Listing<span class="nav-logo-accent">Gems</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="/features">Features</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">Compare</button>
+          <div class="nav-dropdown-menu">
+            <a href="/photoroom-alternative">Photoroom alternative<span class="small">$49 once vs $13&ndash;35/month</span></a>
+            <a href="/removebg-alternative">remove.bg alternative<span class="small">Unlimited vs per-credit pricing</span></a>
+          </div>
+        </div>
+        <a href="/blog/" data-umami-event="nav-blog">Blog</a>
+        <a href="/download" data-umami-event="nav-download">Download</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="/#pricing" class="nav-cta" data-umami-event="buy-now-nav">
+        Buy Now &mdash; $49 <span class="price-old">$79</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="nav-mobile-panel" aria-hidden="true">
+    <a href="/features">Features</a>
+    <a href="/photoroom-alternative">
+      Photoroom alternative
+      <span class="small">$49 once vs $13&ndash;35/month</span>
+    </a>
+    <a href="/removebg-alternative">
+      remove.bg alternative
+      <span class="small">Unlimited vs per-credit pricing</span>
+    </a>
+    <a href="/blog/" data-umami-event="nav-blog-mobile">Blog</a>
+    <a href="/download" data-umami-event="nav-download-mobile">Download</a>
+  </div>
+</nav>
+<script src="/assets/site.js" defer></script>
+<!-- @end nav -->
+
+<div class="breadcrumb"><a href="../blog/" data-umami-event="article-back-to-blog">&larr; Back to blog</a></div>
+
+<article>
+  <h1>How to Fix Background Removal Mistakes in ListingGems: The Erase and Restore Brush</h1>
+  <div class="article-meta">May 23, 2026 &middot; 6 min read</div>
+
+  <!-- SCREENSHOT: hero image — a before/after of a product photo where the brush was used to clean up a missed background object and restore a thin strap. Wide aspect, sized for blog hero. -->
+  <img src="../og-image.png" alt="ListingGems Studio Mode showing the Erase and Restore brush toolbar over a product photo with a refined mask.">
+
+  <p>Background removal is fast, but it's not psychic. It'll keep a slice of the floor under a sneaker, shave a thin strap off a handbag, or eat half a wineglass stem and leave the rest. When that happens, you fix it by hand with the Erase and Restore brush in Studio Mode. Usually takes about a minute.</p>
+
+  <div class="tldr-box">
+    <h2>TL;DR</h2>
+    <ul>
+      <li>Erase (red, shortcut <code>E</code>) removes pixels from the mask. Restore (green, shortcut <code>R</code>) adds them back.</li>
+      <li>Each tool has two modes: Brush (paint freely) and Color Select (click a region, scrub tolerance, press Apply). Toggle modes with <code>S</code>.</li>
+      <li>In Restore + Color Select the canvas swaps to the original image with removed pixels tinted dark red, so you can see what's actually missing.</li>
+      <li>Reset reverts to the auto-generated mask any time. Brush edits don't commit until you export.</li>
+    </ul>
+  </div>
+
+  <h2>When to use Erase vs Restore</h2>
+
+  <p>Pick the tool based on what went wrong:</p>
+
+  <ul>
+    <li>Use Erase when the auto-mask kept something it shouldn't have. A patch of carpet under a shoe. A shadow that survived background removal. A second item in the frame.</li>
+    <li>Use Restore when the auto-mask cut into the product itself. A strap that disappeared against a same-colored wall. Glass handles. Fine hair on a stuffed animal.</li>
+  </ul>
+
+  <p>The toolbar appears in the top-right of the canvas after background removal runs. Click Erase or Restore to start, or press <code>E</code> / <code>R</code> to switch without reaching for the mouse.</p>
+
+  <!-- SCREENSHOT: brush toolbar at top-right of canvas with both Erase (red) and Restore (green) buttons visible, plus the mode toggle and size slider. Label/arrow the toolbar. -->
+
+  <h2>Brush vs Color Select: which mode to pick</h2>
+
+  <p>Once you've chosen Erase or Restore, you have two ways to apply it.</p>
+
+  <p>Brush mode is the default. Drag the cursor across the canvas and the mask updates under it, like a paintbrush. Size goes from 2 to 100 px. The cursor outline is red when erasing and green when restoring, so you always know what's about to happen. This is the mode for fine touch-up: hair edges, glass rims, thin straps. A flood fill would either miss those or grab too much.</p>
+
+  <p>Color Select is what you want when there's a chunk of mistake. Click a point. ListingGems finds all connected pixels close to that color and shows them as an overlay (red for Erase, green for Restore). A tolerance slider controls how strict the match is, from 0 to 100. Nothing actually changes until you press Apply (or <kbd>Enter</kbd>). Cancel (<kbd>Esc</kbd>) throws the selection away. Toggle between Brush and Color Select with <code>S</code>.</p>
+
+  <!-- SCREENSHOT: side-by-side or stacked — left shows Brush mode with the red/green cursor circle over an edge, right shows Color Select mode with a tolerance slider and a colored overlay highlighting a region. -->
+
+  <h2>Walkthrough: erasing an unwanted background object</h2>
+
+  <p>Say you photographed a watch on a desk, ran background removal, and a triangle of the desk surface is still showing under the strap. Fastest path:</p>
+
+  <ol>
+    <li>Click Erase in the toolbar (or press <code>E</code>).</li>
+    <li>Switch to Color Select (or press <code>S</code>).</li>
+    <li>Click once on the desk patch you want gone. A red overlay appears, covering every connected pixel close to that color.</li>
+    <li>Drag the tolerance slider. Lower it if the red is bleeding onto the watch itself, raise it if part of the desk patch isn't covered. The overlay updates as you drag, so you can stop the moment it looks right.</li>
+    <li>Press Apply (or <kbd>Enter</kbd>). The selected pixels come out of the mask and the canvas updates.</li>
+  </ol>
+
+  <p>One click won't always catch everything. If there's a separate patch of the same desk on the other side of the watch, click that region and Apply again. Selections stack. The flood fill is contiguous and works in RGB color distance from the click point, so each disconnected region needs its own click.</p>
+
+  <!-- SCREENSHOT: a watch on a desk, mid-edit. Color Select active, red overlay covering a patch of desk under the strap, tolerance slider visible. Apply / Cancel buttons in view. -->
+
+  <h2>Walkthrough: restoring a piece that got cut off</h2>
+
+  <p>Imagine the model erased the thin shoulder strap of a handbag because the strap was the same color as the wall behind it. You want to bring it back.</p>
+
+  <ol>
+    <li>Click Restore in the toolbar (or press <code>R</code>).</li>
+    <li>Switch to Color Select (or press <code>S</code>).</li>
+    <li>The canvas changes. Instead of the masked product on a checker pattern, you see the full original photo, with everything currently outside the mask tinted dark red. That tinted region is "the part the auto-mask removed." That's where your strap is hiding. You can't restore what you can't see, which is why the view switches.</li>
+    <li>Click on the strap. It reads as a slightly red-tinted version of its original color. A green overlay appears, covering the connected pixels close to that color, including other parts of the strap with the same tone.</li>
+    <li>Drag the tolerance slider until the green overlay covers the whole strap without bleeding into the wall.</li>
+    <li>Press Apply. The strap goes back into the mask and the canvas reverts to the normal masked view.</li>
+  </ol>
+
+  <!-- SCREENSHOT: the dark-red tinted view that appears in Restore + Color Select. Show the full original photo with removed regions dimmed red, and a green flood-fill overlay covering a thin strap or handle. This is the screenshot that explains the article. -->
+
+  <p>That canvas swap is the part that confuses people on the first try. It happens only in Restore + Color Select. Erase doesn't do it: erasing needs the current mask in view, not the original.</p>
+
+  <h2>Tips for tricky edges</h2>
+
+  <p>Color Select handles big regions well. For wisps and edges you'll want the brush, and you'll want it small and zoomed in.</p>
+
+  <ul>
+    <li>Zoom in first. Ctrl+scroll to zoom, middle-mouse drag to pan, <code>0</code> to reset. A percentage indicator and reset button appear on the canvas once you're past 100%. Try doing pixel work at 100% and then at 400% and you'll never go back.</li>
+    <li>Use a small brush. Drop the size to 5&ndash;10 px for hair and glass. Big brushes are for filling regions, not tracing edges.</li>
+    <li>Switch tools without leaving Brush mode. <code>R</code> and <code>E</code> flip between Restore and Erase while you stay in Brush. Useful along a boundary where the auto-mask both added and dropped pixels.</li>
+    <li>Trust the cursor color. Red outline means you're about to erase, green means restore. If the color doesn't match what you intend, change tools before you click.</li>
+    <li>Glass and other transparent materials usually need a mix: restore the rim, erase the interior. A Color Select click on the rim with moderate tolerance often catches the whole outline at once.</li>
+  </ul>
+
+  <!-- SCREENSHOT: zoomed-in view at ~400% with a small green brush cursor restoring a wisp of hair along an edge. Show the zoom percentage indicator and the reset button. -->
+
+  <h2>Keyboard shortcuts</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>E</code></td><td>Switch to Erase tool</td></tr>
+      <tr><td><code>R</code></td><td>Switch to Restore tool</td></tr>
+      <tr><td><code>S</code></td><td>Toggle between Brush and Color Select mode</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Apply the current Color Select preview</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Cancel the current Color Select preview</td></tr>
+      <tr><td>Ctrl+scroll</td><td>Zoom in and out</td></tr>
+      <tr><td>Middle-mouse drag</td><td>Pan the canvas</td></tr>
+      <tr><td><code>0</code></td><td>Reset zoom to 100%</td></tr>
+      <tr><td><code>+</code> / <code>-</code></td><td>Zoom in and out without scrolling</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Reset, and what "commit" actually means</h2>
+
+  <p>The Reset button on the brush toolbar wipes every edit from the current session and restores the auto-generated mask. No confirmation prompt, no undo stack, but also not destructive: brush edits don't overwrite the auto-mask until you export. While you're in Studio Mode, the original ML output is always one Reset away. If you're not sure your edits are an improvement, keep going. If you ruin it, Reset and try again.</p>
+
+  <!-- SCREENSHOT: the Reset button highlighted in the brush toolbar, with a callout that says "reverts to the auto-mask any time". -->
+
+  <h2>Wrapping up</h2>
+
+  <p>Most cleanups go fast once the keys are in your fingers. Tap <code>E</code> to erase or <code>R</code> to restore, <code>S</code> for Color Select, click the region, Apply. Repeat as needed. For the wisps, zoom in with Ctrl+scroll and use a small brush.</p>
+
+  <p>Open Studio Mode on any photo to try it. If you don't have ListingGems yet, you can <a href="../download.html" data-umami-event="article-to-download">grab it from the download page</a>, or look at the <a href="../features.html" data-umami-event="article-to-features">full feature list</a> first.</p>
+
+  <section class="faq-section">
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Why does the canvas look different when I switch to Restore + Color Select? <span class="faq-toggle">+</span></button>
+      <div class="faq-answer"><p>The swap is intentional. To restore pixels you need to see what's currently outside the mask, so the canvas shows the full original image with the removed regions tinted dark red. The green overlay on top is exactly what Apply will bring back. Erase doesn't do the swap, because erasing needs the current mask in view, not the original.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Does Reset destroy my brush edits permanently? <span class="faq-toggle">+</span></button>
+      <div class="faq-answer"><p>Reset wipes the current brush session and reverts to the auto-generated mask. Brush edits aren't baked into anything until you export, so resetting and starting over is always safe. The original auto-mask is always recoverable.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Can I undo a single brush stroke? <span class="faq-toggle">+</span></button>
+      <div class="faq-answer"><p>Brush strokes commit immediately, so there's no per-stroke undo. Color Select effectively acts as one for bigger edits, since nothing applies until you press Apply. For a fully clean slate, use Reset to revert to the auto-generated mask and start over.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Does the brush work without running background removal first? <span class="faq-toggle">+</span></button>
+      <div class="faq-answer"><p>No. The brush refines an existing mask, so background removal has to run at least once before the toolbar appears. Open a photo in Studio Mode, run the initial removal, then use the brush to clean up the result.</p></div>
+    </div>
+  </section>
+</article>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>Turn phone photos into marketplace-ready listings</h2>
+    <p class="sub">$49 one-time. No subscription. Runs on your computer.</p>
+    <a href="../index.html#pricing" class="nav-cta" data-umami-event="buy-now-article-footer" style="padding: 14px 32px; font-size: 16px;">Buy Now &mdash; $49</a>
+    <!-- @begin footer-links -->
+<div class="footer-links">
+  <span>&copy; 2026 ListingGems</span>
+  <a href="/features">Features</a>
+  <a href="/photoroom-alternative">Photoroom alternative</a>
+  <a href="/removebg-alternative">remove.bg alternative</a>
+  <a href="/blog/" data-umami-event="footer-blog">Blog</a>
+  <a href="/privacy">Privacy</a>
+  <a href="/terms">Terms</a>
+  <a href="/contact">Contact</a>
+  <a href="/download">Download</a>
+  <a href="/changelog">Changelog</a>
+</div>
+<!-- @end footer-links -->
+  </div>
+</section>
+
+</body>
+</html>
