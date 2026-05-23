@@ -1,11 +1,11 @@
 {
-  "version": "0.2.0",
-  "notes": "Fixes eraser brush bug. Misc improvements to brush UX and zoom behavior.",
-  "pub_date": "2026-05-21T13:00:00Z",
+  "version": "0.2.1",
+  "notes": "Color Select preview now shows exactly which pixels will be affected. Restore can highlight matching colors anywhere in the photo; tolerance scrubs live.",
+  "pub_date": "2026-05-23T08:30:00Z",
   "platforms": {
     "linux-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.2.0/ListingGems_0.2.0_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGc1ZTNTeG5ndmdWaExUMGFrcDNDWFYxSVZFTzI5Mkkrc1MrZG5HakVRSHkzNG5YcURvZkcwYmV1WHEveTVsNUpqaXd5R3BWcWhQUFVlL2lBNVpxd2c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5MzY2ODI1CWZpbGU6TGlzdGluZ0dlbXNfMC4yLjBfYW1kNjQuQXBwSW1hZ2UKRXE0dVNuWnFDUGJFemJreXc3Vnl1Y1BYVzhsSFoyWHVKUHBaVGJNYUlnWm5YOFhlZXBrOWV2SkRVWFFSMHpTZUhmcmlkQUJqbzVPSVVDdStHb2NyRFE9PQo="
+      "url": "https://dl.listinggems.com/releases/0.2.1/ListingGems_0.2.1_amd64.AppImage",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THZnK0dhSzZCamZqTzVTV3QrNHF5RlVaQUVVU2g4ZlB5dzZ2V2h3RjMyUWUwOFhBSWdJWmhTMytTMGFtR1pKT1JUYVVMcTlZVHl3NWNraXdrdS9EZ3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5NTE0MjU2CWZpbGU6TGlzdGluZ0dlbXNfMC4yLjFfYW1kNjQuQXBwSW1hZ2UKRy9kQVB3aUdrSUFWMHh0SlNLMTdPMUVYSHUvOHkwK2hQV0R5MnhGREtlSzdMMmt0OG5XQ1NPTEZtTSt3Y05HZWVxODdmVVRWdEJLVVgrL3VnNUFZREE9PQo="
     }
   }
 }

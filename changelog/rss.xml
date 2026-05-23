@@ -6,7 +6,22 @@
     <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2026 04:12:06 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2026 08:30:00 +0000</lastBuildDate>
+
+    <item>
+      <title>ListingGems 0.2.1</title>
+      <link>https://listinggems.com/changelog#v0-2-1</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-2-1</guid>
+      <pubDate>Sat, 23 May 2026 08:30:00 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Color Select preview now matches what Apply will do. The overlay shows exactly which pixels will be affected, including ones outside the current foreground. Restore can highlight matching colors anywhere in the photo.</li>
+          <li>When Restore is active, the canvas swaps to show the full original image with a dim tint over removed areas, so you can see what is about to come back into the mask. Tolerance scrubbing stays instant.</li>
+          <li>Erase keeps the regular product display to focus on what is being subtracted &mdash; no distraction from background pixels.</li>
+          <li>Flood fill no longer treats the existing mask edge as a wall, so a color region can be reached even when it spans across the foreground.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>ListingGems 0.2.0</title>

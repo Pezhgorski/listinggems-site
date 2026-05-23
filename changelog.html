@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="dda4e0e3-90be-4000-adc2-9bd30734d9ee"></script>
   <title>Changelog &mdash; ListingGems</title>
-  <meta name="description" content="Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers. Current version: 0.2.0.">
+  <meta name="description" content="Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers. Current version: 0.2.1.">
   <meta property="og:title" content="ListingGems Changelog">
   <meta property="og:description" content="Release notes and version history for ListingGems.">
   <meta property="og:type" content="website">
@@ -57,7 +57,7 @@
         "url": "https://listinggems.com/",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows, Linux",
-        "softwareVersion": "0.2.0",
+        "softwareVersion": "0.2.1",
         "offers": {
           "@type": "Offer",
           "price": "49",
@@ -80,6 +80,19 @@
         "name": "ListingGems Changelog",
         "description": "Release notes and version history for ListingGems.",
         "about": { "@id": "https://listinggems.com/#software" }
+      },
+      {
+        "@type": "Article",
+        "headline": "ListingGems 0.2.1",
+        "datePublished": "2026-05-23",
+        "url": "https://listinggems.com/changelog#v0-2-1",
+        "about": { "@id": "https://listinggems.com/#software" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "ListingGems",
+          "url": "https://listinggems.com/"
+        },
+        "articleBody": "Color Select brush preview now shows exactly which pixels will be affected when you press Apply. The preview overlay extends across the full original image with a dim tint over removed areas, so Restore can highlight matching colors anywhere in the photo. Tolerance scrubbing stays instant. Erase keeps the regular product display to focus on what is being subtracted. Flood fill no longer treats the existing mask edge as a wall, so a color region can be restored or erased even when it spans across the foreground."
       },
       {
         "@type": "Article",
@@ -180,6 +193,17 @@
     <h1>Changelog</h1>
     <p class="lead">Release notes and version history for ListingGems.</p>
     <p class="rss-link"><a href="changelog/rss.xml">Subscribe via RSS &rarr;</a></p>
+
+    <article class="release" id="v0-2-1">
+      <h2><a href="#v0-2-1">v0.2.1</a></h2>
+      <time datetime="2026-05-23">May 23, 2026</time>
+      <ul>
+        <li><strong>Color Select preview now matches what Apply will do.</strong> The overlay shows exactly which pixels will be affected, including ones outside the current foreground. Restore can highlight matching colors anywhere in the photo.</li>
+        <li>When Restore is active, the canvas swaps to show the full original image with a dim tint over removed areas, so you can see what is about to come back into the mask. Tolerance scrubbing stays instant.</li>
+        <li>Erase keeps the regular product display to focus on what is being subtracted &mdash; no distraction from background pixels.</li>
+        <li>Flood fill no longer treats the existing mask edge as a wall, so a color region can be reached even when it spans across the foreground.</li>
+      </ul>
+    </article>
 
     <article class="release" id="v0-2-0">
       <h2><a href="#v0-2-0">v0.2.0</a></h2>
