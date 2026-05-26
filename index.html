@@ -73,6 +73,14 @@
       },
       {
         "@type": "Question",
+        "name": "Why is it so much cheaper than Photoroom or remove.bg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The other tools run AI on their cloud GPUs, so every photo you process costs them server time — that's why they charge $13–35/month or per-credit. ListingGems runs on your computer's GPU, so processing has zero marginal cost on our end. That cost structure is what makes a $49 one-time price sustainable. It's also a solo-founder venture, not a VC-backed company — no investor pressure to maximize revenue per user means no subscriptions, no usage caps, no upsells."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Do I need internet to use it?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -132,7 +140,15 @@
         "name": "How does the money-back guarantee work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Full refund within 45 days, no questions asked. Just reach out and we'll process it immediately."
+          "text": "Full refund within 45 days, no questions asked. Email support@listinggems.com with your order number or purchase email, and we'll process it within 48 hours. See listinggems.com/refund for full details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who handles the payment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Checkout is processed by Creem (Armitage Labs OÜ, registered in Estonia), an EU-based payment provider for software companies. They handle the card form, PCI compliance, and VAT — ListingGems never sees or stores your card details. When you click Buy Now, you'll be taken to a Creem-hosted checkout page; that's expected."
         }
       },
       {
@@ -440,6 +456,19 @@
     .hero-guarantee {
       font-size: 13px;
       color: var(--text-muted);
+    }
+    .hero-guarantee a,
+    .pricing-guarantee a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: rgba(148, 163, 184, 0.4);
+      text-underline-offset: 3px;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+    .hero-guarantee a:hover,
+    .pricing-guarantee a:hover {
+      color: var(--emerald-deep);
+      text-decoration-color: var(--emerald-deep);
     }
 
     /* ═══════════════════════════════════════
@@ -1109,7 +1138,7 @@
           <a href="#pricing" class="btn-primary" data-umami-event="buy-now-hero">Buy Now &mdash; $49</a>
           <span class="price-old-hero">$79</span>
         </div>
-        <p class="hero-guarantee animate-in delay-3">45-day money-back guarantee &middot; No questions asked</p>
+        <p class="hero-guarantee animate-in delay-3"><a href="/refund" data-umami-event="guarantee-hero">45-day money-back guarantee</a> &middot; No questions asked</p>
       </div>
     </div>
   </div>
@@ -1475,7 +1504,7 @@
         <li>Free updates forever</li>
       </ul>
       <a href="https://www.creem.io/payment/prod_3h9qK2NG9j7ZDaIalnQc7V" class="btn-primary pricing-cta" data-umami-event="buy-now-pricing">Buy Now</a>
-      <p class="pricing-guarantee">45-day money-back guarantee &middot; No questions asked</p>
+      <p class="pricing-guarantee"><a href="/refund" data-umami-event="guarantee-pricing">45-day money-back guarantee</a> &middot; No questions asked</p>
     </div>
   </div>
 </section>
@@ -1488,6 +1517,10 @@
       <div class="faq-item">
         <button class="faq-question">Is this really a one-time purchase? No hidden fees? <span class="faq-toggle">+</span></button>
         <div class="faq-answer"><p>Yes. $49 and it's yours permanently. No subscriptions, no credits, no usage limits. Process one image or one million &mdash; same price. All future updates are included at no extra cost.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Why is it so much cheaper than Photoroom or remove.bg? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>The other tools run AI on their cloud GPUs, so every photo you process costs them server time &mdash; that&apos;s why they charge $13&ndash;35/month or per-credit. ListingGems runs on <em>your</em> computer&apos;s GPU, so processing has zero marginal cost on our end. That cost structure is what makes a $49 one-time price sustainable.</p><p>It&apos;s also a <a href="/about">solo-founder venture</a>, not a VC-backed company &mdash; no investor pressure to maximize revenue per user means no subscriptions, no usage caps, no upsells.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Do I need internet to use it? <span class="faq-toggle">+</span></button>
@@ -1527,7 +1560,11 @@
       </div>
       <div class="faq-item">
         <button class="faq-question">How does the money-back guarantee work? <span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><p>Full refund within 45 days, no questions asked. Just reach out and we'll process it immediately. We want you to buy with zero risk.</p></div>
+        <div class="faq-answer"><p>Full refund within 45 days, no questions asked. Email <a href="mailto:support@listinggems.com?subject=Refund%20request">support@listinggems.com</a> with your order number or purchase email, and we'll process it within 48 hours. You can also go through our payment provider Creem if you prefer &mdash; full details on the <a href="/refund">refund page</a>.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Who handles the payment? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Checkout is processed by <a href="https://www.creem.io" rel="noopener" target="_blank" style="color: var(--emerald-deep); font-weight: 600;">Creem</a> (Armitage Labs O&Uuml;, registered in Estonia), an EU-based payment provider for software companies. They handle the card form, PCI compliance, and VAT &mdash; ListingGems never sees or stores your card details. When you click Buy Now, you&apos;ll be taken to a Creem-hosted checkout page; that&apos;s expected.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Can I use it on multiple computers? <span class="faq-toggle">+</span></button>
@@ -1563,6 +1600,8 @@
   <a href="/blog/" data-umami-event="footer-blog">Blog</a>
   <a href="/privacy">Privacy</a>
   <a href="/terms">Terms</a>
+  <a href="/refund">Refund</a>
+  <a href="/about">About</a>
   <a href="/contact">Contact</a>
   <a href="/download">Download</a>
   <a href="/changelog">Changelog</a>

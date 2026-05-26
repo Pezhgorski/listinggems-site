@@ -41,6 +41,16 @@
     <priority>0.2</priority>
   </url>
   <url>
+    <loc>https://listinggems.com/refund</loc>
+    <lastmod>2026-05-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://listinggems.com/about</loc>
+    <lastmod>2026-05-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://listinggems.com/blog/</loc>
     <lastmod>2026-05-19</lastmod>
     <priority>0.7</priority>
