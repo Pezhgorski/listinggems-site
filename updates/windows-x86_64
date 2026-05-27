@@ -1,11 +1,11 @@
 {
-  "version": "0.2.1",
-  "notes": "Color Select preview now matches what Apply will do, including pixels outside the foreground.",
-  "pub_date": "2026-05-23T08:48:50Z",
+  "version": "0.2.2",
+  "notes": "Now accepts .jfif input files.",
+  "pub_date": "2026-05-27T05:56:46Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.2.1/ListingGems_0.2.1_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TG4wNTNCeWVrT1ZJZFZ4QUxMVnlSTGkza25sSTBVajFkRzAzN0hxSmZoZmx2VzI5SjB4TWNtUHJ3QkxOcnA1UjZyUURQZTNUaDVGekNCT1p5U013QVFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5NTE1MzMxCWZpbGU6TGlzdGluZ0dlbXNfMC4yLjFfeDY0LXNldHVwLmV4ZQpJak5lTFRmakwyNng0NGpUVE83Y0xjN0lBM0QrNUthaXpCeFM3aFQwaDBRaVJSazR4bFk4S29OWlR6a1RrdHgxTXVubkhoVWdrbnhKdUJZWE5rSDdDQT09Cg=="
+      "url": "https://dl.listinggems.com/releases/0.2.2/ListingGems_0.2.2_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THZHdUEwaEt0T2tZeW52d2M4WWxZd0FiZkk4WHhsNmRIOGpOcmZ1UW5BcUdCeUUwM285M1p5b3pncUR3NHhyRXgrYXBqdGEvM3ZJZkxRMXZYRHExZHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5ODYxNDA3CWZpbGU6TGlzdGluZ0dlbXNfMC4yLjJfeDY0LXNldHVwLmV4ZQpoU2t5bU5MSFN0Q0J3eWIvSnFIK0dnUERhSlpMQkRFTldXUXB2VFdhVFo0MUVEdHl4NDhQK2EwZXFvQnROQkZsOXN5dkFMNUIvNGNYUSsyeUZ3ZGFCdz09Cg=="
     }
   }
 }
