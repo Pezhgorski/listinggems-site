@@ -1,11 +1,11 @@
 {
-  "version": "0.2.1",
-  "notes": "Color Select preview now shows exactly which pixels will be affected. Restore can highlight matching colors anywhere in the photo; tolerance scrubs live.",
-  "pub_date": "2026-05-23T08:30:00Z",
+  "version": "0.2.2",
+  "notes": "Adds support for .jfif input files (some phone cameras and web tools save JPEGs with this extension).",
+  "pub_date": "2026-05-23T14:00:00Z",
   "platforms": {
     "linux-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.2.1/ListingGems_0.2.1_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THZnK0dhSzZCamZqTzVTV3QrNHF5RlVaQUVVU2g4ZlB5dzZ2V2h3RjMyUWUwOFhBSWdJWmhTMytTMGFtR1pKT1JUYVVMcTlZVHl3NWNraXdrdS9EZ3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5NTE0MjU2CWZpbGU6TGlzdGluZ0dlbXNfMC4yLjFfYW1kNjQuQXBwSW1hZ2UKRy9kQVB3aUdrSUFWMHh0SlNLMTdPMUVYSHUvOHkwK2hQV0R5MnhGREtlSzdMMmt0OG5XQ1NPTEZtTSt3Y05HZWVxODdmVVRWdEJLVVgrL3VnNUFZREE9PQo="
+      "url": "https://dl.listinggems.com/releases/0.2.2/ListingGems_0.2.2_amd64.AppImage",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGdWbEVpckhPZGRDNmZCTTdpZlRLenkyUmdvQnhqQ1pxOTNUa1NUbzc2M2lZcGVLRlRzUlM4S0h1dnJrVFlYUWRCdW9DUk1ZM2RUQkh1U3I1dk9IUWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5ODY5ODQ4CWZpbGU6TGlzdGluZ0dlbXNfMC4yLjJfYW1kNjQuQXBwSW1hZ2UKdWNNaU9uNVp3UXRxS2Nab0E5aTd2NE9XaytadHFlVVYvZWZmY2JUazI1YWIwWkpCUWQ0KzgyMGErYldzSy9FdThBZDM4cy8xNlp4M0g2djR1Y3VwQmc9PQo="
     }
   }
 }
