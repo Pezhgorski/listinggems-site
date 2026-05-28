@@ -1,11 +1,11 @@
 {
-  "version": "0.2.2",
-  "notes": "Adds support for .jfif input files (some phone cameras and web tools save JPEGs with this extension).",
-  "pub_date": "2026-05-23T14:00:00Z",
+  "version": "0.2.3",
+  "notes": "Fixes a memory leak that caused RAM usage to grow per processed photo on CPU mode. Recommended update for Windows users without a supported GPU.",
+  "pub_date": "2026-05-27T09:00:00Z",
   "platforms": {
     "linux-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.2.2/ListingGems_0.2.2_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGdWbEVpckhPZGRDNmZCTTdpZlRLenkyUmdvQnhqQ1pxOTNUa1NUbzc2M2lZcGVLRlRzUlM4S0h1dnJrVFlYUWRCdW9DUk1ZM2RUQkh1U3I1dk9IUWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5ODY5ODQ4CWZpbGU6TGlzdGluZ0dlbXNfMC4yLjJfYW1kNjQuQXBwSW1hZ2UKdWNNaU9uNVp3UXRxS2Nab0E5aTd2NE9XaytadHFlVVYvZWZmY2JUazI1YWIwWkpCUWQ0KzgyMGErYldzSy9FdThBZDM4cy8xNlp4M0g2djR1Y3VwQmc9PQo="
+      "url": "https://dl.listinggems.com/releases/0.2.3/ListingGems_0.2.3_amd64.AppImage",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TG95MUtpeDhhVmtKUmcrbnhRMnFWVUM2bGdOcVQ4VUpVWW9ucVViemhCMDREbU5BM1JVaGI4NTRPRFVHSDl3QWxRQjNZTndzR1hvbjlmaHdqcG5ZblFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5OTU0NzA3CWZpbGU6TGlzdGluZ0dlbXNfMC4yLjNfYW1kNjQuQXBwSW1hZ2UKc0ltUFJXalpzbEJpREFsV1dUR1NhWlVraFlWTXVGMTJrK21qcUJDTWpTa2ZFSjQ3ZW1UeDZRZGhzR2NLcUpBL2NGditrZlZJUDdlTTZXRWFKSnNEQ1E9PQo="
     }
   }
 }

@@ -6,7 +6,19 @@
     <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 May 2026 14:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 09:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>ListingGems 0.2.3</title>
+      <link>https://listinggems.com/changelog#v0-2-3</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-2-3</guid>
+      <pubDate>Wed, 27 May 2026 09:00:00 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Fixes a memory leak that caused RAM usage to grow by hundreds of megabytes per processed photo on CPU mode. Affected Windows users without a supported GPU most. After this update, RAM usage stays stable across a long batch.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>ListingGems 0.2.2</title>
