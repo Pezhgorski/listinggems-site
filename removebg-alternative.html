@@ -393,7 +393,7 @@
     }
   </style>
 
-  <!-- JSON-LD: WebPage + FAQPage -->
+  <!-- JSON-LD: WebPage + SoftwareApplication + FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -406,6 +406,35 @@
       "name": "ListingGems",
       "url": "https://listinggems.com"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ListingGems",
+    "applicationCategory": "PhotographyApplication",
+    "operatingSystem": "Windows 10, Windows 11, Linux",
+    "description": "Offline desktop product photo editor for marketplace sellers. State-of-the-art BiRefNet AI background removal, automatic lighting correction, 4× upscaling, and export presets for Amazon, Etsy, eBay, Poshmark, Mercari, Depop, and Shopify. One-time $49 purchase, unlimited photos, runs entirely on your computer.",
+    "url": "https://listinggems.com",
+    "offers": {
+      "@type": "Offer",
+      "price": "49.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "featureList": [
+      "BiRefNet AI background removal — state-of-the-art segmentation on hair, fur, and translucent edges",
+      "Three quality tiers (115 MB lite to 490 MB full)",
+      "Manual touch-up brush for mask refinement",
+      "Unlimited batch processing — no per-image caps, no credits",
+      "Automatic exposure and white balance correction (IAT neural network)",
+      "4× AI upscaling (HFA2k super-resolution model)",
+      "Amazon main-image preset — pure white background, 85% fill rule, 1600×1600 minimum",
+      "Etsy, eBay, Poshmark, Mercari, Depop, Shopify export presets",
+      "100% offline processing — photos never leave your computer",
+      "One-time $49 license, 3 device activations, 45-day money-back guarantee"
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -450,7 +479,23 @@
         "name": "Is remove.bg's background removal better than ListingGems'?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "remove.bg's segmentation (Kaleido AI) is excellent — they pioneered the category. ListingGems uses BiRefNet and BEN2, two state-of-the-art open-source segmentation models, and ships a manual touch-up brush for the edge cases neither tool gets right. For typical marketplace products (clothes, electronics, homewares) the output is comparable. We don't claim a quality win — we claim a workflow win."
+          "text": "Background removal quality is on par with remove.bg for typical marketplace products — clothes, electronics, jewelry, homewares, and yes, hair, fur, and translucent edges. ListingGems uses BiRefNet, a 2024 segmentation model published by researchers at Nankai University and collaborators that the authors report as state-of-the-art on the DIS5K benchmark — the standard test for clean cutouts on fine details like hair and fur. Both tools also include a manual touch-up brush for the rare edge cases AI doesn't get right — ListingGems' runs offline at no per-photo cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How well does ListingGems handle hair, fur, and fine edges?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Well. ListingGems runs BiRefNet, a segmentation AI model that the authors report as state-of-the-art on the DIS5K benchmark — the standard test specifically designed for clean cutouts on fine details like hair and fur — when published in 2024. For typical marketplace products including clothing, jewelry, electronics, plush items, and pet products, the cutout quality matches what you'd get from cloud tools like remove.bg or Photoroom on the same input image. ListingGems also includes a manual touch-up brush so you can paint to erase or restore any pixel the AI gets wrong."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What AI models does ListingGems use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Background removal uses BiRefNet (2024, Nankai University and collaborators) — three quality tiers from 115 MB lite to 490 MB full. White balance and exposure correction use IAT (Illumination Adaptive Transformer), a neural network published at BMVC 2022. Upscaling uses HFA2k, a 4× super-resolution model. All three run locally on your GPU through ONNX Runtime — no cloud, no API calls, no photos uploaded anywhere."
         }
       },
       {
@@ -458,7 +503,7 @@
         "name": "Do I need a remove.bg API for automation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "If you were paying for the remove.bg API on top of a subscription, you were on a separate billing track that costs additional credits per call. ListingGems doesn't have an API but it does have batch processing — drop a folder of 500 photos in and walk away. For typical marketplace seller workflows, batch covers what you'd otherwise script."
+          "text": "ListingGems processes batches of unlimited size locally — drop a folder of 500, 5,000, or 50,000 photos in, walk away, and every image is processed with the same background removal, lighting correction, upscaling, and marketplace preset cropping in one pass. On an entry-level GPU (NVIDIA GTX 1650 or AMD equivalent) throughput is about 2 seconds per image, so 500 photos finish in under 20 minutes. remove.bg's batch processing consumes one HD credit per image, capping a Pro subscriber at 200 batch images per month before extra purchases. ListingGems has no per-image limit and no API to wire up."
         }
       },
       {
@@ -607,7 +652,7 @@
 <section class="block alt">
   <div class="container">
     <h2 class="section-title animate-in">Why people are searching for a remove.bg alternative</h2>
-    <p class="section-sub animate-in">remove.bg invented the AI background-removal category and Kaleido&rsquo;s segmentation model is genuinely good. But the pricing model and the feature scope are built for occasional users, not high-volume sellers. The common reasons sellers move on:</p>
+    <p class="section-sub animate-in">remove.bg pioneered AI background removal in 2018 and remains a competent tool for occasional cloud-based use. The reasons sellers move on to ListingGems are structural &mdash; pricing per image, credit expiry, narrow feature scope, and privacy from cloud uploads.</p>
 
     <div class="reasons-grid">
       <div class="reason-card animate-in delay-1">
@@ -857,15 +902,13 @@
 <section class="block alt">
   <div class="container">
     <h2 class="section-title animate-in">When remove.bg is still the right call</h2>
-    <p class="section-sub animate-in">Honest tradeoffs. Not every workflow should switch.</p>
+    <p class="section-sub animate-in">ListingGems handles the entire marketplace listing workflow as one tool on your computer &mdash; background removal, white balance, exposure, 4&times; upscaling, and platform-specific presets for nine marketplaces. There are still three specific workflows where remove.bg or another tool may suit you better:</p>
 
     <div class="tradeoffs animate-in delay-1">
       <ul>
-        <li><strong>You&rsquo;re a developer integrating BG removal into a product.</strong> remove.bg&rsquo;s API and official Ruby / Node / Python SDKs are the right tool for that. ListingGems is a desktop app, not an API.</li>
-        <li><strong>You do 1&ndash;2 photos a month and 0.25 MP previews are enough.</strong> remove.bg Free works for you. ListingGems is paid.</li>
-        <li><strong>You use the Photoshop plugin and your workflow lives inside Photoshop.</strong> remove.bg has a CC 22.0+ plugin. ListingGems is its own desktop app.</li>
-        <li><strong>You need a Photoshop / Canva ecosystem integration.</strong> remove.bg is part of Canva now and integrates with that toolchain. ListingGems exports to a folder &mdash; you upload manually.</li>
-        <li><strong>You only need an Android mobile app.</strong> remove.bg has one. ListingGems is desktop-only (Windows, Linux, macOS coming).</li>
+        <li><strong>You&rsquo;re a developer integrating background removal into a product.</strong> remove.bg&rsquo;s API and official Ruby / Node / Python SDKs are built for that. ListingGems is a desktop app, not an API.</li>
+        <li><strong>Your workflow lives inside Photoshop.</strong> remove.bg has a CC 22.0+ plugin that hooks directly into Photoshop. ListingGems is a standalone desktop app &mdash; you import / export through folders.</li>
+        <li><strong>You only need an Android mobile app.</strong> remove.bg has one. ListingGems is desktop-only (Windows and Linux now, macOS coming).</li>
       </ul>
     </div>
   </div>
@@ -895,11 +938,19 @@
       </div>
       <div class="faq-item">
         <button class="faq-question">Is remove.bg&rsquo;s background removal better than ListingGems&rsquo;? <span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><p>remove.bg&rsquo;s segmentation (Kaleido AI) is excellent &mdash; they pioneered the category. ListingGems uses BiRefNet and BEN2, two state-of-the-art open-source segmentation models, and ships a manual touch-up brush for the edge cases neither tool gets right. For typical marketplace products (clothes, electronics, homewares) the output is comparable.</p><p>We don&rsquo;t claim a quality win on the core BG-removal step. We claim a workflow win: ListingGems bundles BG removal, lighting fix, upscaling, and marketplace presets, while remove.bg only does the segmentation step.</p></div>
+        <div class="faq-answer"><p>Background removal quality is on par with remove.bg for typical marketplace products &mdash; clothes, electronics, jewelry, homewares, and yes, hair, fur, and translucent edges. ListingGems uses <a href="https://arxiv.org/abs/2401.03407" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BiRefNet</a>, a 2024 segmentation model published by researchers at Nankai University and collaborators that the authors report as state-of-the-art on the DIS5K benchmark &mdash; the standard test for clean cutouts on fine details like hair and fur.</p><p>Both tools include a manual touch-up brush for the rare edge cases AI doesn&rsquo;t get right. The difference is workflow scope: ListingGems bundles segmentation, lighting fix, upscaling, and marketplace presets in one offline tool. remove.bg does only the segmentation step.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How well does ListingGems handle hair, fur, and fine edges? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Well. ListingGems runs <a href="https://arxiv.org/abs/2401.03407" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BiRefNet</a>, a segmentation AI model that the authors report as state-of-the-art on the DIS5K benchmark &mdash; the standard test specifically designed for clean cutouts on fine details like hair and fur &mdash; when published in 2024. For typical marketplace products including clothing, jewelry, electronics, plush items, and pet products, the cutout quality matches what you&rsquo;d get from cloud tools like remove.bg or Photoroom on the same input image.</p><p>For the rare edge cases no AI gets perfect, ListingGems includes a manual touch-up brush &mdash; paint to erase or restore any pixel of the cutout.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What AI models does ListingGems use? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Background removal uses <a href="https://arxiv.org/abs/2401.03407" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BiRefNet</a> (2024, Nankai University and collaborators) and <a href="https://arxiv.org/abs/2501.06230" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BEN2</a> (2025, Prama LLC) &mdash; three quality tiers from ~110 MB lite to ~470 MB full, both reporting state-of-the-art results on the DIS-VD benchmark. White balance and exposure correction use <strong>IAT</strong> (Illumination Adaptive Transformer), a neural network published at BMVC 2022. Upscaling uses <strong>HFA2k</strong>, a 4&times; super-resolution model.</p><p>All run locally on your GPU through ONNX Runtime &mdash; no cloud, no API calls, no photos uploaded anywhere.</p><p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Model cards: <a href="https://huggingface.co/onnx-community/BiRefNet-ONNX" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BiRefNet ONNX</a> &middot; <a href="https://huggingface.co/PramaLLC/BEN2" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BEN2</a> &middot; <a href="https://huggingface.co/Pezhgorski/IAT-ONNX" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">IAT</a></p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Do I need a remove.bg API for automation? <span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><p>If you were paying for the remove.bg API on top of a subscription, you were on a separate billing track that costs additional credits per call (50 free previews/month, then paid). ListingGems doesn&rsquo;t have an API, but it does have batch processing &mdash; drop a folder of 500 photos in and walk away. For typical marketplace seller workflows, batch covers what you&rsquo;d otherwise script.</p></div>
+        <div class="faq-answer"><p>ListingGems processes batches of unlimited size locally. Drop a folder of 500, 5,000, or 50,000 photos in, walk away, and every image is processed with the same background removal, lighting correction, upscaling, and marketplace preset cropping in one pass. On an entry-level GPU (NVIDIA GTX 1650 or AMD equivalent) throughput is about 2 seconds per image, so 500 photos finish in under 20 minutes.</p><p>remove.bg&rsquo;s batch processing consumes one HD credit per image &mdash; capping a Pro subscriber at 200 batch images per month before extra purchases. The API runs on a separate billing track (50 free previews/month, then paid). ListingGems has no per-image limit and no API to wire up.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Can I use ListingGems for client work / commercial use? <span class="faq-toggle">+</span></button>

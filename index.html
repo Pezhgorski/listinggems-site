@@ -81,10 +81,26 @@
       },
       {
         "@type": "Question",
+        "name": "What AI models does ListingGems use for background removal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three models to choose from: BiRefNet full (470 MB, highest quality), BEN2 (210 MB, balanced), and BiRefNet lite (110 MB, fastest). Both BiRefNet (2024, Nankai University and collaborators) and BEN2 (2025, Prama LLC) report state-of-the-art results on the DIS-VD benchmark — the standard test for clean cutouts on fine details like hair, fur, and translucent edges. BEN's 2025 paper edges out BiRefNet by a small margin on this benchmark (S-measure 0.917 vs 0.905). For typical marketplace products the segmentation quality matches what you'd get from cloud tools like remove.bg or Photoroom."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the lite model good enough? How does it compare to the full?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Very close. On the BiRefNet authors' own DIS-VD benchmarks, the lite model scores about 95–97% of the full model on the main segmentation metrics (S-measure 0.882 vs 0.911, weighted F-measure 0.830 vs 0.875). In practice on typical marketplace products — clothes, shoes, electronics, jewelry, homewares — the difference is hard to spot, which is why we ship lite as an option. The full model has a noticeable edge on the very hardest cases (long flyaway hair, fine lace, semi-transparent fabrics, complex fur patterns), so pick full if you do a lot of those, or BEN2 if you want balanced quality with a smaller download than the full BiRefNet."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Do I need internet to use it?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Only for the initial model download (115–490 MB depending on the model you choose). After that, ListingGems works completely offline. No cloud, no API calls, no data sent anywhere."
+          "text": "Only for the initial model download (about 110–470 MB depending on the model you choose). After that, ListingGems works completely offline. No cloud, no API calls, no data sent anywhere."
         }
       },
       {
@@ -1524,8 +1540,16 @@
         <div class="faq-answer"><p>The other tools run AI on their cloud GPUs, so every photo you process costs them server time &mdash; that&apos;s why they charge $13&ndash;35/month or per-credit. ListingGems runs on <em>your</em> computer&apos;s GPU, so processing has zero marginal cost on our end. That cost structure is what makes a $49 one-time price sustainable.</p><p>It&apos;s also a <a href="/about">solo-founder venture</a>, not a VC-backed company &mdash; no investor pressure to maximize revenue per user means no subscriptions, no usage caps, no upsells.</p></div>
       </div>
       <div class="faq-item">
+        <button class="faq-question">What AI models does ListingGems use for background removal? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Three models to choose from:</p><ul style="margin: 8px 0 12px 20px; line-height: 1.7;"><li><strong>BiRefNet full</strong> (~470 MB) &mdash; highest quality</li><li><strong>BEN2</strong> (~210 MB) &mdash; balanced</li><li><strong>BiRefNet lite</strong> (~110 MB) &mdash; fastest</li></ul><p>Both <a href="https://arxiv.org/abs/2401.03407" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BiRefNet</a> (2024, Nankai University and collaborators) and <a href="https://arxiv.org/abs/2501.06230" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BEN2</a> (2025, Prama LLC) report state-of-the-art results on the DIS-VD benchmark &mdash; the standard test for clean cutouts on fine details like hair, fur, and translucent edges. BEN&rsquo;s 2025 paper edges out BiRefNet by a small margin (S-measure 0.917 vs 0.905). For typical marketplace products the segmentation quality matches what you&rsquo;d get from cloud tools like remove.bg or Photoroom.</p><p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Model cards: <a href="https://huggingface.co/onnx-community/BiRefNet-ONNX" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BiRefNet ONNX</a> &middot; <a href="https://huggingface.co/PramaLLC/BEN2" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BEN2</a></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is the lite model good enough? How does it compare to the full? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Very close. On the <a href="https://github.com/ZhengPeng7/BiRefNet" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BiRefNet authors&rsquo; own DIS-VD benchmarks</a>, the lite model scores about <strong>95&ndash;97% of the full model</strong> on the main segmentation metrics (S-measure 0.882 vs 0.911, weighted F-measure 0.830 vs 0.875). In practice on typical marketplace products &mdash; clothes, shoes, electronics, jewelry, homewares &mdash; the difference is hard to spot, which is why we ship lite as an option.</p><p>The full model has a noticeable edge on the very hardest cases: long flyaway hair, fine lace, semi-transparent fabrics, complex fur patterns. Pick full if you do a lot of those, or BEN2 if you want balanced quality with a smaller download than the full BiRefNet.</p></div>
+      </div>
+      <div class="faq-item">
         <button class="faq-question">Do I need internet to use it? <span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><p>Only for the initial model download (115&ndash;490 MB depending on the model you choose). After that, ListingGems works completely offline. No cloud, no API calls, no data sent anywhere.</p></div>
+        <div class="faq-answer"><p>Only for the initial model download (about 110&ndash;470 MB depending on the model you choose). After that, ListingGems works completely offline. No cloud, no API calls, no data sent anywhere.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Do I need a powerful computer? <span class="faq-toggle">+</span></button>

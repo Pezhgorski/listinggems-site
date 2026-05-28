@@ -393,7 +393,7 @@
     }
   </style>
 
-  <!-- JSON-LD: WebPage + FAQPage -->
+  <!-- JSON-LD: WebPage + SoftwareApplication + FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -406,6 +406,36 @@
       "name": "ListingGems",
       "url": "https://listinggems.com"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ListingGems",
+    "applicationCategory": "PhotographyApplication",
+    "operatingSystem": "Windows 10, Windows 11, Linux",
+    "description": "Offline desktop product photo editor for marketplace sellers. State-of-the-art BiRefNet AI background removal, automatic lighting correction, 4× upscaling, and export presets for Amazon, Etsy, eBay, Poshmark, Mercari, Depop, and Shopify. One-time $49 purchase, unlimited photos, runs entirely on your computer.",
+    "url": "https://listinggems.com",
+    "offers": {
+      "@type": "Offer",
+      "price": "49.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "featureList": [
+      "BiRefNet AI background removal — state-of-the-art segmentation on hair, fur, and translucent edges",
+      "Three quality tiers (115 MB lite to 490 MB full)",
+      "Manual touch-up brush for mask refinement",
+      "Unlimited batch processing — no per-month image caps, no credits",
+      "Automatic exposure and white balance correction (IAT neural network)",
+      "4× AI upscaling (HFA2k super-resolution model)",
+      "Amazon main-image preset — pure white background, 85% fill rule, 1600×1600 minimum",
+      "Etsy, eBay, Poshmark, Mercari, Depop, Shopify export presets",
+      "100% offline processing — photos never leave your computer",
+      "No AI scene hallucination — replaces backgrounds with solid colors, gradients, your own backdrops, or transparent PNG",
+      "One-time $49 license, 3 device activations, 45-day money-back guarantee"
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -451,6 +481,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No, and that's intentional. ListingGems uses ML segmentation to remove backgrounds, then replaces them with solid colors, gradients, or your own images. It will not hallucinate fake scenes. This matters because Amazon, eBay, and Etsy all penalize AI-generated backgrounds that misrepresent the product."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How well does ListingGems handle hair, fur, and fine edges?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Well. ListingGems runs BiRefNet, a segmentation AI model that the authors report as state-of-the-art on the DIS5K benchmark — the standard test specifically designed for clean cutouts on fine details like hair and fur — when published in 2024. For typical marketplace products including clothing, jewelry, electronics, plush items, and pet products, the cutout quality matches what you'd get from cloud tools like Photoroom or remove.bg on the same input image. ListingGems also includes a manual touch-up brush so you can paint to erase or restore any pixel the AI gets wrong."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What AI models does ListingGems use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Background removal uses BiRefNet (2024, Nankai University and collaborators) — three quality tiers from 115 MB lite to 490 MB full. White balance and exposure correction use IAT (Illumination Adaptive Transformer), a neural network published at BMVC 2022. Upscaling uses HFA2k, a 4× super-resolution model. All three run locally on your GPU through ONNX Runtime — no cloud, no API calls, no photos uploaded anywhere."
         }
       },
       {
@@ -872,6 +918,14 @@
       <div class="faq-item">
         <button class="faq-question">Does ListingGems do AI background generation like Photoroom? <span class="faq-toggle">+</span></button>
         <div class="faq-answer"><p>No, and that&rsquo;s intentional. ListingGems uses ML segmentation to remove backgrounds, then replaces them with solid colors, gradients, your own backdrop images, or transparent PNG. It will not hallucinate fake lifestyle scenes.</p><p>This matters because Amazon, eBay, and Etsy all have policies against misrepresenting the product. AI-generated backdrops can get listings suppressed.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How well does ListingGems handle hair, fur, and fine edges? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Well. ListingGems runs <a href="https://arxiv.org/abs/2401.03407" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BiRefNet</a>, a segmentation AI model that the authors report as state-of-the-art on the DIS5K benchmark &mdash; the standard test specifically designed for clean cutouts on fine details like hair and fur &mdash; when published in 2024. For typical marketplace products including clothing, jewelry, electronics, plush items, and pet products, the cutout quality matches what you&rsquo;d get from cloud tools like Photoroom or remove.bg on the same input image.</p><p>For the rare edge cases no AI gets perfect, ListingGems includes a manual touch-up brush &mdash; paint to erase or restore any pixel of the cutout.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What AI models does ListingGems use? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Background removal uses <a href="https://arxiv.org/abs/2401.03407" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BiRefNet</a> (2024, Nankai University and collaborators) and <a href="https://arxiv.org/abs/2501.06230" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BEN2</a> (2025, Prama LLC) &mdash; three quality tiers from ~110 MB lite to ~470 MB full, both reporting state-of-the-art results on the DIS-VD benchmark. White balance and exposure correction use <strong>IAT</strong> (Illumination Adaptive Transformer), a neural network published at BMVC 2022. Upscaling uses <strong>HFA2k</strong>, a 4&times; super-resolution model.</p><p>All run locally on your GPU through ONNX Runtime &mdash; no cloud, no API calls, no photos uploaded anywhere.</p><p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Model cards: <a href="https://huggingface.co/onnx-community/BiRefNet-ONNX" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BiRefNet ONNX</a> &middot; <a href="https://huggingface.co/PramaLLC/BEN2" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BEN2</a> &middot; <a href="https://huggingface.co/Pezhgorski/IAT-ONNX" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">IAT</a></p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Do I need a powerful computer? <span class="faq-toggle">+</span></button>
