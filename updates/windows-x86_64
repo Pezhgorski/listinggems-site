@@ -1,11 +1,11 @@
 {
-  "version": "0.2.2",
-  "notes": "Now accepts .jfif input files.",
-  "pub_date": "2026-05-27T05:56:46Z",
+  "version": "0.2.3",
+  "notes": "Fixes CPU-mode memory leak: RAM stays stable across long batches.",
+  "pub_date": "2026-05-28T17:23:00Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.2.2/ListingGems_0.2.2_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THZHdUEwaEt0T2tZeW52d2M4WWxZd0FiZkk4WHhsNmRIOGpOcmZ1UW5BcUdCeUUwM285M1p5b3pncUR3NHhyRXgrYXBqdGEvM3ZJZkxRMXZYRHExZHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5ODYxNDA3CWZpbGU6TGlzdGluZ0dlbXNfMC4yLjJfeDY0LXNldHVwLmV4ZQpoU2t5bU5MSFN0Q0J3eWIvSnFIK0dnUERhSlpMQkRFTldXUXB2VFdhVFo0MUVEdHl4NDhQK2EwZXFvQnROQkZsOXN5dkFMNUIvNGNYUSsyeUZ3ZGFCdz09Cg=="
+      "url": "https://dl.listinggems.com/releases/0.2.3/ListingGems_0.2.3_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TG82RHQzQm9EdXFoWFFTbXJHVXEzRDN3QkpNYWJSMTZ2RGpGUGE1Y3dHY0Y1Z2ZPTSs3SUF6QU1ieGcvbVZoVWRqYVhMVHErUkhkY09MZUsyT0ZKY2d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5OTg4OTgxCWZpbGU6TGlzdGluZ0dlbXNfMC4yLjNfeDY0LXNldHVwLmV4ZQozdHhOWU5hNmZTTW1ObTJ4K0xFWkdSNlRUUER4SXcwYitQQXJvN2hpNVV1WkhFd3owbnVMRHVCMitOSnFNR09tQWc5Z09lb1lNbzZrL004OUtrOExDdz09Cg=="
     }
   }
 }
