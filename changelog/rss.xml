@@ -6,7 +6,21 @@
     <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 May 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 13:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>ListingGems 0.3.0</title>
+      <link>https://listinggems.com/changelog#v0-3-0</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-3-0</guid>
+      <pubDate>Wed, 03 Jun 2026 13:00:00 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Free trial &mdash; you can now try ListingGems free for 7 days before buying. Process your own photos and see the results, no charge, right on your machine.</li>
+          <li>Your license now becomes permanently valid offline once you're past the refund window &mdash; after that point ListingGems no longer needs to check in online to keep working.</li>
+          <li>Hardened license validation under the hood for better security and reliability. Existing licenses migrate automatically the first time you open this version.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>ListingGems 0.2.3</title>
