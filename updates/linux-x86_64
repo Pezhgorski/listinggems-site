@@ -1,11 +1,11 @@
 {
-  "version": "0.3.0",
-  "notes": "Your license now works offline for good once you're past the refund window — no more periodic online checks. Plus behind-the-scenes security and reliability improvements to licensing.",
-  "pub_date": "2026-06-03T13:00:00Z",
+  "version": "0.3.1",
+  "notes": "If you're on a free trial, you can now enter your license key right inside the app — no need to reinstall after you buy. The trial banner's \"Buy a license\" link and the License button both open the new activation screen.",
+  "pub_date": "2026-06-04T18:10:00Z",
   "platforms": {
     "linux-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.3.0/ListingGems_0.3.0_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGlQTTdqcTRqUDlVNXFYbDAvK3ByUUIzU0NmT2RvUlk5Y2RGOWkvU3BXZnVyTFlvVDYvOW11SWR2b296SkMyUGVITWJlb0lJeFNOaU0yOXI3REtRVFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNDg5MDY3CWZpbGU6TGlzdGluZ0dlbXNfMC4zLjBfYW1kNjQuQXBwSW1hZ2UKNDZTYkZxL1UyQXlMZUphRXQ1d0hDdGFZSXdZWlVqODMwaUVhd08wb2ZxaWY1NkQvWHEwU0pKRUlqTDh4R056dWx3NkdiMFFlMzNxZEZ6bjRiLzBiQWc9PQo="
+      "url": "https://dl.listinggems.com/releases/0.3.1/ListingGems_0.3.1_amd64.AppImage",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THY5T0tFTzAzNEZOeWpBWFlTbHB6SFpQNnBvbVlCUWsrWERTMWlIUlhVdFZqcmVQdDVtQzljZHhDZHFDSnFoN2pwUXpGZ2ljVFVVRUI2Wkg3VmJvTFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNTkyNTg2CWZpbGU6TGlzdGluZ0dlbXNfMC4zLjFfYW1kNjQuQXBwSW1hZ2UKaWFCU0xWbjRiTnpyVWVxRlZXbUdwTEtscXRqVmNndXdUTkZPZnM2KytOOTA4dzBLdzZyVzR1cnFFY2ZyZmtEUEhsd2hmVnBic0N5Q1dlWWFWMEVoQVE9PQo="
     }
   }
 }
