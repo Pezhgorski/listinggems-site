@@ -1,6 +1,6 @@
 {
   "version": "0.3.1",
-  "notes": "Activate a license without reinstalling — paste your key from the new in-app activation screen.",
+  "notes": "Added trial, telemetry to improve service, see the changelog.html for more info",
   "pub_date": "2026-06-04T17:17:15Z",
   "platforms": {
     "windows-x86_64": {
