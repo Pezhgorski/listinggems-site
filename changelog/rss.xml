@@ -6,7 +6,19 @@
     <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Jun 2026 13:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2026 17:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>ListingGems 0.3.1</title>
+      <link>https://listinggems.com/changelog#v0-3-1</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-3-1</guid>
+      <pubDate>Thu, 04 Jun 2026 17:00:00 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Trial users can now activate a license without leaving the app. The trial banner's &ldquo;Buy a license&rdquo; link and the License button both open a new activation screen where you can paste your key and unlock ListingGems, or head to checkout if you haven't bought yet &mdash; no reinstall needed after purchase.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>ListingGems 0.3.0</title>
