@@ -1,6 +1,6 @@
 {
   "version": "0.3.1",
-  "notes": "Added trial, telemetry to improve service, see the changelog.html for more info",
+  "notes": "Windows skipped 0.3.0, so this update bundles two releases:\n\n• 7-day free trial — try the app before buying, runs entirely on your machine.\n• In-app license activation — paste your key from the new activation screen, no reinstall needed.\n• Permanent offline license validity once you're past the refund window — no more online check-ins.\n• Hardened license validation under the hood. Existing licenses migrate automatically.\n• Opt-out anonymous telemetry to help us spot bugs and improve the app. Disable it in settings any time.\n\nFull details at https://listinggems.com/changelog",
   "pub_date": "2026-06-04T17:17:15Z",
   "platforms": {
     "windows-x86_64": {
