@@ -30,6 +30,7 @@
           <li>Free trial &mdash; you can now try ListingGems free for 7 days before buying. Process your own photos and see the results, no charge, right on your machine.</li>
           <li>Your license now becomes permanently valid offline once you're past the refund window &mdash; after that point ListingGems no longer needs to check in online to keep working.</li>
           <li>Hardened license validation under the hood for better security and reliability. Existing licenses migrate automatically the first time you open this version.</li>
+          <li>Anonymous telemetry to help us improve. On first launch ListingGems shows a notice explaining that it sends opt-out anonymous usage telemetry &mdash; an install ID and event counts only, never your photos or license keys. It's on by default; you can turn it off any time from Settings.</li>
         </ul>
       ]]></description>
     </item>
