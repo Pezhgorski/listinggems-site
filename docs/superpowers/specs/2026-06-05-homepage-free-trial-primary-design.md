@@ -27,9 +27,16 @@ biggest conversion lever, but the marketing site does not mention it anywhere:
   mint a trial.
 - Therefore every **"Start free trial"** button on the site routes to **`/download`**,
   and the download page is the trial on-ramp that explains the steps.
-- Trial promise (verified against the app): **7 days · every feature unlocked · no
-  credit card · email only · works fully offline** (same as paid). After it ends, the
-  user buys a license to continue (in-app `LicenseModal` or the website pricing CTA).
+- Trial promise (verified against the app — `App.tsx:54-56`): the `TrialActive` gate
+  sets the same `activated = true` flag as the paid `Active` gate, and the whole app
+  gates only on `activated`. There is **no separate feature-gating for trial** — trial
+  and paid render the identical full app. The gate validates the signed trial token
+  locally, so it works offline like the paid license. The promise is therefore literally
+  true: **7 days · every feature unlocked · no credit card · email only · works fully
+  offline** (same as paid). (Note: the in-app WelcomeScreen copy only *says* "Try it
+  free for 7 days" — the "every feature / offline" framing is new to the marketing copy
+  but is accurate to the code.) After it ends, the user buys a license to continue
+  (in-app `LicenseModal` or the website pricing CTA).
 
 ## Decision: trial fully primary
 
@@ -49,7 +56,16 @@ longer the headline reassurance — the no-card trial is).
    `node build.js` to re-inline it into all pages between the `@begin nav`/`@end nav`
    markers. Do NOT edit the nav block inside `index.html` directly (it will be
    overwritten). This change is site-wide by design — the primary CTA becomes "Start
-   free trial" on every page, which is the intended trial-primary behavior.
+   free trial" on every page, which is the intended trial-primary behavior. Note: the
+   nav partial carries `<script src="/assets/site.js" defer>` inside the nav markers;
+   it re-inlines correctly (not duplicated).
+
+   **Shared partials in general:** `build.js` registers TWO partials — `nav`
+   (`partials/nav.html`) AND `footer-links` (`partials/footer-links.html`). Both are
+   re-inlined on every `node build.js` run. This design does not edit the footer, but
+   if any footer change is added later, edit `partials/footer-links.html`, NOT the
+   inlined `@begin footer-links` blocks in `index.html`/`download.html` (they get
+   reverted on build).
 2. **Hero (`hero-cta-group`):**
    - Badge unchanged ("Launch Sale — Save 38%").
    - Primary button **"Start your free 7-day trial"** → `/download`
@@ -68,8 +84,11 @@ longer the headline reassurance — the no-card trial is).
 5. **FAQ:** add one entry **"Is there a free trial?"** with the approved answer:
    > Yes — 7 days with every feature unlocked. No credit card, just your email. Works
    > fully offline. Buy a license anytime after to keep going.
-   Also add the matching JSON-LD `FAQPage` `Question`/`Answer` entry near the existing
-   FAQ schema block (keep structured data in sync with the visible FAQ).
+   Also add the matching JSON-LD `FAQPage` `Question`/`Answer` entry to the existing
+   FAQ schema block (`index.html:60-204`). Add ONLY the new trial Q&A to both places.
+   Note: the visible FAQ and the JSON-LD are already not 1:1 today (visible has more
+   entries than the schema) — do NOT attempt to reconcile the pre-existing gap; that is
+   out of scope and would balloon the diff.
 
 ### 2. `download.html`
 
@@ -85,8 +104,13 @@ longer the headline reassurance — the no-card trial is).
 4. **`.activation-note`** rewrite → *"After your trial, buy a license for $49 to keep
    going — one-time, no subscription."* (link to `index.html#pricing`). Remove the
    misleading "requires a license key to unlock all features." line.
-5. **Meta description** update to mention the free trial (currently "activate with your
-   license key after purchase").
+   **KEEP the `#purchaseBanner` block** (`download.html:166-168`, "Open ListingGems
+   after installing and paste your key to activate.") — that is post-purchase flow copy,
+   shown only when redirected from Creem, and is still correct. The "remove license-key
+   copy" cleanup applies ONLY to the always-visible subtitle / activation-note / meta,
+   NOT the purchase banner.
+5. **Meta description** (`download.html:9`) update to mention the free trial (currently
+   "Free download — activate with your license key after purchase.").
 
 ### 3. Styling
 
