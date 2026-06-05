@@ -6,7 +6,7 @@
   <meta name="google-site-verification" content="4wxa-zCVVQ75tolYzQKHdjW0o0sj7icc2yNKlK7JUvg" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="dda4e0e3-90be-4000-adc2-9bd30734d9ee"></script>
   <title>Download — ListingGems</title>
-  <meta name="description" content="Download ListingGems for Windows or Linux. Free download — activate with your license key after purchase.">
+  <meta name="description" content="Download ListingGems for Windows or Linux. Start a free 7-day trial — full features, no credit card. Just enter your email when you open the app.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://listinggems.com/download">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -68,6 +68,30 @@
     .download-btn svg { width: 16px; height: 16px; }
 
     .file-size { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+    /* Trial steps */
+    .trial-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .trial-step {
+      background: var(--bg-main);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 18px;
+      text-align: center;
+    }
+    .trial-step .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; margin-bottom: 10px;
+      background: var(--emerald-deep); color: white;
+      border-radius: 50%; font-size: 14px; font-weight: 700;
+    }
+    .trial-step p { font-size: 14px; color: var(--text-secondary); margin: 0; }
+    @media (max-width: 600px) {
+      .trial-steps { grid-template-columns: 1fr; }
+    }
 
     /* Requirements */
     .requirements {
@@ -132,9 +156,8 @@
       </div>
     </div>
     <div class="nav-right">
-      <a href="/#pricing" class="nav-cta" data-umami-event="buy-now-nav">
-        Buy Now &mdash; $49 <span class="price-old">$79</span>
-      </a>
+      <a href="/#pricing" class="nav-cta-secondary" data-umami-event="buy-now-nav">Buy $49</a>
+      <a href="/download" class="nav-cta" data-umami-event="trial-start-nav">Get it FREE &mdash; 7 days</a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -153,7 +176,8 @@
       <span class="small">Unlimited vs per-credit pricing</span>
     </a>
     <a href="/blog/" data-umami-event="nav-blog-mobile">Blog</a>
-    <a href="/download" data-umami-event="nav-download-mobile">Download</a>
+    <a href="/download" data-umami-event="trial-start-nav-mobile">Get it FREE &mdash; 7 days</a>
+    <a href="/#pricing" data-umami-event="buy-now-nav-mobile">Buy &mdash; $49</a>
   </div>
 </nav>
 <script src="/assets/site.js" defer></script>
@@ -168,7 +192,13 @@
     </div>
 
     <h1>Download ListingGems</h1>
-    <p class="subtitle">Free to download. Activate with your license key to unlock all features.</p>
+    <p class="subtitle">Free to download. Start a 7-day free trial &mdash; full features, no card. Just enter your email when you open the app.</p>
+
+    <div class="trial-steps">
+      <div class="trial-step"><span class="num">1</span><p>Download &amp; install</p></div>
+      <div class="trial-step"><span class="num">2</span><p>Open it, enter your email</p></div>
+      <div class="trial-step"><span class="num">3</span><p>7 days, full features, no card</p></div>
+    </div>
 
     <div class="platforms">
       <!-- Windows -->
@@ -178,11 +208,11 @@
         </span>
         <div class="platform-name">Windows</div>
         <div class="platform-detail">Windows 10 / 11 (64-bit)</div>
-        <a href="https://dl.listinggems.com/releases/0.2.0/ListingGems_0.2.0_x64-setup.exe" class="download-btn" data-umami-event="download-windows">
+        <a href="https://dl.listinggems.com/releases/0.3.1/ListingGems_0.3.1_x64-setup.exe" class="download-btn" data-umami-event="download-windows">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download .exe
         </a>
-        <div class="file-size">~14 MB</div>
+        <div class="file-size">~15 MB</div>
       </div>
 
       <!-- Linux -->
@@ -213,8 +243,8 @@
     </div>
 
     <div class="activation-note">
-      <p>ListingGems requires a license key to unlock all features.</p>
-      <p>Don't have a key yet? <a href="index.html#pricing">Purchase for $49</a> &mdash; one-time, no subscription.</p>
+      <p>Your 7-day trial unlocks every feature &mdash; no card needed.</p>
+      <p>After your trial, <a href="index.html#pricing">buy a license for $49</a> to keep going &mdash; one-time, no subscription.</p>
     </div>
 
     <!-- @begin footer-links -->

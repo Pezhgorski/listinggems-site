@@ -83,6 +83,21 @@ nav .container {
 }
 .nav-cta:hover { background: #065f46; transform: translateY(-1px); }
 .nav-cta .price-old { text-decoration: line-through; opacity: 0.6; font-weight: 400; font-size: 12px; }
+.nav-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--emerald-deep);
+  background: var(--emerald-glow);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta-secondary:hover { background: rgba(5, 150, 105, 0.14); transform: translateY(-1px); }
 
 /* ═══ NAV RIGHT (CTA + hamburger group) ═══ */
 .nav-right { display: flex; align-items: center; gap: 12px; }
