@@ -120,6 +120,27 @@ longer the headline reassurance — the no-card trial is).
   dark theme (zinc-800/900 bg, emerald accent) for the new "Buy now" secondary buttons.
   No new colors or framework.
 
+## Known gap — Windows auto-updater (out of scope, separate task)
+
+This design fixes the Windows **download button** (0.2.0 → 0.3.1), which is what new
+trial users need. It does **not** fix the Windows **auto-updater**, which is a separate,
+currently-blocked task:
+
+- `updates/windows-x86_64` manifest is stale at **0.2.3** (Linux manifest is correctly
+  0.3.1).
+- It cannot be bumped to 0.3.1 because the Tauri signature file
+  `releases/0.3.1/ListingGems_0.3.1_x64-setup.exe.sig` is **missing from R2** (returns
+  404). A Tauri updater manifest requires the matching `.sig`.
+- That `.sig` is generated at build time by `tauri build` with the signing key on a
+  **Windows machine**; it cannot be produced on this Linux dev box (no Windows bundle
+  exists locally; only the unsigned `.exe` is staged).
+
+**Consequence:** existing Windows users on ≤0.2.3 will NOT auto-update to the
+trial-capable 0.3.1 build until someone uploads the Windows 0.3.1 `.sig` to R2 and bumps
+`updates/windows-x86_64`. New Windows users (download funnel) are unaffected — the
+button bump serves them 0.3.1 directly. Tracking this as a separate follow-up; not a
+blocker for the homepage/download copy work.
+
 ## Out of scope (YAGNI)
 
 - No change to the in-app trial flow, Worker, or `LicenseModal`.
