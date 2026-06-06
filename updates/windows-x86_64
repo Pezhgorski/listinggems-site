@@ -1,11 +1,11 @@
 {
-  "version": "0.3.1",
-  "notes": "Windows skipped 0.3.0, so this update bundles two releases:\n\n• 7-day free trial — try the app before buying, runs entirely on your machine.\n• In-app license activation — paste your key from the new activation screen, no reinstall needed.\n• Permanent offline license validity once you're past the refund window — no more online check-ins.\n• Hardened license validation under the hood. Existing licenses migrate automatically.\n• Opt-out anonymous telemetry to help us spot bugs and improve the app. Disable it in settings any time.\n\nFull details at https://listinggems.com/changelog",
-  "pub_date": "2026-06-04T17:17:15Z",
+  "version": "0.3.2",
+  "notes": "Major shadows update: new Drop Shadow and Floor Shadow styles with Distance, Softness, and Light Height controls. See https://listinggems.com/changelog for details.",
+  "pub_date": "2026-06-06T17:41:41Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.3.1/ListingGems_0.3.1_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THVPdEFxWkswVlYwNFRHc2U2OGRPNDNMT1JVWXN2Rk5SaFR5cFdpMEFBb2t0SXBCZzYwM3JzRUdGOHJjRVhCRm9VZ1pZN0xYTzd4U2UrTHBZVGhXQndrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNTkzNDM1CWZpbGU6TGlzdGluZ0dlbXNfMC4zLjFfeDY0LXNldHVwLmV4ZQpaVFlMN2N2ZDFKM3RHMDFMYjNvODN4djlPRHRRRjdVNVAvV3IwcVhkQitJSjNpeGM5ajhEMWh0MFZSMEdBeXhoQk5hUGxPcXAwOUtYRVJVV2paYUNCQT09Cg=="
+      "url": "https://dl.listinggems.com/releases/0.3.2/ListingGems_0.3.2_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGhtQkVhYjRRanBIc1pscUhhdTdFMUNlYW1YRU5XQStOU3FSY0hJOUVON2lYNDBKdHlyRTJNRDFsVHBLYlIzRjRWZWNiNTlqWDNtS0p1cEdrenAyM1FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzY3NzAyCWZpbGU6TGlzdGluZ0dlbXNfMC4zLjJfeDY0LXNldHVwLmV4ZQp2SU91N3RmTWxyekkrK2tNNUtZV1NCMmZMNEI0dDlYQ3YrQzN4Zmc1dTkxOWF5NDEwM3Q2aTRZR3lxc2I2YkxuTWJYbkNpOVVZaTE0dGwyYmN0TERCUT09Cg=="
     }
   }
 }
