@@ -1,11 +1,11 @@
 {
-  "version": "0.3.1",
-  "notes": "If you're on a free trial, you can now enter your license key right inside the app — no need to reinstall after you buy. The trial banner's \"Buy a license\" link and the License button both open the new activation screen.",
-  "pub_date": "2026-06-04T18:10:00Z",
+  "version": "0.3.2",
+  "notes": "Better shadows: two new styles give your products a more natural, grounded look. Drop Shadow casts a soft directional shadow behind the item (now the default), and Floor Shadow grounds the product as if it's standing on a surface. New Distance, Softness, and Light Height sliders let you fine-tune the effect.",
+  "pub_date": "2026-06-06T17:35:00Z",
   "platforms": {
     "linux-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.3.1/ListingGems_0.3.1_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THY5T0tFTzAzNEZOeWpBWFlTbHB6SFpQNnBvbVlCUWsrWERTMWlIUlhVdFZqcmVQdDVtQzljZHhDZHFDSnFoN2pwUXpGZ2ljVFVVRUI2Wkg3VmJvTFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNTkyNTg2CWZpbGU6TGlzdGluZ0dlbXNfMC4zLjFfYW1kNjQuQXBwSW1hZ2UKaWFCU0xWbjRiTnpyVWVxRlZXbUdwTEtscXRqVmNndXdUTkZPZnM2KytOOTA4dzBLdzZyVzR1cnFFY2ZyZmtEUEhsd2hmVnBic0N5Q1dlWWFWMEVoQVE9PQo="
+      "url": "https://dl.listinggems.com/releases/0.3.2/ListingGems_0.3.2_amd64.AppImage",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THBIUVl0Qm51bWFtYmNEK1hwamkxWVRubktDa3YyRS9nbjlkVm96cXVxMjRLS2QzRXhOSGZYZjFWZ3UzMGFVUG5XRm00NTIwNG5ramxkQk0zbGZKZHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzY3MzMwCWZpbGU6TGlzdGluZ0dlbXNfMC4zLjJfYW1kNjQuQXBwSW1hZ2UKQjNoeU1ycmlXN2tZUGdTdzFQMEhrVUZtQjhVL3VCMHlTd25RK290dGNoeWw0U3hmR0tqTE82YnhMVEN1bFRocUdZY2xnRWlNY2lxY3QzKzNoeWpsQ3c9PQo="
     }
   }
 }

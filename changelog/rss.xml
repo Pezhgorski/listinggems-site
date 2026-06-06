@@ -6,7 +6,20 @@
     <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Jun 2026 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2026 17:35:00 +0000</lastBuildDate>
+
+    <item>
+      <title>ListingGems 0.3.2</title>
+      <link>https://listinggems.com/changelog#v0-3-2</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-3-2</guid>
+      <pubDate>Sat, 06 Jun 2026 17:35:00 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Better shadows &mdash; two new styles give your products a more natural, grounded look. Drop Shadow casts a soft directional shadow behind the item (now the default), and Floor Shadow grounds the product as if it's standing on a surface.</li>
+          <li>New Distance, Softness, and Light Height sliders let you fine-tune the effect.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>ListingGems 0.3.1</title>
