@@ -55,7 +55,7 @@ The banner is hidden by default (`hidden` attribute). site.js reveals it only wh
 Create `partials/tracking.html`:
 
 ```html
-<div id="lg-consent-banner" class="lg-consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+<div id="lg-consent-banner" class="lg-consent-banner" role="dialog" aria-modal="true" aria-label="Cookie consent" hidden>
   <p class="lg-consent-text">
     We use the Meta Pixel to measure our ads. It sets cookies and shares data with Meta.
     See our <a href="/privacy">Privacy Policy</a>.
