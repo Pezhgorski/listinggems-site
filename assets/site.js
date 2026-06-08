@@ -236,11 +236,38 @@
   function grant() { writeState('granted'); hideBanner(); initPixel(); }
   function deny() { writeState('denied'); hideBanner(); }
 
+  function deleteCookie(name) {
+    // Delete on the current host and on the registrable-domain (.listinggems.com),
+    // since fbevents.js sets _fbp/_fbc on the eTLD+1.
+    var host = location.hostname;
+    var base = host.replace(/^www\./, '');
+    var expires = 'expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    document.cookie = name + '=; ' + expires + '; path=/';
+    document.cookie = name + '=; ' + expires + '; path=/; domain=' + host;
+    document.cookie = name + '=; ' + expires + '; path=/; domain=.' + base;
+  }
+
+  function withdraw() {
+    writeState('denied');
+    if (window.fbq) { try { window.fbq('consent', 'revoke'); } catch (e) {} }
+    deleteCookie('_fbp');
+    deleteCookie('_fbc');
+    // fbevents.js already loaded this session is left inert; no new events fire.
+    // Next page load starts in 'denied' and never inits the Pixel.
+  }
+
   function wireBanner() {
     var accept = document.getElementById('lg-consent-accept');
     var reject = document.getElementById('lg-consent-reject');
     if (accept) accept.addEventListener('click', grant);
     if (reject) reject.addEventListener('click', deny);
+    var settings = document.getElementById('lg-cookie-settings');
+    if (settings) settings.addEventListener('click', function (e) {
+      e.preventDefault();
+      withdraw();
+      // Light confirmation without a dependency: a native alert is fine and accessible.
+      alert('Ad cookies turned off. The Meta Pixel will not load on future visits.');
+    });
   }
 
   function resolveConsent() {
@@ -260,7 +287,7 @@
   }
 
   // Expose for the withdrawal link (Task 6) and external triggers.
-  window.lgConsent = { grant: grant, deny: deny, readState: readState };
+  window.lgConsent = { grant: grant, deny: deny, withdraw: withdraw, readState: readState };
 
   // True only after initPixel() ran — which only happens once consent is granted.
   function pixelReady() {
