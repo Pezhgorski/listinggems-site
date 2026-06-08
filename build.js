@@ -30,6 +30,7 @@ const EXCLUDED_FILES = new Set(['blog/_template.html']);
 const PARTIALS = [
   { name: 'nav', file: 'nav.html' },
   { name: 'footer-links', file: 'footer-links.html' },
+  { name: 'tracking', file: 'tracking.html' },
 ];
 
 function normalizePartial(raw) {
@@ -92,9 +93,31 @@ function applyPartials(content, partials) {
   return { content: out, foundAny };
 }
 
+// Every walked .html file MUST carry the tracking markers, so the consent
+// banner + Pixel ship on every page. build.js only replaces between existing
+// markers — it never inserts them — so a file missing them would silently ship
+// untracked. This assertion turns that silent gap into a hard build failure.
+function assertTrackingMarkers(files) {
+  const re = /<!--\s*@begin\s+tracking\s*-->[\s\S]*?<!--\s*@end\s+tracking\s*-->/;
+  const missing = [];
+  for (const file of files) {
+    const content = fs.readFileSync(file, 'utf8');
+    if (!re.test(content)) {
+      missing.push(path.relative(ROOT, file).split(path.sep).join('/'));
+    }
+  }
+  if (missing.length) {
+    console.error('\nERROR: these .html files are missing the tracking markers:');
+    for (const m of missing) console.error('  - ' + m);
+    console.error('\nAdd <!-- @begin tracking --><!-- @end tracking --> before </body> in each.');
+    process.exit(1);
+  }
+}
+
 function main() {
   const partials = loadPartials();
   const files = walk(ROOT, []);
+  assertTrackingMarkers(files);
   let updated = 0;
   let skipped = 0;
 
