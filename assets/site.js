@@ -189,11 +189,24 @@
     if (el) el.hidden = true;
   }
 
-  // Replaced in Task 5 with real Pixel init. Stub for now.
+  var PIXEL_ID = '1405950224693628';
+
   function initPixel() {
     if (window.__lgPixelInit) return;
     window.__lgPixelInit = true;
-    console.log('[consent] initPixel() — would init Pixel + PageView here');
+    // Meta Pixel bootstrap (loads fbevents.js + sets up the fbq queue).
+    // NOTE: init + PageView are called HERE (consent-gated), not on page load.
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', PIXEL_ID);
+    window.fbq('track', 'PageView');
   }
 
   // Background, non-blocking geo check. Resolves to 'EU'/'NONEU' (fail-safe: EU).
@@ -249,7 +262,28 @@
   // Expose for the withdrawal link (Task 6) and external triggers.
   window.lgConsent = { grant: grant, deny: deny, readState: readState };
 
-  function start() { wireBanner(); resolveConsent(); }
+  function consentGranted() {
+    return window.__lgPixelInit === true && window.fbq;
+  }
+
+  function trackStartTrial() {
+    // Only fires if the Pixel was initialized (i.e., consent granted).
+    if (consentGranted()) {
+      window.fbq('trackCustom', 'StartTrial');
+    }
+  }
+
+  function wireDownloadTracking() {
+    // Delegated: one listener, survives any re-render. The download links trigger
+    // a file download (not a navigation), so the async beacon flushes fine. We
+    // never block or delay the download to send the event.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[data-umami-event^="download-"]');
+      if (a) trackStartTrial();
+    });
+  }
+
+  function start() { wireBanner(); wireDownloadTracking(); resolveConsent(); }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start);
