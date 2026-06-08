@@ -12,6 +12,19 @@
 
 **Reference spec:** `docs/superpowers/specs/2026-06-08-facebook-pixel-gdpr-consent-design.md`
 
+**Execution notes (read first):**
+- **Cited line numbers are approximate — match by content.** Task 3 inserts a marker
+  line before `</body>` in every page, shifting later line numbers. All edits in Tasks
+  5/6/8 are exact-string replaces keyed on content, so this is safe — but do NOT trust
+  absolute line numbers after Task 3; locate the quoted text instead.
+- **Tasks 2 and 3 must not have a deploy between them.** Task 2 commits the build
+  assertion, which intentionally **fails the build** (`exit=1`) until Task 3 adds the
+  markers. Commit them back-to-back; do not run a deploy pipeline (`node build.js`)
+  against the Task 2 commit alone. Every other task leaves a deployable state.
+- **Only Task 7 (CSP) requires a live Cloudflare preview** — `_headers` and
+  `/cdn-cgi/trace` don't exist on the local `http.server`. Everything else is fully
+  verifiable locally.
+
 ---
 
 ## File structure
@@ -720,7 +733,12 @@ git add _headers
 git commit -m "feat(security): add CSP allowing Meta Pixel (report-only then enforce)"
 ```
 
-> Note: Steps 1-2 (Report-Only) and Steps 3-4 (enforce) may be committed/deployed separately if you want a soak period between. The commit message above covers the final enforcing state.
+> **MANDATORY soak — do not skip.** The CSP is the ONLY part of this feature that
+> cannot be verified on the local `python3 -m http.server` — `_headers` only applies
+> on Cloudflare. Steps 1-2 (Report-Only) MUST deploy to a live Cloudflare preview and
+> show a clean console across all 14 pages in both consent states BEFORE Step 3 flips
+> to enforcing. Never add the CSP and flip it to enforcing in the same deploy — a typo
+> or missing origin would break live styling/analytics/Pixel with no prior signal.
 
 ---
 
@@ -747,7 +765,14 @@ Replace with (scopes the no-tracking claim to the app/photos, which stays true):
 
 - [ ] **Step 2: Rewrite the "Website Analytics" section**
 
-Replace the existing "Website Analytics" `<h2>` block (currently the single paragraph at `privacy.html:121-122`) with two subsections — Umami (unchanged) plus a new Advertising & Cookies disclosure:
+Replace the existing "Website Analytics" `<h2>` block with two subsections — Umami (unchanged) plus a new Advertising & Cookies disclosure. The current block reads **exactly** as below — match this verbatim as the `old_string` (it contains the false "no cookie consent banner is required" sentence we must remove):
+
+```html
+    <h2>Website Analytics</h2>
+    <p>Our marketing website (listinggems.com) uses <a href="https://umami.is/" rel="noopener noreferrer" target="_blank">Umami</a>, a privacy-friendly analytics tool, to understand aggregate traffic such as page views and referring sites. Umami is cookieless: it does not set cookies, does not track you across other websites, does not store your IP address, and does not build a profile of you. Because no personal data is collected or stored, no cookie consent banner is required. This analytics applies only to the website &mdash; the desktop application contains no analytics or telemetry.</p>
+```
+
+Replace it with:
 
 ```html
     <h2>Website Analytics</h2>
@@ -805,14 +830,21 @@ git commit -m "docs(privacy): disclose Meta Pixel, consent, joint controllership
 - Verify: `terms.html` (no change expected)
 - Verify: full build
 
-- [ ] **Step 1: Scan terms.html for contradictions**
+- [ ] **Step 1: Scan ALL pages for contradictions, not just terms.html**
+
+The "no tracking / cookieless / no consent banner" claim may appear on multiple pages. Scan the whole site:
 
 ```bash
 cd ~/proekti/listinggems-site
-grep -niE "cookie|tracking|pixel|no data|consent" terms.html
+grep -rniE "no tracking|cookieless|consent banner|no cookies|we use no" --include="*.html" . | grep -v docs/
 ```
 
-Expected: no statement that contradicts the new Pixel/consent reality (e.g., a blanket "we use no cookies"). If a contradiction exists, fix it minimally and commit; otherwise no change.
+Known hits to evaluate (from the plan review): `features.html` and `photoroom-alternative.html` (incl. JSON-LD/FAQ) contain "no tracking" phrases. **For each hit, decide:** is the claim scoped to the **desktop app** (e.g. "the app runs offline, no tracking") — which stays TRUE — or does it describe the **website** — which is now FALSE once the Pixel ships?
+- App-scoped claims: leave unchanged (still true; the Pixel is website-only and never touches photos).
+- Website-scoped blanket claims (e.g. "this site uses no cookies"): fix minimally to match the new reality, then commit.
+- `terms.html` specifically: confirm it has no blanket no-cookies statement.
+
+If any edits are made, commit them: `git commit -am "docs: scope no-tracking claims to the desktop app after Pixel"`. Otherwise no change.
 
 - [ ] **Step 2: Full clean build + assertion passes**
 
