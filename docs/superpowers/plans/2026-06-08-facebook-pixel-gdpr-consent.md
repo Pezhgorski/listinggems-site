@@ -220,6 +220,10 @@ assert.ok(!re.test('<body><p>no markers here</p></body>'),
 assert.ok(!re.test('<!-- @begin tracking --> dangling'),
   'unpaired begin should not match');
 
+// Only end, no begin -> does NOT match (mirror of the unpaired-begin case)
+assert.ok(!re.test('dangling <!-- @end tracking -->'),
+  'unpaired end should not match');
+
 console.log('OK: assert-tracking-markers regex tests passed');
 ```
 
