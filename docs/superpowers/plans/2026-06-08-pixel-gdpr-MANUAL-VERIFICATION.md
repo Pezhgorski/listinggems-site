@@ -11,7 +11,7 @@ All code is implemented, statically verified, and reviewed (per-task spec + code
 - **Consent banner** (`partials/tracking.html`) inlined on every page, hidden by default.
 - **Consent state machine + geo gate** (`assets/site.js`): `lg_consent` localStorage, `/cdn-cgi/trace` region detection (fail-safe EU on timeout/error/missing), gated set = EU-27 + IS/LI/NO + GB + CH.
 - **Meta Pixel** (ID `1479028413910220`): `init` + `PageView` only fire from `initPixel()` after consent is `granted` (auto non-EU / post-Accept EU). `StartTrial` custom event on download-button clicks. No `<noscript>` pixel. No `Purchase`.
-- **Withdrawal:** footer "Cookie settings" link → `withdraw()` sets denied + `fbq('consent','revoke')` + deletes `_fbp`/`_fbc` (verified to clear on `listinggems.com`).
+- **Withdrawal / change choice:** footer "Cookie settings" link → `reopenConsent()` re-shows the banner so the user can pick Accept or Reject. **Reject = full revoke** (`deny()` sets denied + `fbq('consent','revoke')` + deletes `_fbp`/`_fbc`), so it works as a withdrawal of a prior Accept too.
 - **CSP** (`_headers`): added in **Report-Only** mode. A resource audit predicts **zero violations** when enforced.
 - **privacy.html:** Meta Pixel / consent / joint-controller disclosure; false "no consent banner required" claim removed; meta-description rescoped; Meta added to third-party list; date bumped to June 8, 2026.
 

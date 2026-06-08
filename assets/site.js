@@ -234,7 +234,19 @@
   }
 
   function grant() { writeState('granted'); hideBanner(); initPixel(); }
-  function deny() { writeState('denied'); hideBanner(); }
+
+  // Reject = full revoke. Works both as a first-time decline AND as a withdrawal
+  // of a prior grant: it revokes Meta consent and clears the cookies, so clicking
+  // Reject after a previous Accept genuinely turns the Pixel off.
+  function deny() {
+    writeState('denied');
+    hideBanner();
+    if (window.fbq) { try { window.fbq('consent', 'revoke'); } catch (e) {} }
+    deleteCookie('_fbp');
+    deleteCookie('_fbc');
+    // fbevents.js already loaded this session is left inert; no new events fire.
+    // Next page load starts in 'denied' and never inits the Pixel.
+  }
 
   function deleteCookie(name) {
     // Delete on the current host and on the registrable-domain (.listinggems.com),
@@ -247,14 +259,10 @@
     document.cookie = name + '=; ' + expires + '; path=/; domain=.' + base;
   }
 
-  function withdraw() {
-    writeState('denied');
-    if (window.fbq) { try { window.fbq('consent', 'revoke'); } catch (e) {} }
-    deleteCookie('_fbp');
-    deleteCookie('_fbc');
-    // fbevents.js already loaded this session is left inert; no new events fire.
-    // Next page load starts in 'denied' and never inits the Pixel.
-  }
+  // "Cookie settings" re-opens the banner so the user can change their choice in
+  // either direction (Accept or Reject). It does not decide for them — the banner
+  // buttons do (grant / deny). Always re-prompts, regardless of prior state.
+  function reopenConsent() { showBanner(); }
 
   function wireBanner() {
     var accept = document.getElementById('lg-consent-accept');
@@ -264,13 +272,7 @@
     var settings = document.getElementById('lg-cookie-settings');
     if (settings) settings.addEventListener('click', function (e) {
       e.preventDefault();
-      var alreadyDenied = readState() === 'denied';
-      withdraw();
-      // Light confirmation without a dependency: a native alert is fine and accessible.
-      // Only confirm on an actual change — don't re-alert if already denied.
-      if (!alreadyDenied) {
-        alert('Ad cookies turned off. The Meta Pixel will not load on future visits.');
-      }
+      reopenConsent();
     });
   }
 
@@ -290,8 +292,8 @@
     });
   }
 
-  // Expose for the withdrawal link (Task 6) and external triggers.
-  window.lgConsent = { grant: grant, deny: deny, withdraw: withdraw, readState: readState };
+  // Public API: grant/deny set the choice; reopenConsent re-shows the banner.
+  window.lgConsent = { grant: grant, deny: deny, reopenConsent: reopenConsent, readState: readState };
 
   // True only after initPixel() ran — which only happens once consent is granted.
   function pixelReady() {
