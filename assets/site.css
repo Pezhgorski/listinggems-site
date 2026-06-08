@@ -413,3 +413,39 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(
 @media (max-width: 480px) {
   .nav-logo-text { display: none; }
 }
+
+/* --- Consent banner --- */
+.lg-consent-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  padding: 16px 20px;
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+.lg-consent-banner[hidden] { display: none; }
+.lg-consent-text { flex: 1 1 280px; margin: 0; font-size: 14px; line-height: 1.5; color: #d4d4d8; }
+.lg-consent-text a { color: #34d399; }
+.lg-consent-actions { display: flex; gap: 10px; flex: 0 0 auto; }
+.lg-consent-btn {
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #52525b;
+}
+.lg-consent-btn-reject { background: transparent; color: #e4e4e7; }
+.lg-consent-btn-reject:hover { background: #27272a; }
+.lg-consent-btn-accept { background: #059669; color: #fff; border-color: #059669; }
+.lg-consent-btn-accept:hover { background: #047857; }
