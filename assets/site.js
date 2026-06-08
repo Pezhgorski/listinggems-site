@@ -144,3 +144,115 @@
     init();
   }
 })();
+
+// --- Consent + Meta Pixel gate ---------------------------------------------
+// Pixel ID is public by nature (inlined). The Pixel only initializes when
+// consent state is 'granted' (auto for non-EU, post-Accept for EU/EEA/UK/CH).
+(function () {
+  if (window.__lgConsent) return;
+  window.__lgConsent = true;
+
+  var STORAGE_KEY = 'lg_consent';
+  var CONSENT_VERSION = 1;
+  // EU + EEA + UK + Switzerland (ISO-3166 alpha-2). CH included for the Swiss FADP.
+  var GATED = new Set([
+    'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT',
+    'LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE',     // EU 27
+    'IS','LI','NO',                                                   // EEA non-EU
+    'GB','CH'                                                         // UK + Switzerland
+  ]);
+
+  function readState() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (!obj || obj.v !== CONSENT_VERSION) return null; // re-prompt on version bump
+      return obj.state || null;
+    } catch (e) { return null; }
+  }
+
+  function writeState(state) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        state: state, v: CONSENT_VERSION, ts: Math.floor(Date.now() / 1000)
+      }));
+    } catch (e) { /* storage blocked — treat as no persisted choice */ }
+  }
+
+  function showBanner() {
+    var el = document.getElementById('lg-consent-banner');
+    if (el) el.hidden = false;
+  }
+  function hideBanner() {
+    var el = document.getElementById('lg-consent-banner');
+    if (el) el.hidden = true;
+  }
+
+  // Replaced in Task 5 with real Pixel init. Stub for now.
+  function initPixel() {
+    if (window.__lgPixelInit) return;
+    window.__lgPixelInit = true;
+    console.log('[consent] initPixel() — would init Pixel + PageView here');
+  }
+
+  // Background, non-blocking geo check. Resolves to 'EU'/'NONEU' (fail-safe: EU).
+  function detectRegion() {
+    return new Promise(function (resolve) {
+      var done = false;
+      var timer = setTimeout(function () {
+        if (!done) { done = true; resolve('EU'); } // timeout -> fail safe
+      }, 1500);
+      fetch('/cdn-cgi/trace', { cache: 'no-store' })
+        .then(function (r) { return r.text(); })
+        .then(function (txt) {
+          if (done) return;
+          done = true; clearTimeout(timer);
+          var m = /(?:^|\n)loc=([A-Z]{2})/.exec(txt);
+          var loc = m ? m[1] : null;
+          resolve(loc && GATED.has(loc) ? 'EU' : (loc ? 'NONEU' : 'EU'));
+        })
+        .catch(function () {
+          if (done) return;
+          done = true; clearTimeout(timer);
+          resolve('EU'); // error -> fail safe
+        });
+    });
+  }
+
+  function grant() { writeState('granted'); hideBanner(); initPixel(); }
+  function deny() { writeState('denied'); hideBanner(); }
+
+  function wireBanner() {
+    var accept = document.getElementById('lg-consent-accept');
+    var reject = document.getElementById('lg-consent-reject');
+    if (accept) accept.addEventListener('click', grant);
+    if (reject) reject.addEventListener('click', deny);
+  }
+
+  function resolveConsent() {
+    var state = readState();
+    if (state === 'granted') { initPixel(); return; }  // persisted grant: no geo fetch
+    if (state === 'denied') { return; }                // persisted deny: no geo fetch
+    // unset -> detect region (the only path that fetches geo)
+    detectRegion().then(function (region) {
+      if (region === 'NONEU') {
+        grant();                 // non-EU: auto-consent, init Pixel
+      } else {
+        writeState('pending');   // EU/EEA/UK/CH: ask first
+        showBanner();
+      }
+    });
+  }
+
+  // Expose for the withdrawal link (Task 6) and external triggers.
+  window.lgConsent = { grant: grant, deny: deny, readState: readState };
+
+  function start() { wireBanner(); resolveConsent(); }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
