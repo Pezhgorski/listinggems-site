@@ -118,6 +118,26 @@ Withdrawal (any state → denied), via footer "Cookie settings":
    the next page load starts in `denied` and never initializes Pixel. Withdrawing
    must be as easy as granting.
 
+### Pixel ID & snippet refactor
+
+**Pixel ID: `1405950224693628`** (public by nature — inlined in the snippet, no secret).
+
+Meta's standard base snippet **must be refactored, not pasted** — the stock version
+auto-fires on load, which is exactly what the consent gate forbids:
+
+- The stock snippet calls `fbq('init', '1405950224693628')` and
+  `fbq('track', 'PageView')` **immediately** on script execution. In our design these
+  two calls move **inside the consent-gated `initPixel()`** and run only when
+  `state === 'granted'`. The `fbq` bootstrap/queue stub (the `!function(f,b,e,…)` IIFE
+  that loads `fbevents.js`) may exist, but **`init` + `PageView` must not run until
+  consent**. Concretely: `initPixel()` injects `fbevents.js`, then calls `init` then
+  `track('PageView')`, guarded by `window.__lgPixelInit`.
+- **Drop the `<noscript>` fallback** (`<img …facebook.com/tr?…ev=PageView…>`). It fires
+  unconditionally for JS-disabled visitors with **no way to gate consent** (no JS = no
+  banner). That is an ungateable tracking call for EU visitors. The signal loss from
+  omitting it is negligible (virtually no real users browse with JS off) and it removes
+  a compliance hole. Do **not** include the `<noscript>` pixel in `partials/tracking.html`.
+
 ### The banner
 
 Minimal, bottom-anchored. Two buttons — **Accept** / **Reject** — equal visual
@@ -222,7 +242,8 @@ required." Adding Pixel makes that false — required rewrite, not just an addit
 | `privacy.html` | Rewrite analytics section, add Meta to third-party list, consent/withdrawal copy, meta-description fix, date bump. |
 
 **No `functions/` directory, no Meta access-token secret, no Worker changes.**
-Only `META_PIXEL_ID` is needed and it is public (inlined in the snippet).
+The only config is the Pixel ID `1405950224693628`, which is public (inlined in
+the snippet) — no environment variable or secret required.
 
 ### ⚠️ build.js caveat — inlining is NOT fully automatic (highest practical risk)
 
