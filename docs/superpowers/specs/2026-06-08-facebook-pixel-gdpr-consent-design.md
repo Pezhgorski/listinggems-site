@@ -81,6 +81,11 @@ Page paints
                       └─ otherwise       → state=granted, init Pixel
                            banner Accept → state=granted, init Pixel
                            banner Reject → state=denied,  do nothing
+
+Withdrawal (any state → denied), via footer "Cookie settings":
+  set state=denied → fbq('consent','revoke') → delete _fbp/_fbc cookies →
+  (fbevents.js already loaded this session stays inert; no new events fire;
+   next page load starts in `denied` and never inits Pixel)
 ```
 
 ### Key behaviors
@@ -91,8 +96,13 @@ Page paints
 2. **Geo-fetch failure → fail safe (treat as EU).** On error, timeout (~1.5s cap),
    or missing `loc`, default to showing the banner (`pending`). Failing toward
    consent is the compliant default — never track when region is unknown.
-3. **EU/EEA/UK country set** — hardcoded `Set` of ISO-2 codes in `site.js`
-   (27 EU + IS/LI/NO + GB). Inline constant, no external lookup.
+3. **EU/EEA/UK/CH country set** — hardcoded `Set` of ISO-2 codes in `site.js`
+   (27 EU + IS/LI/NO + GB + CH). Switzerland (CH) included because the revised
+   Swiss FADP (in force Sept 2023) carries GDPR-like consent expectations. Inline
+   constant, no external lookup. **Geo source is IP-based (`/cdn-cgi/trace` `loc`),
+   so it is best-effort, not authoritative** — a VPN/proxy can misplace a visitor.
+   This is the industry norm and defensible; the fail-safe (treat-as-EU on unknown)
+   covers the ambiguous case.
 4. **`initPixel()` is idempotent** — a `window.__lgPixelInit` flag prevents
    double-injecting `fbevents.js` or double-counting `PageView`.
 5. **Download click is consent-aware, not consent-blocking.** Clicking Download
@@ -101,6 +111,12 @@ Page paints
 6. **Pending-state click** — if an EU visitor clicks Download while the banner is
    still up, the download proceeds and no event fires (we don't retroactively fire
    on a later Accept). Small accepted signal loss, simpler + compliant.
+7. **Withdrawal actually revokes (GDPR Art. 7(3) parity).** The footer "Cookie
+   settings" link does NOT merely reopen the banner — it transitions to `denied`,
+   calls `fbq('consent','revoke')`, and **deletes the `_fbp`/`_fbc` cookies**.
+   `fbevents.js` already loaded in the current session is left inert (no new events);
+   the next page load starts in `denied` and never initializes Pixel. Withdrawing
+   must be as easy as granting.
 
 ### The banner
 
@@ -124,6 +140,19 @@ CMP vendor — ~30 lines of vanilla JS, consistent with the zero-dependency site
   `data-umami-event="download-windows"` / `download-linux`) via one delegated
   click listener on `[data-umami-event^="download-"]`, so Umami and Pixel fire off
   the identical action with no duplicate markup.
+- **Intentionally NOT hooked:** the nav/hero `trial-start-*` CTAs. Those are links
+  *to* the `/download` page, not the download itself — they navigate, they don't
+  start a trial. StartTrial fires only on the actual `.exe`/`.AppImage` download
+  click, which matches "trial start = download." (If we later want a softer
+  top-of-funnel signal, a separate `ViewDownloadPage` event is the clean way, not
+  overloading StartTrial onto nav clicks.)
+
+**Delivery reliability.** The download buttons are `<a href="https://dl.listinggems.com/…">`
+that trigger a **file download, not a same-tab navigation** — the page is not torn
+down, so a normal async `fbq` beacon flushes fine. To be robust anyway (and to
+survive the rare case of a browser that navigates), fire via a delivery that
+tolerates unload: prefer the Pixel's own beacon, and do not `await` anything on the
+click path. Never block or delay the download to send the event.
 
 ## Content Security Policy
 
@@ -139,8 +168,14 @@ Content-Security-Policy:
   img-src 'self' data: https://www.facebook.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com;
+  frame-src https://www.facebook.com;
   frame-ancestors 'none';
 ```
+
+> `frame-src https://www.facebook.com` is required: `fbevents.js` injects a hidden
+> tracking iframe to `www.facebook.com`. Without it, `default-src 'self'` blocks
+> that iframe and degrades match/attribution. (`frame-ancestors 'none'` is a
+> different directive — it controls who may embed *us*, not what we embed.)
 
 (Exact directive list finalized during implementation against what each page
 actually loads — fonts, umami, inline scripts, OG images.)
@@ -156,44 +191,78 @@ required." Adding Pixel makes that false — required rewrite, not just an addit
 
 - **Rewrite "Website Analytics"** → split into *Umami* (unchanged, cookieless) and
   a new **"Advertising & Cookies"** subsection: discloses Meta Pixel, that it sets
-  cookies (`_fbp`, `_fbc`), shares data with Meta Platforms Ireland for ad
-  measurement and audiences, **fires only after consent for EU/EEA/UK visitors**,
-  with a link to Meta's data policy.
+  cookies (`_fbp`, `_fbc`), and that we and **Meta act as joint controllers** for
+  the data the Pixel collects and transmits (per CJEU *Fashion ID* C-40/17 and
+  Meta's Controller Addendum) — use "joint controllers," not the looser "shares
+  data with." State it is used for ad measurement and audiences, **fires only after
+  consent for EU/EEA/UK/CH visitors**, with a link to Meta's data policy.
+- **Fix the page `<meta name="description">`** (currently `privacy.html:9`,
+  "No cloud uploads, no tracking, no data collection") — "no tracking" becomes
+  misleading once the website Pixel ships. Reword to scope the no-tracking claim to
+  the desktop app / your photos (which stays true), not the website.
 - **Add Meta Platforms** to the "Third-Party Services" list.
-- **New "Your Choices / Consent"** line — how to withdraw consent (reopen banner)
-  + link to Meta's opt-out.
+- **New "Your Choices / Consent"** line — how to withdraw consent (the "Cookie
+  settings" link revokes consent and clears the Meta cookies) + link to Meta's opt-out.
 - **Bump "Last updated"** to June 8, 2026.
 - `terms.html` — light check only, no change expected.
-- **Footer "Cookie settings" link** (in `partials/footer-links.html`) that reopens
-  the banner (sets state back to `pending`) — GDPR requires withdrawal to be as
-  easy as giving consent.
+- **Footer "Cookie settings" link** (in `partials/footer-links.html`) that
+  withdraws consent (see behavior #7 — revoke + clear cookies, not just reopen) —
+  GDPR requires withdrawal to be as easy as giving consent.
 
 ## File-by-file changes (site repo only)
 
 | File | Change |
 |---|---|
 | `partials/tracking.html` | **New.** Banner markup (hidden) + conditional Pixel snippet container. Inlined site-wide. |
-| `build.js` | Register `tracking` partial in `PARTIALS`; add `<!-- @begin tracking -->/<!-- @end tracking -->` markers before `</body>` on each page. |
+| `build.js` | Register `tracking` partial in `PARTIALS`. **Add a build-time assertion** (see below) that fails the build if any non-excluded `.html` is missing the `tracking` markers. |
+| *(every non-excluded `.html` file, by hand)* | Insert `<!-- @begin tracking --><!-- @end tracking -->` markers before `</body>`. **This is NOT automatic** — see the build.js caveat below. ~20+ files including all `blog/*.html`. |
 | `assets/site.js` | Consent state machine, background `/cdn-cgi/trace` geo, EU country set, idempotent `initPixel()`, banner handlers, delegated download-click → `StartTrial`, "Cookie settings" reopen. |
 | `partials/footer-links.html` | Add "Cookie settings" link. |
 | `_headers` | Add CSP — Report-Only first, then enforce. |
-| `privacy.html` | Rewrite analytics section, add Meta to third-party list, consent/withdrawal copy, date bump. |
-| *(all `.html`)* | Receive `tracking` partial via build.js (mechanical). |
+| `privacy.html` | Rewrite analytics section, add Meta to third-party list, consent/withdrawal copy, meta-description fix, date bump. |
 
 **No `functions/` directory, no Meta access-token secret, no Worker changes.**
 Only `META_PIXEL_ID` is needed and it is public (inlined in the snippet).
 
+### ⚠️ build.js caveat — inlining is NOT fully automatic (highest practical risk)
+
+`build.js` only **replaces content between markers that already exist** in a file
+(`build.js:74-93`); it does **not insert** markers. A file with no `tracking`
+markers is silently skipped ("no markers"), shipping **with no banner and no Pixel
+and no error**. On a GDPR feature this is the dangerous failure mode in two
+directions:
+
+- **Compliance:** a page where the consent-gate JS didn't load but a banner partial
+  is half-present could, if mis-wired, fire Pixel pre-consent to an EU visitor.
+- **Revenue:** a page missing the tracking block produces no `StartTrial`.
+
+**Mitigation — a build-time assertion in `build.js`:** after inlining, assert that
+**every** non-excluded `.html` file contains the `@begin tracking`/`@end tracking`
+markers; if any is missing, **fail the build** with the offending file list. This
+converts "silently missing on some page" into a hard, pre-deploy error. The
+`EXCLUDED_FILES`/`EXCLUDED_DIRS` sets (`build.js:27-28`) define the allowlist of
+files that legitimately have no markers (e.g. `blog/_template.html`).
+
 ## Testing / verification
 
-1. **Local build:** `node build.js` → confirm tracking partial inlined on every
-   page; pages render immediately; no banner flash for a simulated non-EU visitor.
-2. **State walk:** force `denied`/`pending`/`granted` via `localStorage` + a stubbed
-   `loc`; confirm `connect.facebook.net` calls appear **only** in `granted`.
-3. **Download integrity:** in every consent state, clicking Download still downloads.
-4. **Meta Events Manager → Test Events:** with a temporary test code, verify
+1. **Build assertion:** `node build.js` passes only when every non-excluded `.html`
+   carries the `tracking` markers; deliberately remove markers from one file and
+   confirm the build **fails** with that file named.
+2. **Coverage:** grep the built output — every page (incl. all `blog/*.html`)
+   contains the inlined banner + Pixel snippet container.
+3. **Render:** pages paint immediately; no banner flash for a simulated non-EU visitor.
+4. **State walk:** force `denied`/`pending`/`granted` (+ a stubbed `loc`); confirm
+   `connect.facebook.net` / `www.facebook.com` calls appear **only** in `granted`,
+   never in `pending`/`denied`.
+5. **Withdrawal:** from `granted`, click "Cookie settings" → confirm `_fbp`/`_fbc`
+   cookies are deleted, `fbq('consent','revoke')` fires, and no further events go out;
+   reload → starts `denied`, Pixel never inits.
+6. **Download integrity:** in every consent state, clicking Download still downloads.
+7. **Meta Events Manager → Test Events:** with a temporary test code, verify
    `PageView` + `StartTrial` arrive and attribute; remove test code before deploy.
-5. **CSP:** Report-Only → zero console violations across all pages → then enforce.
-6. **Fail-safe:** block `/cdn-cgi/trace` in devtools → banner shows (fails toward consent).
+8. **CSP:** Report-Only → zero console violations across all pages (fonts, umami,
+   inline scripts/JSON-LD, FB iframe) → then enforce.
+9. **Fail-safe:** block `/cdn-cgi/trace` → banner shows (fails toward consent).
 
 ## Out of scope (deferred)
 
