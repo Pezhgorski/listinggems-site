@@ -433,7 +433,7 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
-.lg-consent-banner[hidden] { display: none; }
+.lg-consent-banner[hidden] { display: none; } /* override flex so [hidden] still hides */
 .lg-consent-text { flex: 1 1 280px; margin: 0; font-size: 14px; line-height: 1.5; color: #d4d4d8; }
 .lg-consent-text a { color: #34d399; }
 .lg-consent-actions { display: flex; gap: 10px; flex: 0 0 auto; }
@@ -447,5 +447,5 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(
 }
 .lg-consent-btn-reject { background: transparent; color: #e4e4e7; }
 .lg-consent-btn-reject:hover { background: #27272a; }
-.lg-consent-btn-accept { background: #059669; color: #fff; border-color: #059669; }
-.lg-consent-btn-accept:hover { background: #047857; }
+.lg-consent-btn-accept { background: var(--emerald); color: #fff; border-color: var(--emerald); }
+.lg-consent-btn-accept:hover { background: var(--emerald-deep); }
