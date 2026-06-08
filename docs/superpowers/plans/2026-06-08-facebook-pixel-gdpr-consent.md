@@ -709,7 +709,7 @@ In `_headers`, under the existing `/*` block (after the `Referrer-Policy` line),
   X-Frame-Options: DENY
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Referrer-Policy: strict-origin-when-cross-origin
-  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net https://cloud.umami.is; connect-src 'self' https://www.facebook.com https://connect.facebook.net https://cloud.umami.is; img-src 'self' data: https://www.facebook.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.facebook.com; frame-ancestors 'none'; base-uri 'self'
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net https://cloud.umami.is; connect-src 'self' https://www.facebook.com https://connect.facebook.net https://cloud.umami.is https://gateway.umami.is; img-src 'self' data: https://www.facebook.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.facebook.com; frame-ancestors 'none'; base-uri 'self'
 ```
 
 - [ ] **Step 2: Deploy to preview and check for violations**
@@ -725,7 +725,7 @@ Expected: **zero** `[Report Only]` CSP violation messages in the console on any 
 Once Step 2 is clean, change `Content-Security-Policy-Report-Only` to `Content-Security-Policy` (same value):
 
 ```
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net https://cloud.umami.is; connect-src 'self' https://www.facebook.com https://connect.facebook.net https://cloud.umami.is; img-src 'self' data: https://www.facebook.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.facebook.com; frame-ancestors 'none'; base-uri 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net https://cloud.umami.is; connect-src 'self' https://www.facebook.com https://connect.facebook.net https://cloud.umami.is https://gateway.umami.is; img-src 'self' data: https://www.facebook.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.facebook.com; frame-ancestors 'none'; base-uri 'self'
 ```
 
 - [ ] **Step 4: Re-verify enforcing mode doesn't break anything**

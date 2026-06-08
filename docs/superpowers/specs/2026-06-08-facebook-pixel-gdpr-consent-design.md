@@ -184,7 +184,7 @@ HSTS, `Referrer-Policy`). Adding Meta means the browser must be allowed to load
 Content-Security-Policy:
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://connect.facebook.net https://cloud.umami.is;
-  connect-src 'self' https://www.facebook.com https://connect.facebook.net https://cloud.umami.is;
+  connect-src 'self' https://www.facebook.com https://connect.facebook.net https://cloud.umami.is https://gateway.umami.is;
   img-src 'self' data: https://www.facebook.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com;
