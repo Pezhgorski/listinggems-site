@@ -264,9 +264,13 @@
     var settings = document.getElementById('lg-cookie-settings');
     if (settings) settings.addEventListener('click', function (e) {
       e.preventDefault();
+      var alreadyDenied = readState() === 'denied';
       withdraw();
       // Light confirmation without a dependency: a native alert is fine and accessible.
-      alert('Ad cookies turned off. The Meta Pixel will not load on future visits.');
+      // Only confirm on an actual change — don't re-alert if already denied.
+      if (!alreadyDenied) {
+        alert('Ad cookies turned off. The Meta Pixel will not load on future visits.');
+      }
     });
   }
 

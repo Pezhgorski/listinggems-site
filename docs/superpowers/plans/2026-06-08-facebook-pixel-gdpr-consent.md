@@ -607,7 +607,7 @@ In `partials/footer-links.html`, add a "Cookie settings" entry. Insert after the
 
 ```html
   <a href="/privacy">Privacy</a>
-  <a href="#" id="lg-cookie-settings" data-umami-event="cookie-settings">Cookie settings</a>
+  <a href="#" id="lg-cookie-settings" data-umami-event="footer-cookie-settings">Cookie settings</a>
 ```
 
 - [ ] **Step 2: Add the `withdraw()` function in site.js**
@@ -649,10 +649,13 @@ In `start()` (or a small wiring function it calls), attach the handler. Add to `
     var settings = document.getElementById('lg-cookie-settings');
     if (settings) settings.addEventListener('click', function (e) {
       e.preventDefault();
+      var alreadyDenied = readState() === 'denied';
       withdraw();
-      // Light confirmation without a dependency: reuse the banner as an ack is
-      // overkill — a native alert is fine and accessible.
-      alert('Ad cookies turned off. The Meta Pixel will not load on future visits.');
+      // Light confirmation without a dependency: a native alert is fine and accessible.
+      // Only confirm on an actual change — don't re-alert if already denied.
+      if (!alreadyDenied) {
+        alert('Ad cookies turned off. The Meta Pixel will not load on future visits.');
+      }
     });
   }
 ```
