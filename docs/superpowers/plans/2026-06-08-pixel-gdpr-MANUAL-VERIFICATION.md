@@ -10,7 +10,7 @@ All code is implemented, statically verified, and reviewed (per-task spec + code
 
 - **Consent banner** (`partials/tracking.html`) inlined on every page, hidden by default.
 - **Consent state machine + geo gate** (`assets/site.js`): `lg_consent` localStorage, `/cdn-cgi/trace` region detection (fail-safe EU on timeout/error/missing), gated set = EU-27 + IS/LI/NO + GB + CH.
-- **Meta Pixel** (ID `1405950224693628`): `init` + `PageView` only fire from `initPixel()` after consent is `granted` (auto non-EU / post-Accept EU). `StartTrial` custom event on download-button clicks. No `<noscript>` pixel. No `Purchase`.
+- **Meta Pixel** (ID `1479028413910220`): `init` + `PageView` only fire from `initPixel()` after consent is `granted` (auto non-EU / post-Accept EU). `StartTrial` custom event on download-button clicks. No `<noscript>` pixel. No `Purchase`.
 - **Withdrawal:** footer "Cookie settings" link → `withdraw()` sets denied + `fbq('consent','revoke')` + deletes `_fbp`/`_fbc` (verified to clear on `listinggems.com`).
 - **CSP** (`_headers`): added in **Report-Only** mode. A resource audit predicts **zero violations** when enforced.
 - **privacy.html:** Meta Pixel / consent / joint-controller disclosure; false "no consent banner required" claim removed; meta-description rescoped; Meta added to third-party list; date bumped to June 8, 2026.
@@ -39,7 +39,7 @@ No edits needed: the Meta Pixel is website-only and never touches the app or pho
    - Only then, in `_headers`, change `Content-Security-Policy-Report-Only:` → `Content-Security-Policy:` (same value) and re-deploy. Re-verify fonts/umami/Pixel all still work.
    - **Never** add + enforce in the same deploy.
 
-3. **Meta Events Manager → Test Events** (before first ad campaign): confirm `PageView` + `StartTrial` arrive and attribute to Pixel `1405950224693628`. Remove any test code before final deploy.
+3. **Meta Events Manager → Test Events** (before first ad campaign): confirm `PageView` + `StartTrial` arrive and attribute to Pixel `1479028413910220`. Remove any test code before final deploy.
 
 ## Notes
 - The site repo has untracked `.wrangler/` and `releases/` dirs — pre-existing, intentionally NOT committed.

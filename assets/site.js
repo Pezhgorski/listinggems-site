@@ -189,7 +189,7 @@
     if (el) el.hidden = true;
   }
 
-  var PIXEL_ID = '1405950224693628';
+  var PIXEL_ID = '1479028413910220';
 
   function initPixel() {
     if (window.__lgPixelInit) return;

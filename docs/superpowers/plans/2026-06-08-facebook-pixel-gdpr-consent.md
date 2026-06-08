@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add Meta Pixel (ID `1405950224693628`) to the marketing site, firing a `StartTrial` conversion on download clicks, gated behind GDPR-compliant geo-targeted opt-in consent (banner for EU/EEA/UK/CH only), and update the privacy policy to reflect the new tracking.
+**Goal:** Add Meta Pixel (ID `1479028413910220`) to the marketing site, firing a `StartTrial` conversion on download clicks, gated behind GDPR-compliant geo-targeted opt-in consent (banner for EU/EEA/UK/CH only), and update the privacy policy to reflect the new tracking.
 
 **Architecture:** A new `partials/tracking.html` carries the consent banner DOM (hidden by default). All consent + Pixel logic lives in the existing `assets/site.js` (already loaded site-wide via the nav partial). A background `/cdn-cgi/trace` fetch determines region; the Pixel only `init`s + fires after consent is `granted` (auto for non-EU, post-Accept for EU). `build.js` gains a build-time assertion that every page carries the tracking markers. The privacy page is rewritten to disclose the Pixel.
 
@@ -503,7 +503,7 @@ Replace the `initPixel()` stub with the real (refactored) Meta snippet — `init
 In `assets/site.js`, replace the entire stub `function initPixel() { ... }` with:
 
 ```js
-  var PIXEL_ID = '1405950224693628';
+  var PIXEL_ID = '1479028413910220';
 
   function initPixel() {
     if (window.__lgPixelInit) return;
@@ -877,7 +877,7 @@ Expected: clean tree (build is idempotent), and the 8 feature commits present.
 
 - [ ] **Step 4 (optional): Meta Events Manager live validation**
 
-Before the first ad campaign, in Meta Events Manager → **Test Events**, enter the live site URL (deployed), accept consent, and confirm `PageView` + `StartTrial` arrive and are attributed to Pixel `1405950224693628`. This requires the deployed site (Pixel can't reach `localhost`). No code change — purely a go-live confirmation.
+Before the first ad campaign, in Meta Events Manager → **Test Events**, enter the live site URL (deployed), accept consent, and confirm `PageView` + `StartTrial` arrive and are attributed to Pixel `1479028413910220`. This requires the deployed site (Pixel can't reach `localhost`). No code change — purely a go-live confirmation.
 
 ---
 

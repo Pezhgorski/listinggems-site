@@ -120,12 +120,12 @@ Withdrawal (any state → denied), via footer "Cookie settings":
 
 ### Pixel ID & snippet refactor
 
-**Pixel ID: `1405950224693628`** (public by nature — inlined in the snippet, no secret).
+**Pixel ID: `1479028413910220`** (public by nature — inlined in the snippet, no secret).
 
 Meta's standard base snippet **must be refactored, not pasted** — the stock version
 auto-fires on load, which is exactly what the consent gate forbids:
 
-- The stock snippet calls `fbq('init', '1405950224693628')` and
+- The stock snippet calls `fbq('init', '1479028413910220')` and
   `fbq('track', 'PageView')` **immediately** on script execution. In our design these
   two calls move **inside the consent-gated `initPixel()`** and run only when
   `state === 'granted'`. The `fbq` bootstrap/queue stub (the `!function(f,b,e,…)` IIFE
@@ -242,7 +242,7 @@ required." Adding Pixel makes that false — required rewrite, not just an addit
 | `privacy.html` | Rewrite analytics section, add Meta to third-party list, consent/withdrawal copy, meta-description fix, date bump. |
 
 **No `functions/` directory, no Meta access-token secret, no Worker changes.**
-The only config is the Pixel ID `1405950224693628`, which is public (inlined in
+The only config is the Pixel ID `1479028413910220`, which is public (inlined in
 the snippet) — no environment variable or secret required.
 
 ### ⚠️ build.js caveat — inlining is NOT fully automatic (highest practical risk)
