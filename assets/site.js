@@ -234,12 +234,13 @@
     var state = readState();
     if (state === 'granted') { initPixel(); return; }  // persisted grant: no geo fetch
     if (state === 'denied') { return; }                // persisted deny: no geo fetch
-    // unset -> detect region (the only path that fetches geo)
+    // unset or pending -> detect region (fail-safe: re-prompt on every reload-while-pending)
     detectRegion().then(function (region) {
       if (region === 'NONEU') {
         grant();                 // non-EU: auto-consent, init Pixel
       } else {
-        writeState('pending');   // EU/EEA/UK/CH: ask first
+        // EU/EEA/UK/CH: ask first. Don't re-stamp ts if already pending.
+        if (readState() !== 'pending') writeState('pending');
         showBanner();
       }
     });
