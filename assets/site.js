@@ -262,13 +262,14 @@
   // Expose for the withdrawal link (Task 6) and external triggers.
   window.lgConsent = { grant: grant, deny: deny, readState: readState };
 
-  function consentGranted() {
-    return window.__lgPixelInit === true && window.fbq;
+  // True only after initPixel() ran — which only happens once consent is granted.
+  function pixelReady() {
+    return window.__lgPixelInit === true && !!window.fbq;
   }
 
   function trackStartTrial() {
-    // Only fires if the Pixel was initialized (i.e., consent granted).
-    if (consentGranted()) {
+    // Only fires if the Pixel was initialized (i.e., consent was granted).
+    if (pixelReady()) {
       window.fbq('trackCustom', 'StartTrial');
     }
   }
