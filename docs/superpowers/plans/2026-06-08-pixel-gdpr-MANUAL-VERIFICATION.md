@@ -12,7 +12,7 @@ All code is implemented, statically verified, and reviewed (per-task spec + code
 - **Consent state machine + geo gate** (`assets/site.js`): `lg_consent` localStorage, `/cdn-cgi/trace` region detection (fail-safe EU on timeout/error/missing), gated set = EU-27 + IS/LI/NO + GB + CH.
 - **Meta Pixel** (ID `1479028413910220`): `init` + `PageView` only fire from `initPixel()` after consent is `granted` (auto non-EU / post-Accept EU). `StartTrial` custom event on download-button clicks. No `<noscript>` pixel. No `Purchase`.
 - **Withdrawal / change choice:** footer "Cookie settings" link → `reopenConsent()` re-shows the banner so the user can pick Accept or Reject. **Reject = full revoke** (`deny()` sets denied + `fbq('consent','revoke')` + deletes `_fbp`/`_fbc`), so it works as a withdrawal of a prior Accept too.
-- **CSP** (`_headers`): added in **Report-Only** mode. A resource audit predicts **zero violations** when enforced.
+- **CSP** (`_headers`): **ENFORCING** (flipped 2026-06-08 after a clean live soak). One fix was needed during soak — Umami posts its data to `gateway.umami.is` (not `cloud.umami.is`), now in `connect-src`. No other violations.
 - **privacy.html:** Meta Pixel / consent / joint-controller disclosure; false "no consent banner required" claim removed; meta-description rescoped; Meta added to third-party list; date bumped to June 8, 2026.
 
 ### Contradiction scan result (Task 9)
