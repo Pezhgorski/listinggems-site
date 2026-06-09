@@ -496,15 +496,15 @@
         "name": "What AI models does ListingGems use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Background removal uses BiRefNet (2024, Nankai University and collaborators) — three quality tiers from 115 MB lite to 490 MB full. White balance and exposure correction use IAT (Illumination Adaptive Transformer), a neural network published at BMVC 2022. Upscaling uses HFA2k, a 4× super-resolution model. All three run locally on your GPU through ONNX Runtime — no cloud, no API calls, no photos uploaded anywhere."
+          "text": "Background removal uses BiRefNet (2024, Nankai University and collaborators) — three quality tiers from 115 MB lite to 490 MB full. White balance and exposure correction use IAT (Illumination Adaptive Transformer), a neural network published at BMVC 2022. Upscaling uses HFA2k, a 4× super-resolution model. All three run locally on your own machine through ONNX Runtime — no cloud, no API calls, no photos uploaded anywhere."
         }
       },
       {
         "@type": "Question",
-        "name": "Do I need a powerful computer?",
+        "name": "Do I need a powerful computer or a good GPU?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A GPU helps — under 2 seconds per image on a modern NVIDIA or AMD card. On CPU it's about 20 seconds per image. Either way it works. No subscription required either way."
+          "text": "No — no graphics card required. ListingGems runs on any modern Windows or Linux computer. On CPU it's about 20 seconds per image, which is fine for everyday listing. A GPU is optional and just speeds things up to under 2 seconds per image. No subscription required either way."
         }
       }
     ]
@@ -883,7 +883,7 @@
 
     <div class="tradeoffs animate-in delay-1">
       <ul>
-        <li><strong>You work primarily on a phone.</strong> Photoroom has solid iOS and Android apps. ListingGems is desktop only (Windows, Linux, macOS coming).</li>
+        <li><strong>You work primarily on a phone.</strong> You need a computer for ListingGems &mdash; it&rsquo;s a desktop app (Windows, Linux, macOS coming) and can&rsquo;t run from a phone or tablet. Photoroom has solid iOS and Android apps if your workflow lives on mobile.</li>
         <li><strong>You need AI-generated lifestyle backgrounds.</strong> Photoroom can hallucinate scenes (cafes, beaches, marble tables). ListingGems intentionally won&rsquo;t &mdash; it&rsquo;s built for marketplace-compliance, not stylized social content.</li>
         <li><strong>You want a team brand kit and shared templates.</strong> Photoroom has multi-user team features. ListingGems is a single-seat desktop app.</li>
         <li><strong>You need Shopify integration baked in.</strong> Photoroom Max has a Shopify connector. ListingGems exports to a folder &mdash; you upload manually.</li>
@@ -925,11 +925,11 @@
       </div>
       <div class="faq-item">
         <button class="faq-question">What AI models does ListingGems use? <span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><p>Background removal uses <a href="https://arxiv.org/abs/2401.03407" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BiRefNet</a> (2024, Nankai University and collaborators) and <a href="https://arxiv.org/abs/2501.06230" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BEN2</a> (2025, Prama LLC) &mdash; three quality tiers from ~110 MB lite to ~470 MB full, both reporting state-of-the-art results on the DIS-VD benchmark. White balance and exposure correction use <strong>IAT</strong> (Illumination Adaptive Transformer), a neural network published at BMVC 2022. Upscaling uses <strong>HFA2k</strong>, a 4&times; super-resolution model.</p><p>All run locally on your GPU through ONNX Runtime &mdash; no cloud, no API calls, no photos uploaded anywhere.</p><p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Model cards: <a href="https://huggingface.co/onnx-community/BiRefNet-ONNX" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BiRefNet ONNX</a> &middot; <a href="https://huggingface.co/PramaLLC/BEN2" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BEN2</a> &middot; <a href="https://huggingface.co/Pezhgorski/IAT-ONNX" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">IAT</a></p></div>
+        <div class="faq-answer"><p>Background removal uses <a href="https://arxiv.org/abs/2401.03407" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BiRefNet</a> (2024, Nankai University and collaborators) and <a href="https://arxiv.org/abs/2501.06230" target="_blank" rel="noopener" style="color: var(--emerald-deep); font-weight: 600;">BEN2</a> (2025, Prama LLC) &mdash; three quality tiers from ~110 MB lite to ~470 MB full, both reporting state-of-the-art results on the DIS-VD benchmark. White balance and exposure correction use <strong>IAT</strong> (Illumination Adaptive Transformer), a neural network published at BMVC 2022. Upscaling uses <strong>HFA2k</strong>, a 4&times; super-resolution model.</p><p>All run locally on your own machine through ONNX Runtime &mdash; no cloud, no API calls, no photos uploaded anywhere.</p><p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Model cards: <a href="https://huggingface.co/onnx-community/BiRefNet-ONNX" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BiRefNet ONNX</a> &middot; <a href="https://huggingface.co/PramaLLC/BEN2" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">BEN2</a> &middot; <a href="https://huggingface.co/Pezhgorski/IAT-ONNX" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">IAT</a></p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">Do I need a powerful computer? <span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><p>A GPU helps &mdash; under 2 seconds per image on a modern NVIDIA or AMD card. On CPU it&rsquo;s about 20 seconds per image. Either way it works. No subscription required either way.</p></div>
+        <button class="faq-question">Do I need a powerful computer or a good GPU? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>No &mdash; <strong>no graphics card required</strong>. ListingGems runs on any modern Windows or Linux computer. On CPU it&rsquo;s about 20 seconds per image, which is fine for everyday listing. A GPU is optional and just speeds things up to under 2 seconds per image. No subscription required either way.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Can I use ListingGems for client work / commercial use? <span class="faq-toggle">+</span></button>
