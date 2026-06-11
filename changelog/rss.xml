@@ -6,7 +6,20 @@
     <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Jun 2026 17:35:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 09:13:33 +0000</lastBuildDate>
+
+    <item>
+      <title>ListingGems 0.3.3</title>
+      <link>https://listinggems.com/changelog#v0-3-3</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-3-3</guid>
+      <pubDate>Thu, 11 Jun 2026 09:13:33 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Instagram presets &mdash; export your photos sized perfectly for Instagram, right alongside the other marketplaces. Instagram Post (4:5 portrait) fills the feed, and Instagram Reel (9:16 vertical) is ready for Reels and Stories.</li>
+          <li>Auto Apply now turns on automatically after you process your first photo, so your settings carry straight through to the next shot without flipping it on yourself.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>ListingGems 0.3.2</title>
