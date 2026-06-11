@@ -1,11 +1,11 @@
 {
-  "version": "0.3.2",
-  "notes": "Better shadows: two new styles give your products a more natural, grounded look. Drop Shadow casts a soft directional shadow behind the item (now the default), and Floor Shadow grounds the product as if it's standing on a surface. New Distance, Softness, and Light Height sliders let you fine-tune the effect.",
-  "pub_date": "2026-06-06T17:35:00Z",
+  "version": "0.3.3",
+  "notes": "New Instagram presets: export your photos sized perfectly for Instagram Posts (4:5 portrait) and Reels/Stories (9:16 vertical), right alongside the other marketplace presets.",
+  "pub_date": "2026-06-11T09:13:33Z",
   "platforms": {
     "linux-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.3.2/ListingGems_0.3.2_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THBIUVl0Qm51bWFtYmNEK1hwamkxWVRubktDa3YyRS9nbjlkVm96cXVxMjRLS2QzRXhOSGZYZjFWZ3UzMGFVUG5XRm00NTIwNG5ramxkQk0zbGZKZHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzY3MzMwCWZpbGU6TGlzdGluZ0dlbXNfMC4zLjJfYW1kNjQuQXBwSW1hZ2UKQjNoeU1ycmlXN2tZUGdTdzFQMEhrVUZtQjhVL3VCMHlTd25RK290dGNoeWw0U3hmR0tqTE82YnhMVEN1bFRocUdZY2xnRWlNY2lxY3QzKzNoeWpsQ3c9PQo="
+      "url": "https://dl.listinggems.com/releases/0.3.3/ListingGems_0.3.3_amd64.AppImage",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TG44ZEpzOW9lb1FIYms3TFl4KzFZdkxnVGRMbEtEeTdpNzFzZTcxV3dSVzI0YXRnT2poZXdaV1lkRHUva3J4Ull3UlBEUVdCaFpDaDFrRk5pOXFjb2djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxMTY5MDgyCWZpbGU6TGlzdGluZ0dlbXNfMC4zLjNfYW1kNjQuQXBwSW1hZ2UKNW9iVEZRejFhTWJVUUd5TWFXT0Jub1I2WTViZ0tzUGFnbWRhRFRibE9rc29RdEtSYUtTS0JqdkJQYWlQTVlSZ3JCcG9rczNiSzRIOTVncldDcFN0QUE9PQo="
     }
   }
 }
