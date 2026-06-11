@@ -1,11 +1,11 @@
 {
-  "version": "0.3.2",
-  "notes": "Major shadows update: new Drop Shadow and Floor Shadow styles with Distance, Softness, and Light Height controls. See https://listinggems.com/changelog for details.",
-  "pub_date": "2026-06-06T17:41:41Z",
+  "version": "0.3.3",
+  "notes": "Adds Instagram Post and Reel export presets, and Auto Apply now switches on after your first processed photo. See https://listinggems.com/changelog for details.",
+  "pub_date": "2026-06-11T11:50:00Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.3.2/ListingGems_0.3.2_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGhtQkVhYjRRanBIc1pscUhhdTdFMUNlYW1YRU5XQStOU3FSY0hJOUVON2lYNDBKdHlyRTJNRDFsVHBLYlIzRjRWZWNiNTlqWDNtS0p1cEdrenAyM1FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzY3NzAyCWZpbGU6TGlzdGluZ0dlbXNfMC4zLjJfeDY0LXNldHVwLmV4ZQp2SU91N3RmTWxyekkrK2tNNUtZV1NCMmZMNEI0dDlYQ3YrQzN4Zmc1dTkxOWF5NDEwM3Q2aTRZR3lxc2I2YkxuTWJYbkNpOVVZaTE0dGwyYmN0TERCUT09Cg=="
+      "url": "https://dl.listinggems.com/releases/0.3.3/ListingGems_0.3.3_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THJ0c1ZDQlhUbHV5RzdueFRIYjkrMVFkN2VISVFVbnBYclQ4dGxnNGJ6dUNMc2ZPbVF0WXlneDRWOHhWZ3ZNQzVac2ovSHR5TWIvQ2xXZTlCeTZHYVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxMTc4NjAwCWZpbGU6TGlzdGluZ0dlbXNfMC4zLjNfeDY0LXNldHVwLmV4ZQpBSlZwa0dzOEovUU51eGVsVWF4Wm1SWnZRUDZMblNPVWFyQk9KTXRWZi9LbzIxWVVUWE4xY2ZkUTllcW9aRXFqYjkzaDFWR0xZdEwvbWtXeHRYajZEdz09Cg=="
     }
   }
 }
