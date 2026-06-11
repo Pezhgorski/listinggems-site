@@ -301,9 +301,13 @@
   }
 
   function trackStartTrial() {
+    // Fires the Meta standard "Lead" event for a website download-click — the
+    // top-of-funnel signal. (The in-app trial *activation* is sent separately
+    // via the Worker's CAPI as "StartTrial"; keeping the names distinct stops
+    // Meta from deduping two different funnel steps.)
     // Only fires if the Pixel was initialized (i.e., consent was granted).
     if (pixelReady()) {
-      window.fbq('trackCustom', 'StartTrial');
+      window.fbq('trackCustom', 'Lead');
     }
   }
 
