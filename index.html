@@ -732,6 +732,71 @@
       margin-bottom: 0;
     }
 
+    /* ── Problem section: 3 statements + visuals ── */
+    .problem-rows {
+      max-width: 920px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .problem-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 36px;
+    }
+    .problem-row:nth-child(even) .problem-row-text { order: 2; }
+    .problem-row-text p {
+      font-size: clamp(19px, 2vw, 23px);
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .problem-row-text .sub {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .problem-row-text .sub a { color: inherit; text-decoration: underline; text-decoration-color: var(--text-muted); text-underline-offset: 3px; }
+    .problem-row-text .sub a.ban-link { color: var(--emerald-deep); font-weight: 600; text-decoration: none; }
+
+    /* Visual 1: cost counter */
+    .viz-cost { border: 1px solid var(--border); border-radius: 14px; background: var(--bg-card); padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .viz-cost-row { display: flex; justify-content: space-between; align-items: baseline; padding: 9px 0; font-size: 15px; }
+    .viz-cost-row + .viz-cost-row { border-top: 1px solid var(--border); }
+    .viz-cost-name { color: var(--text-secondary); }
+    .viz-cost-amt { font-family: var(--font-mono); font-weight: 700; color: var(--red-soft); white-space: nowrap; }
+    .viz-cost-amt .x { font-size: 12px; color: var(--text-muted); font-weight: 400; }
+    .viz-cost-row.lg { background: var(--emerald-glow); margin: 6px -20px -18px; padding: 12px 20px; border-radius: 0 0 14px 14px; border-top: 1px solid var(--border); }
+    .viz-cost-row.lg .viz-cost-name { color: var(--emerald-deep); font-weight: 700; }
+    .viz-cost-row.lg .viz-cost-amt { color: var(--emerald-deep); }
+
+    /* Visual 2: invented vs actual */
+    .viz-split { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16 / 10; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .viz-split img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .viz-split .altered { clip-path: polygon(52% 0, 100% 0, 100% 100%, 48% 100%); filter: blur(2.2px) saturate(1.5) contrast(1.12) brightness(1.04); }
+    .viz-split .divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff; transform: skewX(-12deg); box-shadow: 0 0 0 1px rgba(0,0,0,0.06); }
+    .viz-pill { position: absolute; bottom: 10px; font-size: 11px; font-weight: 700; padding: 4px 9px; border-radius: 20px; letter-spacing: 0.2px; }
+    .viz-pill.ok { left: 10px; background: var(--emerald-glow); color: var(--emerald-deep); border: 1px solid var(--emerald); }
+    .viz-pill.bad { right: 10px; background: rgba(220,38,38,0.08); color: var(--red-soft); border: 1px solid var(--red-soft); }
+
+    /* Visual 3: banned stamp over marketplaces */
+    .viz-ban { position: relative; border: 1px solid var(--border); border-radius: 14px; background: var(--bg-card); padding: 26px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .viz-ban-grid { display: flex; flex-wrap: wrap; gap: 14px 16px; justify-content: center; opacity: 0.4; filter: grayscale(1); }
+    .viz-ban-grid span { font-size: 15px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.3px; }
+    .viz-ban-stamp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-11deg); border: 3px solid var(--red-soft); color: var(--red-soft); font-weight: 800; font-size: 26px; letter-spacing: 3px; padding: 4px 18px; border-radius: 7px; box-shadow: 0 0 0 1px rgba(220,38,38,0.15); opacity: 0.92; background: rgba(255,255,255,0.55); }
+
+    @media (max-width: 720px) {
+      .problem-row { grid-template-columns: 1fr; gap: 18px; }
+      .problem-row:nth-child(even) .problem-row-text { order: 0; }
+      .problem-row-text p { font-size: 20px; }
+    }
+
     /* ═══════════════════════════════════════
        COMPETITOR COMPARISON
     ═══════════════════════════════════════ */
@@ -1215,13 +1280,51 @@
 <!-- ═══════════════ PROBLEM ═══════════════ -->
 <section class="pain-points">
   <div class="container">
-    <h2 class="section-title">You're overpaying for background removal.<br>And your photos still get rejected.</h2>
-    <div class="problem-narrative">
-      <p>You know the drill. Shoot your product on the kitchen table. Upload it to a cloud tool. Pay per image. Download the result. Realize Amazon rejected it because the white isn't white enough. Open another app to fix the color. Re-export. Re-upload. Repeat for 200 products.</p>
-      <p>Meanwhile, <a href="removebg-alternative.html" style="color: inherit; text-decoration: underline; text-decoration-color: var(--text-muted); text-underline-offset: 3px;">remove.bg is charging you <strong>$39/month</strong></a>, <a href="photoroom-alternative.html" style="color: inherit; text-decoration: underline; text-decoration-color: var(--text-muted); text-underline-offset: 3px;">PhotoRoom wants <strong>$13/month</strong></a>, and you're still running back and forth between three different tools just to get a compliant listing image.</p>
-      <p>And the new generative AI tools (ChatGPT, Gemini, Photoroom AI) make it worse, not better. They <strong>invent pixels</strong> &mdash; smoothing textures, hallucinating details, "improving" your product into something that isn't quite what ships. Amazon&apos;s main image policy requires the actual product. Get caught and your listing gets pulled. The opposite shortcut &mdash; reusing brand or stock photos &mdash; gets resale accounts banned outright on every major marketplace. <a href="blog/why-marketplaces-ban-stock-photos.html" data-umami-event="landing-to-blog-article" style="color: var(--emerald-deep); font-weight: 600;">Why marketplaces ban stock photos &rarr;</a></p>
-      <p class="problem-kicker">There's a better way.</p>
+    <h2 class="section-title">Most resellers waste hours and money making photos that still don't sell.</h2>
+    <div class="problem-rows">
+
+      <div class="problem-row">
+        <div class="problem-row-text">
+          <p>You list more than they do. You shouldn't pay per photo to do it.</p>
+          <p class="sub">Cloud editors meter you forever &mdash; <a href="removebg-alternative.html">remove.bg runs $39/mo</a>, <a href="photoroom-alternative.html">PhotoRoom $13/mo</a> &mdash; and you're still bouncing between three tabs to get one listing-ready shot.</p>
+        </div>
+        <div class="viz-cost" aria-hidden="true">
+          <div class="viz-cost-row"><span class="viz-cost-name">remove.bg</span><span class="viz-cost-amt">$39/mo <span class="x">&times; 12</span></span></div>
+          <div class="viz-cost-row"><span class="viz-cost-name">PhotoRoom</span><span class="viz-cost-amt">$13/mo <span class="x">&times; 12</span></span></div>
+          <div class="viz-cost-row"><span class="viz-cost-name">A year of subscriptions</span><span class="viz-cost-amt">$624</span></div>
+          <div class="viz-cost-row lg"><span class="viz-cost-name">ListingGems</span><span class="viz-cost-amt">$49 once &check;</span></div>
+        </div>
+      </div>
+
+      <div class="problem-row">
+        <div class="problem-row-text">
+          <p>The new AI "fixers" invent pixels.</p>
+          <p class="sub">ChatGPT, Gemini and PhotoRoom AI smooth textures and hallucinate details, "improving" your item into something that isn't what ships &mdash; and a buyer who gets the wrong thing leaves the kind of feedback eBay remembers.</p>
+        </div>
+        <div class="viz-split" aria-hidden="true">
+          <img src="images/bgremoval-after.webp" alt="">
+          <img class="altered" src="images/bgremoval-after.webp" alt="">
+          <div class="divider"></div>
+          <span class="viz-pill ok">&check; Actual photo</span>
+          <span class="viz-pill bad">&#9888; AI-altered</span>
+        </div>
+      </div>
+
+      <div class="problem-row">
+        <div class="problem-row-text">
+          <p>Grabbing the brand's stock photo is the fastest way to lose your account.</p>
+          <p class="sub">eBay, Etsy, Poshmark, Mercari, Depop and Vinted all ban reused stock and brand images outright. <a class="ban-link" href="blog/why-marketplaces-ban-stock-photos.html" data-umami-event="landing-to-blog-article">Why marketplaces ban stock photos &rarr;</a></p>
+        </div>
+        <div class="viz-ban" aria-hidden="true">
+          <div class="viz-ban-grid">
+            <span>eBay</span><span>Etsy</span><span>Poshmark</span><span>Mercari</span><span>Depop</span><span>Vinted</span>
+          </div>
+          <span class="viz-ban-stamp">BANNED</span>
+        </div>
+      </div>
+
     </div>
+    <p class="problem-kicker" style="text-align:center; margin-top:32px;">There's a better way.</p>
   </div>
 </section>
 
@@ -1798,7 +1901,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.feature-card, .step, .sysreq-item, .speed-item, .problem-narrative p').forEach(el => {
+  document.querySelectorAll('.feature-card, .step, .sysreq-item, .speed-item, .problem-narrative p, .problem-row').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
