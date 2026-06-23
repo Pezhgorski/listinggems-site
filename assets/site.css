@@ -401,15 +401,19 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(
 /* ═══ RESPONSIVE ═══ */
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .nav-cta .price-old { display: none; }
+  /* Collapse the "Get it FREE — 7 days" CTA into the hamburger on mobile: the
+     trial requires downloading the desktop app, which can't be done on a phone,
+     and keeping it pushed the toggle off-screen on narrow phones (iPhone SE,
+     Galaxy Z Fold cover screen). "Buy $49" stays — Creem checkout works on
+     mobile. The trial link is still available inside #mobile-menu. */
+  .nav-right .nav-cta { display: none; }
   .nav-toggle { display: block; }
   body.nav-open .nav-mobile-panel { display: flex; }
   body.nav-open { overflow: hidden; }                 /* lock background scroll */
 }
 
-/* Below 480px the logo wordmark + CTA + hamburger no longer fit in a 60px nav
-   bar without wrapping. Hide the wordmark — the icon alone still identifies
-   the brand and links to "/". */
+/* Below 480px the logo wordmark no longer fits next to the hamburger in the
+   60px bar. Hide the wordmark — the icon alone still identifies the brand. */
 @media (max-width: 480px) {
   .nav-logo-text { display: none; }
 }
