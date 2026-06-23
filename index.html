@@ -607,6 +607,16 @@
       opacity: 0.85;
     }
 
+    .feature-tech-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--emerald-deep);
+      text-decoration: none;
+    }
+    .feature-tech-link:hover { text-decoration: underline; }
+
     /* ═══════════════════════════════════════
        GALLERY
     ═══════════════════════════════════════ */
@@ -682,6 +692,22 @@
       font-size: 12px;
       line-height: 1.5;
       color: var(--text-muted);
+    }
+
+    /* in-body links that pull readers into the Features page */
+    .feature-link {
+      color: var(--emerald-deep);
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .feature-link:hover { text-decoration: underline; }
+    .section-lead {
+      text-align: center;
+      max-width: 600px;
+      margin: -20px auto 36px;
+      font-size: 15px;
+      color: var(--text-secondary);
     }
 
     .gallery-item {
@@ -1563,6 +1589,7 @@
         <h3>Marketplace Export Presets</h3>
         <p>Stop guessing whether your image will pass. Amazon pure white background, Etsy square crop, eBay and Shopify dimensions. Select your marketplace, hit export. It's compliant. Every time.</p>
         <span class="feature-tech">9 presets: Amazon, Etsy, eBay, Poshmark, Shopify + more</span>
+        <a href="/features#presets" class="feature-tech-link" data-umami-event="landing-to-features-presets">See all 9 presets &rarr;</a>
       </div>
       <div class="feature-card">
         <div class="feature-icon">&#x26a1;</div>
@@ -1584,6 +1611,7 @@
 <section class="gallery">
   <div class="container">
     <h2 class="section-title">See the full pipeline in action</h2>
+    <p class="section-lead">Three of the steps below. <a href="/features" class="feature-link" data-umami-event="landing-to-features-gallery">See every feature with screenshots &rarr;</a></p>
 
     <!-- 1. Background Removal — slider left, text right -->
     <div class="gallery-section">
@@ -1601,7 +1629,7 @@
           <li>Pure white, custom color, gradient, or image backgrounds</li>
           <li><strong>Realistic drop shadows</strong> so the product sits on the surface instead of floating</li>
           <li>Transparent PNG export, drop it into any editor or listing</li>
-          <li>Brush tool for <strong>pixel-perfect edges</strong> on tricky items</li>
+          <li>Brush tool for <strong>pixel-perfect edges</strong> on tricky items &mdash; <a href="/features#touch-up" class="feature-link" data-umami-event="landing-to-features-touchup">see the touch-up brush &rarr;</a></li>
           <li>Passes Amazon Main Image white background check</li>
         </ul>
       </div>
