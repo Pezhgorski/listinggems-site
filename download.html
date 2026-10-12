@@ -115,6 +115,21 @@
       background: var(--emerald); border-radius: 50%;
     }
 
+    /* Use with Claude / command line */
+    .agents p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+    .agents h3 { font-size: 14px; font-weight: 700; margin: 20px 0 6px; }
+    .agents code { font-family: var(--font-mono); font-size: 12px; overflow-wrap: anywhere; }
+    .agents pre {
+      margin: 8px 0 0; padding: 12px 16px;
+      background: var(--text-primary); color: #e5e7eb;
+      border-radius: 10px;
+      font-family: var(--font-mono); font-size: 12px; line-height: 1.7;
+      white-space: pre-wrap; overflow-wrap: anywhere;
+    }
+    .agents .note { font-size: 13px; color: var(--text-muted); margin: 12px 0 0; }
+    .agents a { color: var(--emerald-deep); font-weight: 600; text-decoration: none; }
+    .agents a:hover { text-decoration: underline; }
+
     /* Activation note */
     .activation-note {
       text-align: center;
@@ -212,7 +227,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download .exe
         </a>
-        <div class="file-size">~15 MB</div>
+        <div class="file-size">~117 MB</div>
       </div>
 
       <!-- Linux -->
@@ -240,6 +255,26 @@
         <li>Works on CPU too — slower (~20 sec/image) but no GPU needed</li>
         <li>500 MB disk space + ~500 MB for AI models (downloaded on first run)</li>
       </ul>
+    </div>
+
+    <div class="requirements agents" id="claude">
+      <h2>Use it with Claude or from the command line</h2>
+      <p>After installing, click <strong>Use with Claude</strong> in the ListingGems top bar. It shows where ListingGems is on your computer and copies a ready-made snippet:</p>
+      <ul>
+        <li><strong>Claude Code:</strong> paste it into a chat, or once into <code>~/.claude/CLAUDE.md</code> so every session knows about it.</li>
+        <li><strong>Claude Desktop:</strong> Settings &rarr; Developer &rarr; Edit Config, paste it in, save, and restart Claude Desktop.</li>
+      </ul>
+      <p>Then ask in plain words, for example &ldquo;make the photos in my new-stock folder Amazon-ready.&rdquo; Your photos are processed on your computer and never uploaded. <a href="/#agents">How it works &rarr;</a></p>
+
+      <h3>Where the command-line program is</h3>
+      <ul>
+        <li><strong>Windows:</strong> <code>%LOCALAPPDATA%\ListingGems\listinggems-cli.exe</code>, for example <code>C:\Users\you\AppData\Local\ListingGems\listinggems-cli.exe</code>. It isn&rsquo;t on your PATH, so type the full path.</li>
+        <li><strong>Linux:</strong> the AppImage file itself, wherever you saved it, for example <code>~/Applications/ListingGems_0.3.5_amd64.AppImage</code>. If you move it, copy the snippet again.</li>
+      </ul>
+      <p>Check that everything is ready (license, GPU, downloaded models), then process a folder:</p>
+<pre>&amp; "$env:LOCALAPPDATA\ListingGems\listinggems-cli.exe" status
+&amp; "$env:LOCALAPPDATA\ListingGems\listinggems-cli.exe" batch C:\Photos\new-stock --preset ebay --bg white</pre>
+      <p class="note">Shown for Windows PowerShell. On Linux, put the AppImage path in front of <code>status</code> and <code>batch</code> instead. Results go to a <code>processed</code> folder next to your photos. The command line and Claude support are included in your trial and license.</p>
     </div>
 
     <div class="activation-note">

@@ -52,7 +52,8 @@
       "AI upscaling (HFA2k 4x)",
       "9 marketplace export presets",
       "Batch processing",
-      "100% offline — no cloud uploads"
+      "100% offline — no cloud uploads",
+      "Works with Claude and other AI agents (MCP), plus a command line"
     ]
   }
   </script>
@@ -109,6 +110,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Only for the initial model download (about 110–470 MB depending on the model you choose). After that, ListingGems works completely offline. No cloud, no API calls, no data sent anywhere."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use ListingGems with Claude or another AI assistant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Claude Code, Claude Desktop and other agents that support MCP (the Model Context Protocol) can run ListingGems for you: ask for \"these 40 photos, white background, sized for eBay\" and your assistant does it. Click Use with Claude in the app for the setup to copy. The processing still happens on your computer, and your assistant gets a short text report, not your photos. For scripts, the same processing is available from the command line (listinggems batch). It's included in your license."
         }
       },
       {
@@ -1060,6 +1069,183 @@
     }
 
     /* ═══════════════════════════════════════
+       AI AGENTS (Claude, MCP, command line)
+    ═══════════════════════════════════════ */
+    .agents {
+      background: var(--bg-main);
+    }
+
+    .agents-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .agent-chat {
+      margin: 0;
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .agent-chat-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .agent-chat-head::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+    }
+
+    .agent-msg {
+      max-width: 92%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .agent-msg.user {
+      align-self: flex-end;
+      background: var(--emerald-deep);
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+
+    .agent-msg.assistant {
+      align-self: flex-start;
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      border-bottom-left-radius: 4px;
+    }
+
+    .agent-msg code,
+    .agent-cli code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .agent-tool {
+      align-self: flex-start;
+      padding: 6px 10px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--emerald-deep);
+      background: var(--emerald-glow);
+      border: 1px solid rgba(5, 150, 105, 0.2);
+      border-radius: 8px;
+    }
+
+    .agent-setup {
+      margin-top: 24px;
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .agent-setup-title {
+      margin-bottom: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .agent-setup ol {
+      list-style: none;
+      counter-reset: agent-step;
+      margin: 0;
+      padding: 0;
+    }
+
+    .agent-setup li {
+      counter-increment: agent-step;
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .agent-setup li:last-child { margin-bottom: 0; }
+
+    .agent-setup li::before {
+      content: counter(agent-step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--emerald-deep);
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .agent-cli {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 24px;
+      max-width: 1000px;
+      margin: 40px auto 0;
+      padding: 20px 24px;
+      border: 1px dashed var(--border-light);
+      border-radius: 14px;
+    }
+
+    .agent-cli p {
+      flex: 1 1 280px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
+    .agent-cli pre {
+      flex: 1 1 340px;
+      min-width: 0;
+      margin: 0;
+      padding: 12px 16px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #e5e7eb;
+      background: var(--text-primary);
+      border-radius: 10px;
+    }
+
+    @media (max-width: 760px) {
+      .agents-grid { grid-template-columns: 1fr; gap: 32px; }
+      .agent-cli { padding: 16px; }
+      .agent-cli pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+    }
+
+    /* ═══════════════════════════════════════
        SYSTEM REQUIREMENTS
     ═══════════════════════════════════════ */
     .sysreq {
@@ -1878,6 +2064,44 @@
   </div>
 </section>
 
+<!-- ═══════════════ AI AGENTS ═══════════════ -->
+<section class="agents" id="agents">
+  <div class="container">
+    <h2 class="section-title">Or just ask Claude to do it</h2>
+    <p class="section-lead">ListingGems works with Claude Code, Claude Desktop and other AI agents. Say what you need in plain words, and your assistant runs ListingGems on your computer, one folder after another.</p>
+    <div class="agents-grid">
+      <figure class="agent-chat" aria-label="Example: asking Claude to prepare a folder of photos for eBay">
+        <div class="agent-chat-head">Claude &middot; ListingGems connected</div>
+        <div class="agent-msg user">Process the photos in Downloads/october-haul: white background, sized for eBay.</div>
+        <div class="agent-tool">listinggems &rsaquo; process_photos &middot; 38 photos</div>
+        <div class="agent-msg assistant">Done. 37 of 38 photos are in <code>october-haul/processed</code>, 1600&nbsp;&times;&nbsp;1600 on white and ready for eBay. <code>IMG_2231.jpg</code> couldn&rsquo;t be opened; the file looks damaged. Want Etsy versions too?</div>
+      </figure>
+      <div>
+        <h3 class="gallery-title">Tell it what you need. It handles the folder.</h3>
+        <p class="gallery-subtitle">Ask from Claude Code, Claude Desktop, or any agent that supports MCP. Your assistant picks the photos, the marketplace and the background. ListingGems does the processing.</p>
+        <ul class="gallery-benefits">
+          <li><strong>Same results as the app.</strong> Same models, presets and backgrounds. Anything you don&rsquo;t mention uses the look you last set in ListingGems.</li>
+          <li><strong>Your photos stay on your computer.</strong> ListingGems processes them locally and sends your assistant a short text report, not the images.</li>
+          <li><strong>Big batches finish.</strong> Long batches run in chunks, and ListingGems tells the assistant exactly which photos are left, so none get skipped.</li>
+          <li><strong>Included in your license.</strong> No add-on, no API key, no per-photo fee.</li>
+        </ul>
+        <div class="agent-setup">
+          <div class="agent-setup-title">Set up in a minute</div>
+          <ol>
+            <li>Click <strong>Use with Claude</strong> in the ListingGems top bar.</li>
+            <li>Copy the snippet into Claude Code, or the config entry into Claude Desktop (Settings &rarr; Developer &rarr; Edit Config).</li>
+            <li>Ask: <em>&ldquo;Make the photos in my new-stock folder Amazon-ready.&rdquo;</em></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="agent-cli">
+      <p><strong>Prefer scripts?</strong> The same engine runs from the command line, for shell scripts, scheduled jobs and other automation. On Windows it&rsquo;s <code>listinggems-cli.exe</code>. <a href="/changelog#v0-3-5" class="feature-link" data-umami-event="landing-agents-changelog">What&rsquo;s new in 0.3.5 &rarr;</a></p>
+      <pre><code>listinggems batch ~/Photos/new-stock --preset ebay --bg white</code></pre>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ SYSTEM REQUIREMENTS ═══════════════ -->
 <section class="sysreq">
   <div class="container">
@@ -1973,6 +2197,10 @@
       <div class="faq-item">
         <button class="faq-question">Do I need internet to use it? <span class="faq-toggle">+</span></button>
         <div class="faq-answer"><p>Only for the initial model download (about 110&ndash;470 MB depending on the model you choose). After that, ListingGems works completely offline. No cloud, no API calls, no data sent anywhere.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I use ListingGems with Claude or another AI assistant? <span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Yes. Claude Code, Claude Desktop and other agents that support MCP (the Model Context Protocol) can run ListingGems for you: ask for &ldquo;these 40 photos, white background, sized for eBay&rdquo; and your assistant does it. Click <strong>Use with Claude</strong> in the app for the setup to copy.</p><p>The processing still happens on your computer, and your assistant gets a short text report, not your photos. For scripts, the same processing is available from the command line (<code>listinggems batch</code>). It&rsquo;s included in your license. <a href="#agents" class="feature-link">How it works &uarr;</a></p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Do I need a powerful computer or a good GPU? <span class="faq-toggle">+</span></button>
