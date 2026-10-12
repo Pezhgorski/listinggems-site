@@ -6,7 +6,40 @@
     <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jun 2026 09:13:33 +0000</lastBuildDate>
+    <lastBuildDate>пн, 12 окт 2026 09:04:36 +0000</lastBuildDate>
+
+    <item>
+      <title>ListingGems 0.3.5</title>
+      <link>https://listinggems.com/changelog#v0-3-5</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-3-5</guid>
+      <pubDate>пн, 12 окт 2026 09:04:36 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Use ListingGems with Claude. Let Claude Code or Claude Desktop process your photos for you: ask for &ldquo;these 40 photos, white background, sized for eBay&rdquo; and Claude runs ListingGems on them. The new <strong>Use with Claude</strong> button in the top bar gives you everything to copy and paste for the setup. Processing still happens entirely on your computer, and your photos never leave it.</li>
+          <li>Command line for power users. The same processing is available as <code>listinggems batch</code>, with <code>status</code> and <code>presets</code> commands, for scripts and automation. On Windows it comes as <code>listinggems-cli.exe</code>.</li>
+          <li>Fewer failures on GPUs with less memory. If the graphics card runs out of memory on a photo, ListingGems now frees it and tries that photo again automatically instead of stopping with an error.</li>
+          <li>Photos open even with the wrong file extension. A WebP or PNG saved with a <code>.jpg</code> name now opens normally.</li>
+          <li>Smoother GPU setup. A GPU library download that stalls now offers Retry instead of hanging. If you skipped GPU setup, you can start it later from <strong>Diagnostics</strong> without losing the photos you have open. After setup, your next photo runs on the GPU right away. Diagnostics now show which processor (GPU or CPU) is actually doing the work.</li>
+          <li>Settings saved more safely. Settings are written in one step, so a crash, or the app and the command line saving at the same moment, can no longer leave them half-saved, and a damaged settings file is kept aside instead of being overwritten.</li>
+        </ul>
+      ]]></description>
+    </item>
+
+    <item>
+      <title>ListingGems 0.3.4</title>
+      <link>https://listinggems.com/changelog#v0-3-4</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-3-4</guid>
+      <pubDate>Fri, 09 Oct 2026 09:57:09 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>GPU acceleration without the CUDA Toolkit. With an NVIDIA graphics card, ListingGems now downloads the GPU libraries it needs by itself (a one-time download). An NVIDIA driver is all you install.</li>
+          <li>Product Fill from 5% to 100% on every preset. Make the product as small or as large in the frame as you like, for every marketplace.</li>
+          <li>Type exact values. The numbers next to sliders are now editable, so you can enter a precise value.</li>
+          <li>New Image Size preset. Keeps the output at the size of your original photo.</li>
+          <li>Fixes. Floor Shadow no longer leaves a faint halo around the product, the mask brush can reach the product from outside the crop, the thumbnail strip follows your selection, backgrounds scale correctly at full resolution, and a license-status issue and a few settings edge cases are fixed.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>ListingGems 0.3.3</title>

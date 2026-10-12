@@ -1,11 +1,11 @@
 {
-  "version": "0.3.4",
-  "notes": "GPU acceleration no longer needs the NVIDIA CUDA Toolkit: ListingGems downloads the GPU libraries it needs (a one-time download; an NVIDIA driver is all you install). Product Fill now goes from 5% to 100% for every marketplace preset, and you can type exact values next to sliders. Also fixes a license-status issue and a few settings edge cases.",
-  "pub_date": "2026-10-09T09:57:09Z",
+  "version": "0.3.5",
+  "notes": "ListingGems can now work with Claude: let Claude Code or Claude Desktop process your photos for you (see the new Use with Claude button). Your photos still never leave your computer. Also: automatic retry when the GPU runs out of memory, photos with the wrong file extension now open, and a smoother GPU setup.",
+  "pub_date": "2026-10-12T09:04:36Z",
   "platforms": {
     "linux-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.3.4/ListingGems_0.3.4_amd64.AppImage",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THBVaVFWSzRaSHJPSHRuWjFTS3hWbE1xWEdJMkJjNHRTTUNYUS9PWGdnc0pzcVF2dytJMEhtY2ZHUmhkREFZeFk2UjF5RmhRL01HUzMyaFcwRHFOZ2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNTM5NzY1CWZpbGU6TGlzdGluZ0dlbXNfMC4zLjRfYW1kNjQuQXBwSW1hZ2UKM3dVa09JMjdjQkk5MERSZjVBTmo5Tm8xbG9UOEptSDYwMGxqZDgyYVY1Uy9VblhyTUpHNGQweGkwK2JYcWM1ODZWTFFhVktTcmFKeFR1Kys4VjlYQUE9PQo="
+      "url": "https://dl.listinggems.com/releases/0.3.5/ListingGems_0.3.5_amd64.AppImage",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGtLS1NQVmYwWnR2UzBwR0RJUmpEN0VtTnpEMENnaGVwRVVxaEMxMERZOU9tN29iVG4zdGE2NXRxUWROemcxVzlZTVNmTVNLb2tkcUJnNk50K095RWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzk1NzkzCWZpbGU6TGlzdGluZ0dlbXNfMC4zLjVfYW1kNjQuQXBwSW1hZ2UKTnloUFJjMHVPVkxNNWh4TTE2dElCSHdVcEtrTytJTlhySE5ybUZVbzc0UHQybDlzZml3eFJqT0RaM2llMXBYdDRpS1hKZThheFNwWDBuM29jOWROQ0E9PQo="
     }
   }
 }
