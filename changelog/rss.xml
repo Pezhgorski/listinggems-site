@@ -6,13 +6,25 @@
     <atom:link href="https://listinggems.com/changelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and version history for ListingGems, the desktop product photo enhancer for marketplace sellers.</description>
     <language>en-us</language>
-    <lastBuildDate>пн, 12 окт 2026 09:04:36 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 18:14:27 +0000</lastBuildDate>
 
+    <item>
+      <title>ListingGems 0.3.6</title>
+      <link>https://listinggems.com/changelog#v0-3-6</link>
+      <guid isPermaLink="true">https://listinggems.com/changelog#v0-3-6</guid>
+      <pubDate>Mon, 12 Oct 2026 18:14:27 +0000</pubDate>
+      <description><![CDATA[
+        <ul>
+          <li>Command line on your PATH (Windows). The installer now adds ListingGems to your PATH, so <code>listinggems-cli status</code> works in any terminal you open after installing, without typing the full install path. Uninstalling removes it again.</li>
+          <li>Sharp app icon. The app icon is now crisp in the taskbar, Start menu and on the desktop instead of blurry, and the logo in the app&rsquo;s top bar is sharper too.</li>
+        </ul>
+      ]]></description>
+    </item>
     <item>
       <title>ListingGems 0.3.5</title>
       <link>https://listinggems.com/changelog#v0-3-5</link>
       <guid isPermaLink="true">https://listinggems.com/changelog#v0-3-5</guid>
-      <pubDate>пн, 12 окт 2026 09:04:36 +0000</pubDate>
+      <pubDate>Mon, 12 Oct 2026 09:04:36 +0000</pubDate>
       <description><![CDATA[
         <ul>
           <li>Use ListingGems with Claude. Let Claude Code or Claude Desktop process your photos for you: ask for &ldquo;these 40 photos, white background, sized for eBay&rdquo; and Claude runs ListingGems on them. The new <strong>Use with Claude</strong> button in the top bar gives you everything to copy and paste for the setup. Processing still happens entirely on your computer, and your photos never leave it.</li>
