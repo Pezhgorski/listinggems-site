@@ -126,6 +126,11 @@
       font-family: var(--font-mono); font-size: 12px; line-height: 1.7;
       white-space: pre-wrap; overflow-wrap: anywhere;
     }
+    .agents-shot img {
+      display: block; width: 100%; height: auto;
+      margin: 4px 0 16px;
+      border: 1px solid var(--border); border-radius: 10px;
+    }
     .agents .note { font-size: 13px; color: var(--text-muted); margin: 12px 0 0; }
     .agents a { color: var(--emerald-deep); font-weight: 600; text-decoration: none; }
     .agents a:hover { text-decoration: underline; }
@@ -260,6 +265,10 @@
     <div class="requirements agents" id="claude">
       <h2>Use it with Claude or from the command line</h2>
       <p>After installing, click <strong>Use with Claude</strong> in the ListingGems top bar. It shows where ListingGems is on your computer and copies a ready-made snippet:</p>
+      <picture class="agents-shot">
+        <source srcset="images/use-with-claude.webp" type="image/webp">
+        <img src="images/use-with-claude.png" alt="The ListingGems top bar with the Use with Claude button circled, next to About, Diagnostics and License." width="1050" height="132" loading="lazy">
+      </picture>
       <ul>
         <li><strong>Claude Code:</strong> paste it into a chat, or once into <code>~/.claude/CLAUDE.md</code> so every session knows about it.</li>
         <li><strong>Claude Desktop:</strong> Settings &rarr; Developer &rarr; Edit Config, paste it in, save, and restart Claude Desktop.</li>
