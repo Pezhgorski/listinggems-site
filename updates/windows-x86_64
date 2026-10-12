@@ -1,11 +1,11 @@
 {
-  "version": "0.3.3",
-  "notes": "Adds Instagram Post and Reel export presets, and Auto Apply now switches on after your first processed photo. See https://listinggems.com/changelog for details.",
-  "pub_date": "2026-06-11T11:50:00Z",
+  "version": "0.3.5",
+  "notes": "ListingGems can now work with Claude: let Claude Code or Claude Desktop process your photos for you (see the new Use with Claude button). Your photos still never leave your computer. Also: automatic retry when the GPU runs out of memory, photos with the wrong file extension now open, and a smoother GPU setup.",
+  "pub_date": "2026-10-12T17:51:27Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://dl.listinggems.com/releases/0.3.3/ListingGems_0.3.3_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THJ0c1ZDQlhUbHV5RzdueFRIYjkrMVFkN2VISVFVbnBYclQ4dGxnNGJ6dUNMc2ZPbVF0WXlneDRWOHhWZ3ZNQzVac2ovSHR5TWIvQ2xXZTlCeTZHYVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxMTc4NjAwCWZpbGU6TGlzdGluZ0dlbXNfMC4zLjNfeDY0LXNldHVwLmV4ZQpBSlZwa0dzOEovUU51eGVsVWF4Wm1SWnZRUDZMblNPVWFyQk9KTXRWZi9LbzIxWVVUWE4xY2ZkUTllcW9aRXFqYjkzaDFWR0xZdEwvbWtXeHRYajZEdz09Cg=="
+      "url": "https://dl.listinggems.com/releases/0.3.5/ListingGems_0.3.5_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TGk5WXVTekc4aXJQTkVNNFl6QUJlM0lFVkQ4ZVpXWlJRb0huUTlxNGRYZHBBWXNKTmRsT2tCdTlURVBvaGlyRGZ2di9hTDFOTWNLb1E4Z2kvMFJYUmdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODI1NTc3CWZpbGU6TGlzdGluZ0dlbXNfMC4zLjVfeDY0LXNldHVwLmV4ZQpYdTJWRUt0QjhiRjZ1NC9qcWxIWHFMV3c2Z1J6WUMwLzkrZi9IVjN5YzJXVSt4Rkx3M25mZm5IVjA4cHlhcjZwN25odlVRdUxlNHlSaEdST1lVT3ZBUT09Cg=="
     }
   }
 }
