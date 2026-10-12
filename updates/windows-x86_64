@@ -1,11 +1,11 @@
 {
   "version": "0.3.6",
   "notes": "The installer now puts ListingGems on your PATH, so listinggems-cli works in any new terminal, and the app icon is sharp in the taskbar, Start menu and desktop. See https://listinggems.com/changelog for details.",
-  "pub_date": "2026-10-12T18:14:27Z",
+  "pub_date": "2026-10-12T18:29:40Z",
   "platforms": {
     "windows-x86_64": {
       "url": "https://dl.listinggems.com/releases/0.3.6/ListingGems_0.3.6_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5THJPSGtzdFZZYjRCQ2VFYS9FaTdmK2JHSDhhZmdBRmNUbDRzMEMwSVJJdnkvR09GamQzOGVGby9mM3NzZDFZdHF0amlMR3JDZDdWMVg3eW1wV1kzVkFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODI4NzM0CWZpbGU6TGlzdGluZ0dlbXNfMC4zLjZfeDY0LXNldHVwLmV4ZQpKVXFESzZBTi8rSlNXeUR1NGZ2TGk3R2NmWHNha09WS0djOGh2N2V2Rkk0SkNWcmpNM3FXNVVrT3YvOWZLRW5nNGZ3TW1IZTZnejRIaFlsV3c0TUdDZz09Cg=="
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTeUJuUmxrZlQ5TG0wVUNRdHhrb1pMN0RBWEVMWlFYSFlzNk1tbC9zdzRxY3V0alpuZzNoR1pYMkhoL0JJNG5JREFzLzNXR21jY05Xbzc3M0xZZXdJWW12cEFZeUk0aVE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODI5NzIzCWZpbGU6TGlzdGluZ0dlbXNfMC4zLjZfeDY0LXNldHVwLmV4ZQpVZUlGeXk2OC94ZlNESmoxbk13M3BPZzgwUUFkdi9UenZ4VGdhUzZVekNJWm9udHBoT3AxUGRvSmE1NWFvaFNiY1h5SFg3Qm55Mk9YbUxTU1VYa3lCUT09Cg=="
     }
   }
 }

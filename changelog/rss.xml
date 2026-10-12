@@ -17,6 +17,7 @@
         <ul>
           <li>Command line on your PATH (Windows). The installer now adds ListingGems to your PATH, so <code>listinggems-cli status</code> works in any terminal you open after installing, without typing the full install path. Uninstalling removes it again.</li>
           <li>Sharp app icon. The app icon is now crisp in the taskbar, Start menu and on the desktop instead of blurry, and the logo in the app&rsquo;s top bar is sharper too.</li>
+          <li>Version in About. The About dialog now shows which version of ListingGems you have.</li>
         </ul>
       ]]></description>
     </item>
